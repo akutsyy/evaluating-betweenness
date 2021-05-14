@@ -1,0 +1,5 @@
+Running BrandesSubset with parameters Set Percentage=0.05'
+Set Size=355 on: datasets/final/wiki-vote_directed.txt
+Size: 7115 nodes, 103689 edges
+Time taken: 0.166141484
+ Graph accesses: 16180689

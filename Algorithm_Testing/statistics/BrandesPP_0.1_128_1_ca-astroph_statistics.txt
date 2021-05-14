@@ -1,0 +1,5 @@
+averageError: 2.3206043766138173E-10
+maxError: 8.661898115767446E-7
+percentOfTop: 1.0
+euclideanDistance: 0.0029304389369592203
+inversionPercent: 0.0025802481290561788

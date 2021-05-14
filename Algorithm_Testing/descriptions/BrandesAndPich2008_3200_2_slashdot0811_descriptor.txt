@@ -1,0 +1,4 @@
+Running BrandesAndPich2008 with parameters pivots=3200 on: datasets/final/slashdot0811_directed.txt
+Size: 77360 nodes, 905468 edges
+Time taken: 39.311602752
+ Graph accesses: 3320343630

@@ -1,0 +1,7 @@
+Running Bader with parameters Low=0.0'
+High=0.001
+Terminated from max iterations cutoff:false
+After iterations: 266 on: datasets/final/4932.protein.links_undirected_weighted.csv
+Size: 6574 nodes, 1845966 edges
+Time taken: 3.465298572
+ Graph accesses: 496275333

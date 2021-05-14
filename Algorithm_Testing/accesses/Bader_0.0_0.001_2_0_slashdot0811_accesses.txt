@@ -1,0 +1,3 @@
+Running Bader with parameters Low=0.0'
+High=0.001 on: datasets/final/slashdot0811_directed.txt
+Graph accesses: 427765407

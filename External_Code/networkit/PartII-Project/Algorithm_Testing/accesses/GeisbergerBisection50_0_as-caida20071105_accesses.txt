@@ -1,0 +1,2 @@
+Running GeisbergerBisection with parameters pivots=50 on: datasets/final/as-caida20071105_undirected.txt
+Graph accesses: 10952926

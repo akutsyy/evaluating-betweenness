@@ -1,0 +1,4 @@
+Running BrandesAndPich2008 with parameters pivots=800 on: datasets/final/ca-astroph_undirected.txt
+Size: 18772 nodes, 396160 edges
+Time taken: 3.232761006
+ Graph accesses: 339837706

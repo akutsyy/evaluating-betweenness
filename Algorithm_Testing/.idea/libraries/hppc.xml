@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="hppc">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/lib/hppc-0.9.0.RC2/hppc-benchmarks/src/jmh/java" />
+      <root url="file://$PROJECT_DIR$/lib/hppc-0.9.0.RC2/hppc-examples/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hppc-0.9.0.RC2/hppc-template-intrinsics/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hppc-0.9.0.RC2/hppc-template-processor/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hppc-0.9.0.RC2/hppc-template-processor/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hppc-0.9.0.RC2/hppc-template-processor/src/test/resources" />
+      <root url="file://$PROJECT_DIR$/lib/hppc-0.9.0.RC2/hppc/src/main/java" />
+      <root url="file://$PROJECT_DIR$/lib/hppc-0.9.0.RC2/hppc/src/main/templates" />
+      <root url="file://$PROJECT_DIR$/lib/hppc-0.9.0.RC2/hppc/src/test/java" />
+      <root url="file://$PROJECT_DIR$/lib/hppc-0.9.0.RC2/hppc/src/test/templates" />
+    </SOURCES>
+  </library>
+</component>

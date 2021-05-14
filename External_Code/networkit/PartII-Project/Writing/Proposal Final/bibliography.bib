@@ -1,0 +1,163 @@
+
+
+
+ @misc{string, title={Welcome to STRING}, url={https://string-db.org/}, author={Bork, Peer and Jensen, Lars  Juhl and von Mering, Christian}} 
+
+
+
+@article{brandes,
+author = { Ulrik   Brandes },
+title = {A faster algorithm for betweenness centrality},
+journal = {The Journal of Mathematical Sociology},
+volume = {25},
+number = {2},
+pages = {163-177},
+year  = {2001},
+publisher = {Routledge},
+doi = {10.1080/0022250X.2001.9990249},
+
+URL = { 
+        https://doi.org/10.1080/0022250X.2001.9990249
+    
+},
+eprint = { 
+        https://doi.org/10.1080/0022250X.2001.9990249
+    
+}
+
+}
+
+@misc{erdos,
+      title={A Divide-and-Conquer Algorithm for Betweenness Centrality}, 
+      author={Dora Erdos and Vatche Ishakian and Azer Bestavros and Evimaria Terzi},
+      year={2015},
+      eprint={1406.4173},
+      archivePrefix={arXiv},
+      primaryClass={cs.DS}
+}
+
+
+@InProceedings{bader,
+author="Bader, David A.
+and Kintali, Shiva
+and Madduri, Kamesh
+and Mihail, Milena",
+editor="Bonato, Anthony
+and Chung, Fan R. K.",
+title="Approximating Betweenness Centrality",
+booktitle="Algorithms and Models for the Web-Graph",
+year="2007",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="124--137",
+abstract="Betweenness is a centrality measure based on shortest paths, widely used in complex network analysis. It is computationally-expensive to exactly determine betweenness; currently the fastest-known algorithm by Brandes requires O(nm) time for unweighted graphs and O(nm{\thinspace}+{\thinspace}n2logn) time for weighted graphs, where n is the number of vertices and m is the number of edges in the network. These are also the worst-case time bounds for computing the betweenness score of a single vertex. In this paper, we present a novel approximation algorithm for computing betweenness centrality of a given vertex, for both weighted and unweighted graphs. Our approximation algorithm is based on an adaptive sampling technique that significantly reduces the number of single-source shortest path computations for vertices with high centrality. We conduct an extensive experimental study on real-world graph instances, and observe that our random sampling algorithm gives very good betweenness approximations for biological networks, road networks and web crawls.",
+isbn="978-3-540-77004-6"
+}
+
+
+@article{borassi,
+  author    = {Michele Borassi and
+               Emanuele Natale},
+  title     = {{KADABRA} is an ADaptive Algorithm for Betweenness via Random Approximation},
+  journal   = {CoRR},
+  volume    = {abs/1604.08553},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1604.08553},
+  archivePrefix = {arXiv},
+  eprint    = {1604.08553},
+  timestamp = {Mon, 13 Aug 2018 16:47:36 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/BorassiN16.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inbook{geisberger,
+author = {Robert Geisberger and Peter Sanders and Dominik Schultes},
+title = {Better Approximation of Betweenness Centrality},
+booktitle = {2008 Proceedings of the Workshop on Algorithm Engineering and Experiments (ALENEX)},
+chapter = {},
+pages = {90-100},
+doi = {10.1137/1.9781611972887.9},
+URL = {https://epubs.siam.org/doi/abs/10.1137/1.9781611972887.9},
+eprint = {https://epubs.siam.org/doi/pdf/10.1137/1.9781611972887.9}
+}
+
+@misc{snap,
+                    author       = {Jure Leskovec and Andrej Krevl},
+                    title        = {{SNAP Datasets}: {Stanford} Large Network Dataset Collection},
+                    howpublished = {\url{http://snap.stanford.edu/data}},
+                    month        = jun,
+                    year         = 2014
+                  }
+                  
+@Article{comparesmall,
+author={Matta, John
+and Ercal, Gunes
+and Sinha, Koushik},
+title={Comparing the speed and accuracy of approaches to betweenness centrality approximation},
+journal={Computational Social Networks},
+year={2019},
+month={Feb},
+day={09},
+volume={6},
+number={1},
+pages={2},
+abstract={Many algorithms require doing a large number of betweenness centrality calculations quickly, and accommodating this need is an active open research area. There are many different ideas and approaches to speeding up these calculations, and it is difficult to know which approach will work best in practical situations.},
+issn={2197-4314},
+doi={10.1186/s40649-019-0062-5},
+url={https://doi.org/10.1186/s40649-019-0062-5}
+}
+
+@inproceedings{comparebig,
+author = {AlGhamdi, Ziyad and Jamour, Fuad and Skiadopoulos, Spiros and Kalnis, Panos},
+title = {A Benchmark for Betweenness Centrality Approximation Algorithms on Large Graphs},
+year = {2017},
+isbn = {9781450352826},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3085504.3085510},
+doi = {10.1145/3085504.3085510},
+abstract = {Betweenness centrality quantifies the importance of graph nodes in a variety of applications including social, biological and communication networks. Its computation is very costly for large graphs; therefore, many approximate methods have been proposed. Given the lack of a golden standard, the accuracy of most approximate methods is evaluated on tiny graphs and is not guaranteed to be representative of realistic datasets that are orders of magnitude larger. In this paper, we develop BeBeCA, a benchmark for betweenness centrality approximation methods on large graphs. Specifically: (i) We generate a golden standard by deploying a parallel implementation of Brandes algorithm using 96,000 CPU cores on a supercomputer to compute exact betweenness centrality values for several large graphs with up to 126M edges. (ii) We propose an evaluation methodology to assess various aspects of approximation accuracy, such as average error and quality of node ranking. (iii) We survey a large number of existing approximation methods and compare their performance and accuracy using our benchmark. (iv) We publicly share our benchmark, which includes the golden standard exact betweenness centrality values together with the scripts that implement our evaluation methodology; for researchers to compare their own algorithms and practitioners to select the appropriate algorithm for their application and data.},
+booktitle = {Proceedings of the 29th International Conference on Scientific and Statistical Database Management},
+articleno = {6},
+numpages = {12},
+keywords = {Experimental Evaluation, Betweenness Centrality, Social Networks, Approximation Algorithms},
+location = {Chicago, IL, USA},
+series = {SSDBM '17}
+}
+
+@misc{repository, 
+title={Network Data Repository: The First Interactive Network Data Repository}, url={http://networkrepository.com/}, journal={Network Repository}, author={ Rossi, Ryan  A. and Ahmed, Nesreen   K.}, year={2020}} 
+
+
+@article{doi:10.1080/0022250X.2001.9990249,
+author = { Ulrik   Brandes },
+title = {A faster algorithm for betweenness centrality},
+journal = {The Journal of Mathematical Sociology},
+volume = {25},
+number = {2},
+pages = {163-177},
+year  = {2001},
+publisher = {Routledge},
+doi = {10.1080/0022250X.2001.9990249},
+
+URL = { 
+        https://doi.org/10.1080/0022250X.2001.9990249
+    
+},
+eprint = { 
+        https://doi.org/10.1080/0022250X.2001.9990249
+    
+}
+
+}
+
+@article{floyd,
+  author = {FLOYD, R.W.},
+  title = {Algorithm 97--Shortest Path},
+  volume = {5},
+  pages = {345},
+  date = {1962},
+  language = {fr},
+  journal = {Communications of ACM}
+}
+

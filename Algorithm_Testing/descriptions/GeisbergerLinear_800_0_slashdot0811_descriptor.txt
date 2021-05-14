@@ -1,0 +1,4 @@
+Running GeisbergerLinear with parameters pivots=800 on: datasets/final/slashdot0811_directed.txt
+Size: 77360 nodes, 905468 edges
+Time taken: 10.570599153
+ Graph accesses: 857113723

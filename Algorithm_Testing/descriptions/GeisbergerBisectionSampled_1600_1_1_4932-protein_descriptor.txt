@@ -1,0 +1,4 @@
+Running GeisbergerBisectionSampled with parameters pivots=1600, samples=1 on: datasets/final/4932.protein.links_undirected_weighted.csv
+Size: 6574 nodes, 1845966 edges
+Time taken: 22.26603009
+ Graph accesses: 2997447776

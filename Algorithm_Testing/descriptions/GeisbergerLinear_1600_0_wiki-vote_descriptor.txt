@@ -1,0 +1,4 @@
+Running GeisbergerLinear with parameters pivots=1600 on: datasets/final/wiki-vote_directed.txt
+Size: 7115 nodes, 103689 edges
+Time taken: 0.559676796
+ Graph accesses: 58321961

@@ -1,0 +1,2 @@
+Running GeisbergerLinear with parameters pivots=200 on: datasets/final/com-amazon_undirected.txt
+Graph accesses: 576310743

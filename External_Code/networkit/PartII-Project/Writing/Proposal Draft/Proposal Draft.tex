@@ -1,0 +1,143 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{soul}
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage[section]{placeins}
+\fvset{tabsize=4}
+\hypersetup{colorlinks,
+	urlcolor=blue,
+	pdfborderstyle={/S/U/W 1}% border style will be underline of width 1pt
+	}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+
+\setlength{\droptitle}{-5em}   % This is your set screw
+
+
+\begin{document}
+
+
+\pagenumbering{arabic}
+\section*{Phase 1 Project Selection Status Report}
+
+\noindent
+Name: Iris Kutsyy\\
+
+\noindent
+College: Trinity\\
+
+\noindent
+User Identifier: ak2149\\
+
+\noindent
+Director of Studies: Prof. Frank Stajano, Dr. Sean Holden, and Dr. Neel Krishnaswami
+\section{Introduction and Description of Work}
+Betweenness centrality is a very important metric for analyzing graphs, and algorithms to efficiently compute it have become very relevant within the past decade. In addition to the variety of algorithms that exactly compute betweenness centrality, a number of algorithms have been developed which attempt to estimate the betweenness centrality of a node through probabilistic methods. Further, recent studies have noted that the performance of individual betweeness centrality algorithms depends a great deal on the characteristics of the network they are run on.
+
+I will attempt to use graph statistics to determine the situations where each of a number of algorithms should be used. Specifically, I will look at the Brandes \cite{doi:10.1080/0022250X.2001.9990249} algorithm, the Brandes++ \cite{erdos2015divideandconquer} algorithm, an algorithm based on random walks \cite{NEWMAN200539}, and an algorithm based on random sampling \cite{inproceedings}. I will implement each of these algorithms in Java, adding instrumentation such that I can accurately measure a variety of performance metrics.
+
+I will verify my implementation of each of these algorithms by comparing their performance to the fastest known implementation. This will allow me to verify the correctness, as well as confirm that my performance is within an order of magnitude of the most efficient known implementation. The comparison is important to verify that I'm not missing any major optimization tricks. Since I will be implementing all four algorithms (and using the same language/toolkit) and verifying that the performance is as expected, I'll be able to confirm that their relative performance is actually due to the algorithms rather than the implementation.
+
+Next, I will select several network datasets from the Stanford SNAP \cite{snapnets} dataset collection. I will find a variety of network statistics for each dataset, and then run each of my instrumented algorithms on the dataset. Using these results, I will attempt to determine a set of metrics by which one can predict the most efficient algorithm to run on a given dataset. I will also determine a set of metrics by which one can predict the accuracy of the two approximation algorithms. As a possible extension, I may create tools to modify the datasets to change their properties (such as adding or deleting nodes to change connectivity) in order to measure the effects on the algorithms.
+\section{Starting Point}
+
+Of the four algorithms, Brandes \cite{doi:10.1080/0022250X.2001.9990249} is the best known and de-facto ``standard'' algorithm. Brandes++ \cite{erdos2015divideandconquer} can exhibit significant speedups over Brandes, especially for graphs that have small k-cuts. It doesn't provide much benefit for graphs that have large k-cuts. Kornaropoulos and Riondato claim that their algorithm outperforms Brandes on a number of real-world datasets, but makes no comparison to Brandes++ or other approximation algorithms \cite{inproceedings}. Newman makes no such claims about their random walk algorithm \cite{NEWMAN200539}. I have not been able to find any other comparisons between these algorithms.
+\section{Substance and Structure of the Project}
+
+I will implement the algorithms and graph statistic calculations in Java. The program will output the time taken to run each algorithm on each dataset as well as performance metrics such as number of reads.
+
+\section{Success Criteria}
+
+My success criteria will be that I have correctly and reasonably efficiently implemented the four algorithms, run them on at least 5 datasets with varied network statistics, and determined to what extent it is possible to predict the relative performance of the algorithms, as well as the accuracy of the approximate algorithms.
+
+I will evaluate my project by comparing the efficiency and outputs of my implementations with a known implementation. I will also verify that my instrumentation gives repeatable results for each algorithm, and that this correlates strongly to the real amount of time spent.
+
+\section{Plan of Work}
+\subsection{Timetable}
+The following timetable breaks the project into 10 2-week work packages.
+\begin{enumerate}
+\item Verify that all necessary resources are ready. This includes familiarizing myself with running projects on the compute server.
+
+Install all software and packages needed to run the project.
+
+Research how to instrument code.
+
+\item Use a pre-existing package to run a betweenness centrality algorithm on several Stanford SNAP datasets to determine size constraints.
+
+Research relevant graph statistics.
+\item Implement and instrument the Brandes algorithm. Test on a small dataset. Compare performance to best known implementation.
+
+\item Implement and instrument the Brandes++ algorithm. Test on a small dataset. Compare performance to best known implementation.
+
+\item Implement and instrument the random samples and random walk algorithms. Test on a small dataset. Compare performance to best known implementations.
+
+\item Run each algorithm on at least 5 datasets.
+
+Write the progress report
+
+\item Determine the graph statistics of each of these datsets.
+
+Analyze the results of these experiments.
+
+\item Begin writing dissertation.
+
+\item Continue writing dissertation.
+
+\item Finish writing dissertation.
+
+\end{enumerate}
+\subsection{Milestones}
+\begin{itemize}
+\item By the end of the 6th week of work, I should be able to run Brandes \cite{doi:10.1080/0022250X.2001.9990249} on a small dataset and confirm that performance is comparable to the best known implementation.
+\item By the end of the 8th week of work, I should be able to run Brandes++ \cite{erdos2015divideandconquer} on a small dataset and confirm that performance is comparable to the best known implementation.
+\item By the end of the 10th week of work, I should be able to run the random samples \cite{inproceedings} and random walk \cite{NEWMAN200539} algorithms on a small dataset and confirm that performance is comparable to the best known implementations.
+\item By the end of the 10th week of work, I should have run all of these algorithms on my selected 5 datasets. \textbf{This is the first part of my success criteria} 
+\item By the end of the 12th week of work, I should have run all relevant graph statistics on the 5 datasets. \textbf{This is the second part of my success criteria}
+\end{itemize}
+\section{Resource Declaration}
+
+\begin{itemize}
+
+\item My own laptop
+\begin{itemize}
+
+\item I will use this for small experiments and for ease of use. 
+\item All code will be checked into GitHub daily, and all setup and non-code items will be mirrored onto the MCS. In case of failure, I will use the MCS backup.
+\item \textit{I accept full responsibility for this machine and I have made contingency plans to protect myself against hardware and/or software failure.}
+\end{itemize}
+
+\item Graph Analysis Package
+\begin{itemize}
+\item I will use a graph analysis package to do my initial tests with. 
+\item This is widely available. I will use the \texttt{org.jgrapht.alg.scoring} library.
+\end{itemize}
+
+\item Stanford SNAP datasets
+\begin{itemize}
+\item I will use 5 of these datasets to run experiments on. 
+\item It is freely available and I will download at least 5 datasets as soon as the project is approved.
+\end{itemize}
+\newpage
+\item Access to a high performance computer.
+\begin{itemize}
+\item I would benefit from a high-performance computing server to speed up the experiments. 
+\item My supervisor has already arranged access to a high performance computer through the computer lab. 
+\item In case that doesn't work, I can use my laptop or the MCS and allocate more time for the experiments.
+\end{itemize}
+\end{itemize}
+
+
+\newpage
+\bibliography{bibliography}
+\bibliographystyle{plain}
+
+\end{document}

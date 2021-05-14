@@ -1,0 +1,4 @@
+Running KADABRA with parameters lambda=0.01, delta=0.1terminated from cutoff: false iterations: 24585 on: datasets/final/slashdot0811_directed.txt
+Size: 77360 nodes, 905468 edges
+Time taken: 6.357610252
+ Graph accesses: 154355773

@@ -1,0 +1,7 @@
+Running BrandesPP with parameters Set Percentage=0.001'
+Set Size=18
+NumPartitions=2048
+Times=[5.289171401, 0.557294355, 0.366767853, 0.0, 0.169143579] on: datasets/final/ca-astroph_undirected.txt
+Size: 18772 nodes, 396160 edges
+Time taken: 6.383202719
+ Graph accesses: 2148413324

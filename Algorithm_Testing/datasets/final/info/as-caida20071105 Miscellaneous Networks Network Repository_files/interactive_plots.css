@@ -1,0 +1,190 @@
+.lineplot {
+    fill: rgba(250, 250, 255, 0.6);
+    cursor: -webkit-zoom-in; cursor: -moz-zoom-in;
+}
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+.grid path {
+    stroke-width: 0;
+}
+.x.axis path {
+    stroke: #000;
+    shape-rendering: auto;
+}
+
+.y.axis path {
+      stroke: #000;
+    shape-rendering: auto;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: auto;
+}
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+
+      
+      
+.line {
+    fill: none;
+    stroke: #000;
+    stroke-width: 1.5px;
+    shape-rendering: auto;
+}
+
+.point {
+    shape-rendering: auto;
+}
+
+
+text {
+  fill: #000;
+  pointer-events: all;
+  shape-rendering: auto;
+}
+
+.innerDraggable {
+    border: 0px solid #000 !important;
+    width: 100%;
+    height: 100%;
+    cursor: -webkit-zoom-in; cursor: -moz-zoom-in;
+}
+
+
+.isResizable {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border-color: #ddd;
+    margin: 15px;
+    padding: 30px;
+    overflow: hidden;
+    resize: both;
+    width: 480px;
+    height: 380px;
+    min-width: 200px;
+    min-height: 150px;
+    cursor: -webkit-grab; cursor: -moz-grab;
+
+
+      box-shadow: 0 0 8px #ddd; 
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.isResizable:hover {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.8);
+    -moz-background-clip: border;     /* Firefox 3.6 */
+    -webkit-background-clip: border;  /* Safari 4? Chrome 6? */
+    background-clip: border-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+
+    -moz-background-clip: padding;     /* Firefox 3.6 */
+    -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+    background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+
+    margin: 15px;
+    padding: 30px;
+    overflow: hidden;
+    resize: both;
+    width: 480px;
+    height: 380px;
+    min-width: 200px;
+    min-height: 150px;
+    cursor: -webkit-grab; cursor: -moz-grab;
+    box-shadow: 0 8px 12px #ddd; 
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.draggable { 
+  border: 1px solid #000;
+  width: 150px; 
+  height: 150px; 
+  padding: 0.5em; 
+  margin: 10px;
+  background: #fff;
+  cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+#draggable { 
+  border: 1px solid #000;
+  width: 150px; 
+  height: 150px; 
+  padding: 0.5em; 
+  margin: 10px;
+  background: #fff;
+  cursor: -webkit-grab; cursor: -moz-grab;
+}
+
+path.link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+.bar rect {
+  fill: steelblue;
+  shape-rendering: auto;
+}
+
+.bar text {
+  fill: #fff;
+}
+
+.d3-tip {
+  display: inline;
+  position: absolute;
+  border: 1px solid #D9D9D9;
+  font: 400 12px/12px Arial;
+  border-radius: 3px;
+  background: #fff;
+  opacity: 0;
+  top: 30px;
+  padding: 5px;
+  left: -9px;
+  text-align: center;
+  shape-rendering: auto;
+}
+.d3-tip strong {
+  display: inline;
+  padding: 2px;
+}
+
+.tooltipSlider strong {
+  display: block;
+  padding: 2px;
+}
+
+.blueSlider {
+  background: #2980b9;
+}
+.redSlider {
+  background: #c0392b;
+}
+.greenSlider {
+  background: #27ae60;
+}
+
+
+#slider_num_bins {
+  background: #2980b9;
+}
+
+#slider_kcore {
+  background: #c0392b;
+}

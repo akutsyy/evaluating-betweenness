@@ -1,0 +1,66 @@
+\makeatletter
+%AMS packages
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{bm}%Boldmath
+\usepackage[english]{babel}%Language stuff
+\usepackage{booktabs}%Better tables
+\usepackage[margin = 10pt, font = small, labelfont = bf]{caption}%Caption environment
+\usepackage{fancyhdr}%Fancy headers
+\usepackage{graphicx}%Graphics
+\usepackage{xcolor}%Coloured text
+\usepackage{mathtools}%Minor mathstuff
+\usepackage{microtype}%Improve typography
+\usepackage{multirow}%Cells that span multiple rows in tables
+\usepackage{pgfplots}%Plotting in LaTeX
+\usepackage{siunitx}%Si units
+\usepackage{tabularx}%Table environment
+\usepackage{tikz}%Figures
+\usepackage{sectsty}%Section header stuff
+\usepackage{derivative}%Derivative macros
+\usepackage{braket}%Braket macros
+\usepackage[colorlinks=true
+   ,urlcolor=blue
+   ,anchorcolor=blue
+   ,citecolor=blue
+   ,filecolor=blue
+   ,linkcolor=blue
+   ,menucolor=blue
+   ,linktocpage=true
+   ,pdfa=true
+]{hyperref}%Coloured links
+
+\pagestyle{fancyplain}
+\fancyhead[R]{Oscar Emil Sommer}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\@dotsep}{10000} %No dots in ToC
+\allsectionsfont{\bfseries\sffamily} %Sections are bold sans serif
+
+
+
+% Theorem-like environments
+\theoremstyle{definition}
+\newtheorem*{axiom}{Axiom}
+\newtheorem*{aprx}{Approximation}
+\newtheorem*{claim}{Claim}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{conjecture}{Conjecture}
+\newtheorem*{example}{Example}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{fact}{Fact}
+\newtheorem*{remark}{Remark}
+\newtheorem*{method}{Method}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+
+\newtheorem*{principle}{Principle}
+\setcounter{tocdepth}{2}
+\makeatother

@@ -1,0 +1,4 @@
+Running KADABRA with parameters lambda=0.01, delta=0.1terminated from cutoff: false iterations: 17622 on: datasets/final/ca-astroph_undirected.txt
+Size: 18772 nodes, 396160 edges
+Time taken: 2.123535704
+ Graph accesses: 75921455

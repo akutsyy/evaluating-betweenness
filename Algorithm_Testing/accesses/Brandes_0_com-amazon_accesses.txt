@@ -1,0 +1,2 @@
+Running Brandes with parameters None on: datasets/final/com-amazon_undirected.txt
+Graph accesses: 956481576836

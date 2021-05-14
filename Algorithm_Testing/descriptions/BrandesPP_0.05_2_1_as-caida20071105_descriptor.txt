@@ -1,0 +1,7 @@
+Running BrandesPP with parameters Set Percentage=0.05'
+Set Size=1323
+NumPartitions=2
+Times=[20.035942264, 1.522673242, 13.387340465, 0.0, 2272.576181932] on: datasets/final/as-caida20071105_undirected.txt
+Size: 26475 nodes, 106762 edges
+Time taken: 2307.523113706
+ Graph accesses: 8075260250

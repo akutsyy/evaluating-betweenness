@@ -1,0 +1,84 @@
+\documentclass[a4paper,12pt,english]{article}
+\usepackage{soul}
+\usepackage{titling}
+\usepackage[vmargin=20mm,hmargin=25mm]{geometry}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage[english]{babel}
+\usepackage{changepage}
+\usepackage{makecell}
+\usepackage{bookmark}
+\usepackage{isodate}
+\usepackage{hyperref}
+\usepackage[level]{datetime}
+
+
+\usepackage{tabularx}
+    \renewcommand\tabularxcolumn[1]{m{#1}}
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+
+% Fixes date in section
+    \newcommand{\printdatetitle}[1]{
+      \texorpdfstring{\printdate{#1}}{#1}
+    }
+
+    \makeatletter
+    \providecommand{\@nil}
+    \makeatother
+    
+    \dateinputformat{tex}
+
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+\begin{document}
+
+\title{Progress Log}
+\author{Iris Kutsyy}
+\date{\protect\today}
+
+\maketitle
+\frenchspacing
+\section*{General}
+\begin{itemize}
+\item My laptop is ~3x faster than the server (tried running a graph) for single-thread performance. This is in line with CPU benchmarks.
+\item Largest graph I can run: EU-email (265214 nodes, 420045 edges), 30mins for my implementation of Brandes (and a whole lot more for JGraphT [at least 1 hour for 8\%])
+\end{itemize}
+\section*{Brandes++}
+\begin{enumerate}
+\item So first off the major issue of using an optimized c library for one thing and python for another
+\item They also don't say how to get correctly formatted inputs which is annoying 
+\item The bit about removing clarifying sentences (which say that this isn't as magical as they say it is)
+ in the second draft
+ \item arraygraph: \url{https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-895-theory-of-parallel-systems-sma-5509-fall-2003/projects/kasheff.pdf}
+\end{enumerate}
+\section*{Geisberger}
+location: \url{http://algo2.iti.kit.edu/schultes/hwy/betweenness.pdf} (geisberger)
+additional: \url{https://www.yumpu.com/en/document/view/16871703/better-approximation-of-betweenness-centrality-computer-science}(geisberger-thesis)
+\begin{itemize}
+\item The big study says they use geisberger. Their source code just calls networkKit ApproxBetweenness2 (their code was last updated June 21, 2017) (\url{https://github.com/ecrc/BeBeCA/blob/master/Source_Code/src/NetworKitApps.cpp}) This was then renamed to EstimateBetweenness (\url{https://github.com/networkit/networkit/blob/master/networkit/cpp/centrality/EstimateBetweenness.cpp}).
+
+This is documented at \url{https://networkit.github.io/dev-docs/python_api/centrality.html}, which says that it uses the algorithm described in Geisberger. HOWEVER, the source code actually implements the version of Brandes (2008) which is described by Geisberger.
+
+
+\item So it says ``decrement'' in section 3.3. It doesn't specify by what, and it isn't 1. I found the thesis (above) that Geisberger's paper is based on, which describes to decrement v by 1/sigma(v) (it also describes a different position to decrement than Geisberger does. It also actually describes the algorithm! However, it shouldn't be 1/sigma(v), it should be 1/sigma(w) where w is the thing popped off of the stack.
+
+\item I don't think a published implementation actually exists
+
+\item The sampling actually requires the following steps repeated numSamples times: sample parents, run canonical betweenness.
+\end{itemize}
+\section*{Brandes 2008}
+\begin{enumerate}
+\item Can't actually find the proper one anywhere except \url{https://www.worldscientific.com/doi/abs/10.1142/S0218127407018403} where it's \$30...
+\item Pre-print here: \url{https://kops.uni-konstanz.de/bitstream/handle/123456789/5772/estimations.pdf?sequence=1&isAllowed=y}
+\item Good description in Geisberger though
+\end{enumerate}
+
+\section*{Bader}
+\begin{enumerate}
+\item Good for getting top 1% (according to big study), fastest according to big study
+\end{enumerate}
+\end{document}

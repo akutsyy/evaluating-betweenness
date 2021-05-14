@@ -1,0 +1,5 @@
+averageError: 0.0
+maxError: 0.0
+percentOfTop: 1.0
+euclideanDistance: 0.0
+inversionPercent: 0.0

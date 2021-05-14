@@ -1,0 +1,12 @@
+How to remove large files:
+
+0. Make a backup, its gonna save your ass
+
+1. Follow https://rtyley.github.io/bfg-repo-cleaner/
+using just the directory location as the source, and optionally doing 
+
+--single-branch -branch develop
+
+2. Run command given by the cleaner/
+
+3. Push the mirror using git push TO THE REMOTE BRANCH (it will default to the working directory)

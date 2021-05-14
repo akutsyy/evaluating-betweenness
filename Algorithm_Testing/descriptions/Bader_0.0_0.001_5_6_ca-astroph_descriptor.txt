@@ -1,0 +1,7 @@
+Running Bader with parameters Low=0.0'
+High=0.001
+Terminated from max iterations cutoff:true
+After iterations: 938 on: datasets/final/ca-astroph_undirected.txt
+Size: 18772 nodes, 396160 edges
+Time taken: 3.609939418
+ Graph accesses: 400728281

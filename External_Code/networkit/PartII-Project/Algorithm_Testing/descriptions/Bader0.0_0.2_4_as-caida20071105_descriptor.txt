@@ -1,0 +1,6 @@
+Running Bader with parameters Low=0.0'
+High=0.2
+Terminated from max iterations cutoff:true on: datasets/final/as-caida20071105_undirected.txt
+Size: 26475 nodes, 106762 edges
+Time taken: 2.708783564
+ Graph accesses: 246361145

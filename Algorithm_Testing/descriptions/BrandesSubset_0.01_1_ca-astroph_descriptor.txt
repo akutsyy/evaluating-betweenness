@@ -1,0 +1,5 @@
+Running BrandesSubset with parameters Set Percentage=0.01'
+Set Size=187 on: datasets/final/ca-astroph_undirected.txt
+Size: 18772 nodes, 396160 edges
+Time taken: 0.829067919
+ Graph accesses: 80141423

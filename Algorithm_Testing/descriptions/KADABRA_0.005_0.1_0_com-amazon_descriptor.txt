@@ -1,0 +1,4 @@
+Running KADABRA with parameters lambda=0.005, delta=0.1terminated from cutoff: false iterations: 104357 on: datasets/final/com-amazon_undirected.txt
+Size: 334863 nodes, 1851744 edges
+Time taken: 346.850333784
+ Graph accesses: 4308918478

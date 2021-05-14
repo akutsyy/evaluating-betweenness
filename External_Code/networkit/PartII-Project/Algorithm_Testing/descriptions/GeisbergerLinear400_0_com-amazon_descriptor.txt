@@ -1,0 +1,3 @@
+Running GeisbergerLinear with parameters pivots=400 on: datasets/final/com-amazon_undirected.txt
+Size: 334863 nodes, 1851744 edges
+Time taken: 40.236390149

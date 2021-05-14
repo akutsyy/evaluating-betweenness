@@ -1,0 +1,26 @@
+rio: 4x AMD Opteron(tm) Processor 6128 125GiB ram
+nile: 2x AMD Opteron(tm) Processor 6128 25GiB ram
+yellow: same as nile
+
+
+Using rio
+
+Name:     Iris Kutsyy
+Userid:   ak2149
+UID:      4655
+
+Userid:      ak2149
+Password:    raven
+
+To use:
+run kerberos keygen with userid password
+putty into it
+Using tmux session 0
+
+
+tmux list-sessions
+tmux attach-session -t 
+
+To exit:
+exit kills tmux
+ctrl-b then d detatches

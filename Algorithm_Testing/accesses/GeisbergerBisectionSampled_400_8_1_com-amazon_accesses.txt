@@ -1,0 +1,2 @@
+Running GeisbergerBisectionSampled with parameters pivots=400, samples=8 on: datasets/final/com-amazon_undirected.txt
+Graph accesses: 2221003886

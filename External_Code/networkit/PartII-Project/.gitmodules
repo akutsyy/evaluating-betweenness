@@ -1,0 +1,9 @@
+[submodule "External_Code/kadabra"]
+	path = External_Code/kadabra
+	url = https://github.com/natema/kadabra.git
+[submodule "External_Code/BeBeCA"]
+	path = External_Code/BeBeCA
+	url = https://github.com/ecrc/BeBeCA.git
+[submodule "External_Code/networkit"]
+	path = External_Code/networkit
+	url = https://github.com/networkit/networkit.git

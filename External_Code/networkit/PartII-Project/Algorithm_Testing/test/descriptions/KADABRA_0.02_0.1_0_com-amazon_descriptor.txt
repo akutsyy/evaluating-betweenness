@@ -1,0 +1,3 @@
+Running KADABRA with parameters lambda=0.02, delta=0.1 on: datasets/final/com-amazon_undirected.txt
+Size: 334863 nodes, 1851744 edges
+Time taken: 23.663716172

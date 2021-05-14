@@ -1,0 +1,7 @@
+Running Bader with parameters Low=0.0'
+High=0.01
+Terminated from max iterations cutoff:false
+After iterations: 901 on: datasets/final/slashdot0811_directed.txt
+Size: 77360 nodes, 905468 edges
+Time taken: 10.807296296
+ Graph accesses: 907777240

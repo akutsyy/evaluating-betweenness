@@ -1,0 +1,348 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{soul}
+\usepackage{titling}
+\usepackage[vmargin=20mm,hmargin=25mm]{geometry}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage[english]{babel}
+\usepackage{changepage}
+\usepackage{makecell}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+    \renewcommand\tabularxcolumn[1]{m{#1}}
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%\setlength{\parindent}{2em}
+\renewcommand{\baselinestretch}{0.99}
+\setlength{\parskip}{1em}
+\setlength{\droptitle}{-5em}   % This is your set screw
+
+
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+\begin{document}
+
+
+\title{{\Large Computer Science Tripos - Part II - Project Proposal}\vspace{0.5cm}\\
+Evaluating Betweenness Centrality Algorithms for Real World Datasets}
+
+\date{\parbox{\linewidth}{\centering% 
+\vspace{-2cm}     
+Iris Kutsyy \hspace{1cm} ak2149 \hspace{1cm} Trinity College\\ \vspace{3mm}
+Originator: Dr Timothy Griffin \\ \vspace{3mm}  
+      \today\endgraf\vspace{3mm}
+  }}
+
+\maketitle
+\frenchspacing
+
+\noindent
+\textbf{Project Supervisor:} Dr. Timothy Griffin
+
+\noindent
+\textbf{Directors of Studies:} Dr. Sean Holden, Dr. Neel Krishnaswami, Prof. Frank Stajano
+
+\noindent
+\textbf{Project Overseers:} Prof. Marcelo Fiore, Dr. Robert Mullins
+
+\section{Introduction and Description}
+
+Graphs represent entities and the relationships between them. They are used in a wide variety of applications, including biology, business, social media, and web pages \cite{snap}. Analyzing these graphs is useful for scientific purposes (disease spread, web growth) as well as for policy decisions (product recommendations, routing control). Betweeness centrality is one measure of the importance of a node in a graph and is commonly used in applications ranging from optimizing internet routing to finding potential leaders in terrorist networks \cite{comparebig}. It is also computationally intense to calculate --- the most commonly used algorithm (\verb|Brandes|) takes $O(nm+n^2 \log{n})$ time for a weighted graph of $n$ nodes and $m$ edges \cite{erdos}.
+
+Numerous algorithms to speed up this computation have been proposed since Brandes published his algorithm in 2001, including several for approximating rather than directly calculating betweeness centrality \cite{brandes}. Given the scale of ``interesting'' graphs (the \verb|wiki-meta| graph of Wikipedia edit history has 5.8 million nodes) and diversity of algorithms, it is important to use the fastest betweeness centrality algorithm which will satisfy accuracy constraints \cite{snap}.
+
+To this end, I will implement five algorithms (see  \nameref{tab:algorithms}) for calculating betweeness centrality, three of which are approximate algorithms. I will instrument each of these algorithms in order to obtain useful performance metrics (including time per node, total time, memory usage, and number of graph reads). For each algorithm, I will run one of the fastest published implementation on a large graph (1,000+ nodes). I will then run my own implementation on the same graph and compare the total run-times. If the times are within the same order of magnitude and the outputs are identical (or of similar accuracy for the approximate algorithms), I can conclude that my implementation is correct and has included all important optimizations. As all five algorithms will be implemented within the same framework, their relative performance will be an accurate comparison of the algorithms themselves, not just their implementation.
+
+After verifying my implementation of each of the algorithms, I will run them on at least five non-temporal graphs from the Stanford SNAP dataset collection, Network Repository, and STRING. Stanford SNAP is a high-quality collection of graphs from a range of fields, including online communities, location services, citations, and email communication \cite{snap}. Network Repository is a very large collection of graphs from a wider range of domains, including biology and transportation \cite{repository}. STRING is a large collection of protein networks \cite{string}.
+
+After running each algorithm on each dataset (multiple times for the approximation algorithms as they are non-deterministic), I will evaluate their relative performance and accuracy. I plan to use the output of the \verb|Brandes| algorithm as a ground truth for evaluating the accuracy of the approximate algorithms.
+
+
+\begin{table}[h]
+\renewcommand\arraystretch{1.5}
+    \centering
+    \caption{Selected Algorithms}
+\begin{tabularx}{\linewidth}{|c|c|X|}
+\hline 
+Algorithm & Type & Description and Reason for Including \\ 
+\hline 
+\verb|Brandes| \cite{brandes} & Exact & \verb|Brandes| is the most commonly used betweeness centrality algorithm \cite{erdos} and has $O(nm+n^2 \log{n})$ runtime. It is used as a baseline to represent the current state of the world.\\ 
+\hline 
+\verb|Brandes++| \cite{erdos}& Exact & Erdos et al. claims that \verb|Brandes++| achieves significantly better (up to 75x) performance than \verb|Brandes| while still giving exact results \cite{erdos}. Its performance relative to approximate algorithms has never been studied.\\ 
+\hline 
+Geisberger et al. \cite{geisberger} & Approximate & The algorithm by Geisberger et al. is based off of randomly selecting source nodes (``pivots'') to calculate betweeness centrality \cite{geisberger}. It was the most accurate approximate algorithm tested by Matta et al. \cite{comparesmall}. \\ 
+\hline 
+Bader et al. \cite{bader} & Approximate & This algorithm uses a different sampling strategy. On a supercomputer, it had significantly better performance than any other tested algorithm \cite{comparebig}\\ 
+\hline 
+\verb|KADABRA| \cite{borassi}& Approximate & This algorithm, developed by Borassi and Natale, selects random shortest paths in a complicated fashion in order to guarantee bounds on accuracy \cite{borassi}. It was the fastest algorithm in tests by Matta et al. \cite{comparesmall}.\\ 
+\hline 
+\end{tabularx}
+\label{tab:algorithms}
+\end{table}
+
+\section{Starting Point}
+
+Each of the five algorithms for betweeness centrality have a published implementation. However, the implementations use different frameworks for reading the graph, and in many cases, are in entirely separate languages. Further, most implementations of these algorithms are completely uninstrumented.
+
+Comparisons between these algorithms are relatively rare. Bader et al. does not compare the performance of their algorithm to any other \cite{bader}. Borassi and Natale \cite{borassi} compare the performance of their algorithm to the \verb|RK|, \verb|ABRA-Aut|, and \verb|ABRA-1.2| algorithms. Geisberger et al. \cite{geisberger} and Erd\H{o}s et al. \cite{erdos} compare their algorithms with \verb|Brandes|. Brandes \cite{brandes}, in turn, compares his algorithm to the \verb|Floyd|-\verb|Warshall| algorithm. 
+
+\verb|Floyd|-\verb|Warshall| \cite{floyd} is an all-shortest-paths algorithm published in 1962 which can be modified to calculate betweeness centrality. I will not be examining it as it has $O(n^3)$ runtime for $n$ nodes and as such cannot be run on as large graphs as the other algorithms \cite{brandes}. Further, it has fallen out of use since \verb|Brandes| was published in 2001.
+
+Two major studies have attempted to benchmark betweeness centrality algorithms. Al-Ghamdi et al. \cite{comparebig} uses a supercomputer to benchmark a large number of algorithms, including those by Brandes, Bader et al. and Geisberger et al. Their work focuses primarily on the process of benchmarking rather than the results they obtain. 
+
+The other study by Matta et al. \cite{comparesmall} attempts to evaluate algorithms in ``real world'' scenarios, benchmarking simply by evaluating the speed and accuracy of algorithms at performing two tasks (clustering and immunization). The algorithms they compare include those by Borassi and Natale, Brandes, and Geisberger et al.
+
+From the Computer Science Tripos, I have knowledge and experience in Java, algorithms, and data science. I have used high-power computing servers before in my internship, but never the ones operated by the Systems Research Group. I will need to do significant reading about graphs, graph metrics, probabilistic algorithms, and code instrumentation.
+
+\section{Work to be Done}
+
+I will use the Waterfall software development model while undertaking this project. The work to be done in each stage follows.
+
+\subsection{Requirements} 
+
+The requirements stage has already been completed, as it consisted of understanding the requirements and scope of the Part II project, and doing research into previous projects.
+\subsection{Design} 
+
+The Design stage is the project proposal. Tasks to be completed are in the \nameref{implementation} section and the schedule can be found in the \nameref{plan} section.
+
+\subsection{Implementation} \label{implementation}
+
+\subsubsection*{Tasks}
+\begin{enumerate}[label=\arabic*.]
+\item Verify availability of all resources.\label{resources}
+
+\item Determine how to use high power computing facilities.\label{learncomp}\\
+\textsc{Dependent on:} \ref{resources}
+
+\item Install one of the fastest known implementations for each algorithm. \label{install_imp}
+
+\item Through experimentation, determine the maximum size of graphs I can use.\\
+ \textsc{Dependent on:} \ref{learncomp} and one algorithm of \ref{install_imp}  \label{findmax}
+ 
+ \item Choose and download all selected graphs.\\ 
+ \textsc{Dependent on:} \ref{findmax} \label{getgraphs}
+ 
+\item Implement testing framework. \label{frame}
+
+\item Implement all five algorithms with instrumentation.\label{algs}
+
+\item Integrate algorithms into testing framework. \label{int}\\
+\textsc{Dependent on:} \ref{frame} and \ref{algs}
+
+\item Compare the performance my implementations to the fast implementation.\\
+\textsc{Dependent on:} \ref{install_imp} and \ref{int} \label{compare}
+
+\item Run each algorithm on each selected graph.\\
+\textsc{Dependent on:} \ref{getgraphs} and \ref{compare} \label{run}
+\end{enumerate}
+
+\subsubsection*{Schedule}
+The schedule is outlined in the \nameref{plan} section.
+
+\subsubsection*{Technical Details}
+
+I will use Java to implement the five algorithms described in \nameref{tab:algorithms} and instrument them to record (at least) the total time, time per node, memory usage, and number of graph reads. Java was chosen because it is highly portable, reasonably efficient, and high level. The portability will allow me to use my laptop for testing and a high power server for actual experiments. Reasonable efficiency is desirable to reduce the time that experiments take, and the high-level features should make it easier to implement the more complicated algorithms.
+
+Each implementation will be single threaded and run on a single core. This is for two reasons. First, some algorithms are inherently more parallelizable than others, so by using multiple cores, we no longer have a level comparison. This came up in Matta et al. where the relative ranking of \verb|KADABRA| and \verb|McLaughlin2014| depended on how good of a GPU they used \cite{comparesmall}. Second, implementing these already complicated algorithms with parallelism is beyond the scope of a Part II project and better suited as an extension.
+
+I will use the four performance metrics described previously to evaluate the performance of each algorithm. For approximation algorithms, I will also evaluate the maximum and average error in betweeness centralities across all nodes, as well as the accuracy of the overall and top 1\% node rankings. I will use the results from \verb|Brandes| as the ground truth for these measures.
+
+\subsection{Verification}
+
+I will evaluate that I have met the criteria described in the \nameref{success} section. Following this, I will write my dissertation.
+
+Further, I will evaluate the correctness of each algorithm I implement by running both my implementation and one of the fastest known implementations on the same large graph. I will also use this to evaluate that I have achieved reasonable efficiency in my implementations and have not missed major optimizations. I will do this evaluation for each algorithm within a few weeks of implementing it, before I can consider the algorithm ``done''.
+
+\subsection{Maintenance}
+
+Maintenance is beyond the scope of the Part II project.
+
+\section{Success}
+\label{success}
+\subsection{Success Criterion}
+
+This project will be successful if the following criteria are met:
+\begin{itemize}
+\item All five algorithms described in \nameref{tab:algorithms} have been implemented and each meets the following criteria:
+\begin{itemize}
+\item Is instrumented with all selected performance measures.
+\begin{itemize}
+\item This includes, but is not limited to, time per node, total time, memory usage, and number of graph reads.
+\end{itemize}
+\item Gives verifiably correct results on test graphs (for exact algorithms) or within expected accuracy (for approximation algorithms).
+\end{itemize}
+
+\item Each algorithm has been run on each of the five selected graphs and the instrumentation results have been collected.
+\end{itemize}
+
+\subsection{Possible Extensions}
+\subsubsection*{Parallelization}
+Several of the algorithms are amenable to parallelization. One possible extension would be to modify my testing framework and implementations of the algorithms to exploit hardware parallelism. I would then be able to compare the relative performance of the algorithms in multicore environments.
+
+\subsubsection*{Characterize relationship between graph statistics and algorithm performance}
+Another possible extension would be to compute various graph statistics on each of the graphs I use for testing, and attempt to determine if there is some relation between the statistics and which algorithm will perform best. Using this, I would attempt to create a method to predict which algorithm would perform best on a new graph based on a collection of graph statistics.
+
+\section{Plan of Work}
+\label{plan}
+
+\subsection*{Michaelmas Term}
+
+ 
+\subsubsection*{24/10 -- 06/11}\hrule
+Verify that all resources are available. Install all necessary software and packages. 
+
+\noindent
+Read about instrumenting algorithms.
+
+\noindent
+Continue to do background reading on analyzing graphs, specifically looking for how to reason about graph algorithms.
+
+\noindent
+Implement the testing framework. This involves parsing the graph and hooks for instrumentation. 
+
+\noindent
+\textit{Milestone \textbf{6 November:} decide on a set of instrumentation metrics.}\\
+\textit{Milestone \textbf{6 November:} Confirm access to, and log into, the high power computing server.}\\
+\hrule
+
+\subsubsection*{07/11 -- 20/11}\hrule
+
+\noindent
+Implement the \verb|Brandes| algorithm. Test on a small graph, comparing output to \verb|JGraphT|.
+
+\noindent
+Learn how to run code on the high power computing server.
+
+\noindent
+\textit{Milestone \textbf{20 November:} Run my instrumented} \verb|Brandes| implementation \textit{on small graphs.}\\
+\hrule
+
+\subsubsection*{21/11 -- 04/12}\hrule
+
+\noindent
+Run my implementation of \verb|Brandes|, as well as one of the fastest known implementation, on a large graph.
+
+\noindent
+Run \verb|Brandes| on increasingly large graphs to determine an upper bound on graph size for testing.
+
+\noindent
+\textit{Milestone \textbf{4 December:} Determined maximum size of graphs.}\\
+\textit{Milestone \textbf{4 December:} Completed and verified my implementation of} \verb|Brandes|.\\
+\hrule
+
+\subsection*{Christmas Vacation}
+\subsubsection*{04/12 -- 18/12}\hrule
+Implement the \verb|Brandes++| algorithm. Test on a small graph, comparing output to \verb|JGraphT|.
+
+\noindent
+Run my implementation of \verb|Brandes++|, as well as one of the fastest known implementation, on a large graph.
+
+\noindent
+\textit{Milestone \textbf{18 December:} Completed and verified my implementation of} \verb|Brandes++|.\\
+\hrule
+
+\subsubsection*{08/01 -- 20/12}\hrule
+Implement the Geisberger et al. algorithm. Test on a small graph, comparing output to \verb|JGraphT|.
+
+\noindent
+Run my implementation of \verb|Brandes++|, as well as one of the fastest known implementation, on a large graph.
+
+\noindent
+\textit{Milestone \textbf{20 January:} Completed and verified my implementation of} Geisberger et al.\\
+\hrule
+
+\subsection*{Lent Term}
+
+\subsubsection*{21/01 -- 05/02}\hrule
+Implement the Bader et al. algorithm. Test on a small graph, comparing output to \verb|JGraphT|.
+
+\noindent
+Run my implementation of Bader et al., as well as one of the fastest known implementation, on a large graph.
+
+\noindent Write progress report
+
+\noindent
+\textit{Milestone \textbf{04 February:} Progress report complete.}\\
+\textit{Milestone \textbf{05 February:} Completed and verified my implementation of} Bader et al.\\
+\hrule
+\subsubsection*{06/02 -- 19/02}\hrule
+Implement the \verb|KADABRA| algorithm. Test on a small graph, comparing output to \verb|JGraphT|.
+
+\noindent
+Run my implementation of \verb|KADABRA|, as well as one of the fastest known implementation, on a large graph.
+
+\noindent
+Present project report to overseers.
+
+\noindent
+\textit{Milestone \textbf{16 February:} Progress report presentation given.}\\
+\textit{Milestone \textbf{19 February:} Completed and verified my implementation of} \verb|KADABRA|.\\
+\hrule
+\subsubsection*{20/02 -- 05/03}\hrule
+Select 5 graphs
+
+\noindent
+Run all algorithms on all five graphs, multiple times for the approximate algorithms.
+
+\noindent
+\textit{Milestone \textbf{05 March:} Have results for all executions.}\\
+\hrule
+\subsubsection*{06/03 -- 19/03}\hrule
+Evaluate results of executions.
+
+\noindent
+Begin writing the dissertation.\\
+\hrule
+
+\subsection*{Easter Vacation}
+\subsubsection*{20/03 -- 27/04}\hrule
+Finish skeleton draft.
+
+\noindent
+Incorporate feedback from supervisor.
+
+\noindent
+Finish writing dissertation and proof-read.
+
+\noindent
+\textit{Milestone \textbf{25 March:} Skeleton draft submitted to supervisor.}\\
+\textit{Milestone \textbf{21 April:} Final dissertation draft submitted to supervisor and Director of Studies.}\\
+\hrule
+
+\subsection*{Easter Term} \nopagebreak
+\subsubsection*{28/04 -- 14/05}\hrule \nopagebreak
+Incorporate feedback from supervisor and Director of Studies. \nopagebreak
+
+\noindent
+\textit{Milestone \textbf{14 May:} Dissertation submitted.}\\
+\hrule
+
+
+\section{Resource Declaration}
+\subsection*{Personal Resources}
+I will primarily use my personal laptop for writing the dissertation and development. For development, I will use an IDE such as IntelliJ IDEA. I will maintain a git repository with both the written work and source code, and will back it up to GitHub daily. I will also have OneDrive continuously back up the git repository. In case of failure I will simply switch to the MCS.
+
+\textit{I accept full responsibility for this machine and I have made contingency plans to protect myself against hardware and/or software failure.}
+\subsection*{Computing Resources} %five  - for search in case of changed number of algorithms
+
+Betweeness centrality is very computationally expensive. Matta et al. used a computer somewhat more powerful than my laptop and found that \verb|Brandes| took over 48 hours to execute their clustering test on a 100,000 node graph \cite{comparesmall}. If we take this as an upper bound on the time to process one graph, it could take up to 50 days to run all 25 combinations of algorithms and graphs. I have been granted permission for the following resource, which I will use to significantly speed up the computation time.
+
+{\begin{adjustwidth}{1cm}{0cm}
+\noindent
+Resource: access to the compute servers \textit{rio}, \textit{yellow}, and \textit{nile}.\\
+Institution: Systems Research Group (\url{https://www.cl.cam.ac.uk/research/srg/})\\
+Sponsor: Dr. Andrew Moore (\email{andrew.moore@cl.cam.ac.uk})\\ \\
+This requires setting up a Computer Laboratory account.
+\end{adjustwidth}
+}
+
+In case there is some problem with this resource, I will either use Amazon Web Services or Google Cloud with free credits for students, and/or restrict myself to relatively small graphs.
+\subsection*{Datasets}
+I will use five different graphs from a combination of Stanford SNAP \cite{snap}, Network Repository \cite{repository}, and STRING \cite{string}. In the case that one or both sites become unavailable, I will use a different network dataset collection, which there are dozens of.
+
+\bibliography{proposalbib}
+\bibliographystyle{plain}
+
+\end{document}

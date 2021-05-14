@@ -1,0 +1,1499 @@
+Time taken to partition: 160.15723605
+Time taken to construct skeleton: 8.309488485
+Time taken to run brandes on skeleton: 49.657914209
+Time taken to compute other centralities: 20169.907666041
+Completed BrandesPP0.001_2_0_slashdot0811 in time 20388.045629339s
+
+
+Time taken to partition: 228.338631917
+Time taken to construct skeleton: 8.23106685
+Time taken to run brandes on skeleton: 56.226395752
+Time taken to compute other centralities: 5910.418410534
+Completed BrandesPP0.001_8_0_slashdot0811 in time 6203.21645617s
+
+
+
+Time taken to partition: 245.728591142
+Time taken to construct skeleton: 6.308862669
+Time taken to run brandes on skeleton: 59.644375501
+Time taken to compute other centralities: 1632.396768405
+Completed BrandesPP0.001_32_0_slashdot0811 in time 1944.082061168s
+
+
+Time taken to partition: 238.557735176
+Time taken to construct skeleton: 6.02928805
+Time taken to run brandes on skeleton: 61.593717816
+Time taken to compute other centralities: 1032.235926131
+Completed BrandesPP0.001_128_0_slashdot0811 in time 1338.418636518s
+
+
+Time taken to partition: 248.738491038
+Time taken to construct skeleton: 5.991335222
+Time taken to run brandes on skeleton: 61.294295493
+Time taken to compute other centralities: 912.917523968
+Completed BrandesPP0.001_512_0_slashdot0811 in time 1228.943615638s
+
+
+Time taken to partition: 247.127722936
+Time taken to construct skeleton: 5.956814047
+Time taken to run brandes on skeleton: 61.855891412
+Time taken to compute other centralities: 881.366944946
+Completed BrandesPP0.001_2048_0_slashdot0811 in time 1196.311038629s
+
+iris@Maxwell-L:~/Desktop/Cambridge/PartII-Project/Algorithm_Testing$ java -jar Algorithm_Testing.jar 
+Doing warmup
+Completed BrandesSubset0.001_0_as-caida20071105 in time 0.76748559s                                            ] 1%0%
+File created: BrandesSubset0.001_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.001_0_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.001_0_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.001_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.001_0_as-caida20071105_accesses.txt
+File created: BrandesSubset0.001_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.001_0_as-caida20071105centrality.txt
+Time taken to partition: 20.116304692==========================================================================] 100%
+Time taken to construct skeleton: 1.378312538
+Time taken to run brandes on skeleton: 2.574574508
+Time taken to compute other centralities: 696.609620535
+Completed BrandesPP0.001_2_0_as-caida20071105 in time 720.686269908s
+File created: BrandesPP0.001_2_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_2_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_2_0_as-caida20071105with accessses: 7750803789
+File created: BrandesPP0.001_2_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_2_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_2_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_2_0_as-caida20071105centrality.txt
+Time taken to partition: 27.197502504==========================================================================] 100%
+Time taken to construct skeleton: 1.169576281
+Time taken to run brandes on skeleton: 3.568461728
+Time taken to compute other centralities: 138.552574519
+Completed BrandesPP0.001_8_0_as-caida20071105 in time 170.490849859s
+File created: BrandesPP0.001_8_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_8_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_8_0_as-caida20071105with accessses: 10806046185
+File created: BrandesPP0.001_8_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_8_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_8_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_8_0_as-caida20071105centrality.txt
+Time taken to partition: 26.728693773==========================================================================] 100%
+Time taken to construct skeleton: 1.280896172
+Time taken to run brandes on skeleton: 3.753539777
+Time taken to compute other centralities: 57.529303821
+Completed BrandesPP0.001_32_0_as-caida20071105 in time 89.294890338s
+File created: BrandesPP0.001_32_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_32_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_32_0_as-caida20071105with accessses: 10581003597
+File created: BrandesPP0.001_32_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_32_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_32_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_32_0_as-caida20071105centrality.txt
+Time taken to partition: 27.897536752==========================================================================] 100%
+Time taken to construct skeleton: 1.059141134
+Time taken to run brandes on skeleton: 3.906196563
+Time taken to compute other centralities: 34.812533615
+Completed BrandesPP0.001_128_0_as-caida20071105 in time 67.676913433s
+File created: BrandesPP0.001_128_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_128_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_128_0_as-caida20071105with accessses: 11011680051
+File created: BrandesPP0.001_128_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_128_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_128_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_128_0_as-caida20071105centrality.txt
+Time taken to partition: 28.975549133==========================================================================] 100%
+Time taken to construct skeleton: 1.080759599
+Time taken to run brandes on skeleton: 3.993641202
+Time taken to compute other centralities: 42.227165848
+Completed BrandesPP0.001_512_0_as-caida20071105 in time 76.278246052s
+File created: BrandesPP0.001_512_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_512_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_512_0_as-caida20071105with accessses: 11140055521
+File created: BrandesPP0.001_512_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_512_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_512_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_512_0_as-caida20071105centrality.txt
+Time taken to partition: 27.428484632==========================================================================] 100%
+Time taken to construct skeleton: 1.185582608
+Time taken to run brandes on skeleton: 4.28979144
+Time taken to compute other centralities: 32.099959594
+Completed BrandesPP0.001_2048_0_as-caida20071105 in time 65.004990331s
+File created: BrandesPP0.001_2048_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_2048_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_2048_0_as-caida20071105with accessses: 10712516171
+File created: BrandesPP0.001_2048_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_2048_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_2048_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_2048_0_as-caida20071105centrality.txt
+Completed BrandesSubset0.01_0_as-caida20071105 in time 0.814295702s                                            ] 1%0%
+File created: BrandesSubset0.01_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.01_0_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.01_0_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.01_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.01_0_as-caida20071105_accesses.txt
+File created: BrandesSubset0.01_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.01_0_as-caida20071105centrality.txt
+Time taken to partition: 19.438430044==========================================================================] 100%
+Time taken to construct skeleton: 1.503571695
+Time taken to run brandes on skeleton: 2.92457175
+Time taken to compute other centralities: 695.448089269
+Completed BrandesPP0.01_2_0_as-caida20071105 in time 719.315638873s
+File created: BrandesPP0.01_2_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_2_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_2_0_as-caida20071105with accessses: 7700870626
+File created: BrandesPP0.01_2_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_2_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_2_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_2_0_as-caida20071105centrality.txt
+Time taken to partition: 27.271523295==========================================================================] 100%
+Time taken to construct skeleton: 1.332536705
+Time taken to run brandes on skeleton: 3.762219496
+Time taken to compute other centralities: 130.320882763
+Completed BrandesPP0.01_8_0_as-caida20071105 in time 162.688726626s
+File created: BrandesPP0.01_8_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_8_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_8_0_as-caida20071105with accessses: 10828658307
+File created: BrandesPP0.01_8_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_8_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_8_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_8_0_as-caida20071105centrality.txt
+Time taken to partition: 28.117695567==========================================================================] 100%
+Time taken to construct skeleton: 1.383126979
+Time taken to run brandes on skeleton: 4.093527214
+Time taken to compute other centralities: 56.317767134
+Completed BrandesPP0.01_32_0_as-caida20071105 in time 89.913613562s
+File created: BrandesPP0.01_32_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_32_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_32_0_as-caida20071105with accessses: 10791449453
+File created: BrandesPP0.01_32_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_32_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_32_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_32_0_as-caida20071105centrality.txt
+Time taken to partition: 28.046184997==========================================================================] 100%
+Time taken to construct skeleton: 1.319512842
+Time taken to run brandes on skeleton: 4.129797331
+Time taken to compute other centralities: 31.715474656
+Completed BrandesPP0.01_128_0_as-caida20071105 in time 65.212008847s
+File created: BrandesPP0.01_128_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_128_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_128_0_as-caida20071105with accessses: 11078207818
+File created: BrandesPP0.01_128_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_128_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_128_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_128_0_as-caida20071105centrality.txt
+Time taken to partition: 29.897139141==========================================================================] 100%
+Time taken to construct skeleton: 1.19246178
+Time taken to run brandes on skeleton: 4.163334488
+Time taken to compute other centralities: 34.146330019
+Completed BrandesPP0.01_512_0_as-caida20071105 in time 69.400242825s
+File created: BrandesPP0.01_512_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_512_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_512_0_as-caida20071105with accessses: 11787232922
+File created: BrandesPP0.01_512_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_512_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_512_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_512_0_as-caida20071105centrality.txt
+Time taken to partition: 27.848188572==========================================================================] 100%
+Time taken to construct skeleton: 1.242776017
+Time taken to run brandes on skeleton: 3.9620053
+Time taken to compute other centralities: 33.577649595
+Completed BrandesPP0.01_2048_0_as-caida20071105 in time 66.63161188s
+File created: BrandesPP0.01_2048_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_2048_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_2048_0_as-caida20071105with accessses: 10848353639
+File created: BrandesPP0.01_2048_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_2048_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_2048_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_2048_0_as-caida20071105centrality.txt
+Completed BrandesSubset0.05_0_as-caida20071105 in time 0.888980288s                                            ] 1%0%
+File created: BrandesSubset0.05_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.05_0_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.05_0_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.05_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.05_0_as-caida20071105_accesses.txt
+File created: BrandesSubset0.05_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.05_0_as-caida20071105centrality.txt
+Time taken to partition: 20.048533497==========================================================================] 100%
+Time taken to construct skeleton: 1.484197741
+Time taken to run brandes on skeleton: 2.632294579
+Time taken to compute other centralities: 687.829542248
+Completed BrandesPP0.05_2_0_as-caida20071105 in time 711.995689567s
+File created: BrandesPP0.05_2_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_2_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_2_0_as-caida20071105with accessses: 7785366235
+File created: BrandesPP0.05_2_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_2_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_2_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_2_0_as-caida20071105centrality.txt
+Time taken to partition: 27.897994024==========================================================================] 100%
+Time taken to construct skeleton: 1.430110935
+Time taken to run brandes on skeleton: 3.838308482
+Time taken to compute other centralities: 102.932091649
+Completed BrandesPP0.05_8_0_as-caida20071105 in time 136.099654357s
+File created: BrandesPP0.05_8_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_8_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_8_0_as-caida20071105with accessses: 10765313573
+File created: BrandesPP0.05_8_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_8_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_8_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_8_0_as-caida20071105centrality.txt
+Time taken to partition: 28.14713808===========================================================================] 100%
+Time taken to construct skeleton: 1.068791093
+Time taken to run brandes on skeleton: 3.986292775
+Time taken to compute other centralities: 45.304180689
+Completed BrandesPP0.05_32_0_as-caida20071105 in time 78.507407757s
+File created: BrandesPP0.05_32_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_32_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_32_0_as-caida20071105with accessses: 10976540429
+File created: BrandesPP0.05_32_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_32_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_32_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_32_0_as-caida20071105centrality.txt
+Time taken to partition: 27.817105347==========================================================================] 100%
+Time taken to construct skeleton: 1.057143478
+Time taken to run brandes on skeleton: 3.978509837
+Time taken to compute other centralities: 31.968430238
+Completed BrandesPP0.05_128_0_as-caida20071105 in time 64.822702085s
+File created: BrandesPP0.05_128_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_128_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_128_0_as-caida20071105with accessses: 10853025013
+File created: BrandesPP0.05_128_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_128_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_128_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_128_0_as-caida20071105centrality.txt
+Time taken to partition: 28.227302912==========================================================================] 100%
+Time taken to construct skeleton: 1.113855358
+Time taken to run brandes on skeleton: 4.13188907
+Time taken to compute other centralities: 27.787115165
+Completed BrandesPP0.05_512_0_as-caida20071105 in time 61.261100482s
+File created: BrandesPP0.05_512_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_512_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_512_0_as-caida20071105with accessses: 10895753439
+File created: BrandesPP0.05_512_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_512_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_512_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_512_0_as-caida20071105centrality.txt
+Time taken to partition: 28.120161203==========================================================================] 100%
+Time taken to construct skeleton: 1.234722748
+Time taken to run brandes on skeleton: 4.156803394
+Time taken to compute other centralities: 29.330084549
+Completed BrandesPP0.05_2048_0_as-caida20071105 in time 62.842743089s
+File created: BrandesPP0.05_2048_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_2048_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_2048_0_as-caida20071105with accessses: 10835790699
+File created: BrandesPP0.05_2048_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_2048_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_2048_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_2048_0_as-caida20071105centrality.txt
+Completed BrandesSubset0.1_0_as-caida20071105 in time 0.794871093s                                             ] 1%0%
+File created: BrandesSubset0.1_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.1_0_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.1_0_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.1_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.1_0_as-caida20071105_accesses.txt
+File created: BrandesSubset0.1_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.1_0_as-caida20071105centrality.txt
+Time taken to partition: 19.674960002==========================================================================] 100%
+Time taken to construct skeleton: 1.179963386
+Time taken to run brandes on skeleton: 2.47039613
+Time taken to compute other centralities: 702.24546684
+Completed BrandesPP0.1_2_0_as-caida20071105 in time 725.57177181s
+File created: BrandesPP0.1_2_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_2_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_2_0_as-caida20071105with accessses: 7750749051
+File created: BrandesPP0.1_2_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_2_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_2_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_2_0_as-caida20071105centrality.txt
+Time taken to partition: 27.980316687==========================================================================] 100%
+Time taken to construct skeleton: 1.175923915
+Time taken to run brandes on skeleton: 3.547031563
+Time taken to compute other centralities: 121.347492692
+Completed BrandesPP0.1_8_0_as-caida20071105 in time 154.051737609s
+File created: BrandesPP0.1_8_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_8_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_8_0_as-caida20071105with accessses: 10873435512
+File created: BrandesPP0.1_8_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_8_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_8_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_8_0_as-caida20071105centrality.txt
+Time taken to partition: 27.502983254==========================================================================] 100%
+Time taken to construct skeleton: 1.177505386
+Time taken to run brandes on skeleton: 3.892143984
+Time taken to compute other centralities: 42.285602336
+Completed BrandesPP0.1_32_0_as-caida20071105 in time 74.859147404s
+File created: BrandesPP0.1_32_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_32_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_32_0_as-caida20071105with accessses: 10732077095
+File created: BrandesPP0.1_32_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_32_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_32_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_32_0_as-caida20071105centrality.txt
+Time taken to partition: 29.020668736==========================================================================] 100%
+Time taken to construct skeleton: 1.1769713
+Time taken to run brandes on skeleton: 3.895815947
+Time taken to compute other centralities: 38.609439742
+Completed BrandesPP0.1_128_0_as-caida20071105 in time 72.703824878s
+File created: BrandesPP0.1_128_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_128_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_128_0_as-caida20071105with accessses: 10990203063
+File created: BrandesPP0.1_128_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_128_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_128_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_128_0_as-caida20071105centrality.txt
+Time taken to partition: 28.963336669==========================================================================] 100%
+Time taken to construct skeleton: 1.16914844
+Time taken to run brandes on skeleton: 4.000518978
+Time taken to compute other centralities: 32.669742883
+Completed BrandesPP0.1_512_0_as-caida20071105 in time 66.803692896s
+File created: BrandesPP0.1_512_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_512_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_512_0_as-caida20071105with accessses: 11252028560
+File created: BrandesPP0.1_512_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_512_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_512_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_512_0_as-caida20071105centrality.txt
+Time taken to partition: 28.746277379==========================================================================] 100%
+Time taken to construct skeleton: 1.031975716
+Time taken to run brandes on skeleton: 4.116025304
+Time taken to compute other centralities: 24.101305337
+Completed BrandesPP0.1_2048_0_as-caida20071105 in time 57.996534952s
+File created: BrandesPP0.1_2048_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_2048_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_2048_0_as-caida20071105with accessses: 10930887025
+File created: BrandesPP0.1_2048_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_2048_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_2048_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_2048_0_as-caida20071105centrality.txt
+Completed BrandesSubset0.5_0_as-caida20071105 in time 0.812115474s                                             ] 1%0%
+File created: BrandesSubset0.5_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.5_0_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.5_0_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.5_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.5_0_as-caida20071105_accesses.txt
+File created: BrandesSubset0.5_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.5_0_as-caida20071105centrality.txt
+Time taken to partition: 20.240349081==========================================================================] 100%
+Time taken to construct skeleton: 1.392142368
+Time taken to run brandes on skeleton: 2.720160072
+Time taken to compute other centralities: 569.448709521
+Completed BrandesPP0.5_2_0_as-caida20071105 in time 593.802294783s
+File created: BrandesPP0.5_2_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_2_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_2_0_as-caida20071105with accessses: 7861030307
+File created: BrandesPP0.5_2_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_2_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_2_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_2_0_as-caida20071105centrality.txt
+Time taken to partition: 27.657445865==========================================================================] 100%
+Time taken to construct skeleton: 1.12182609
+Time taken to run brandes on skeleton: 3.738951639
+Time taken to compute other centralities: 115.98496569
+Completed BrandesPP0.5_8_0_as-caida20071105 in time 148.504118052s
+File created: BrandesPP0.5_8_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_8_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_8_0_as-caida20071105with accessses: 10677977915
+File created: BrandesPP0.5_8_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_8_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_8_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_8_0_as-caida20071105centrality.txt
+Time taken to partition: 28.626118169==========================================================================] 100%
+Time taken to construct skeleton: 1.139607225
+Time taken to run brandes on skeleton: 3.928720731
+Time taken to compute other centralities: 49.834931425
+Completed BrandesPP0.5_32_0_as-caida20071105 in time 83.531060124s
+File created: BrandesPP0.5_32_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_32_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_32_0_as-caida20071105with accessses: 11019629873
+File created: BrandesPP0.5_32_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_32_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_32_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_32_0_as-caida20071105centrality.txt
+Time taken to partition: 29.743198083==========================================================================] 100%
+Time taken to construct skeleton: 1.058161005
+Time taken to run brandes on skeleton: 4.108538555
+Time taken to compute other centralities: 40.181160352
+Completed BrandesPP0.5_128_0_as-caida20071105 in time 75.092033204s
+File created: BrandesPP0.5_128_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_128_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_128_0_as-caida20071105with accessses: 11617217160
+File created: BrandesPP0.5_128_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_128_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_128_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_128_0_as-caida20071105centrality.txt
+Time taken to partition: 29.699334725==========================================================================] 100%
+Time taken to construct skeleton: 1.143240269
+Time taken to run brandes on skeleton: 4.162051963
+Time taken to compute other centralities: 35.003624389
+Completed BrandesPP0.5_512_0_as-caida20071105 in time 70.009275795s
+File created: BrandesPP0.5_512_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_512_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_512_0_as-caida20071105with accessses: 11433020204
+File created: BrandesPP0.5_512_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_512_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_512_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_512_0_as-caida20071105centrality.txt
+Time taken to partition: 27.533614721==========================================================================] 100%
+Time taken to construct skeleton: 1.185912804
+Time taken to run brandes on skeleton: 3.996170925
+Time taken to compute other centralities: 28.219778416
+Completed BrandesPP0.5_2048_0_as-caida20071105 in time 60.936425879s
+File created: BrandesPP0.5_2048_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_2048_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_2048_0_as-caida20071105with accessses: 10621140904
+File created: BrandesPP0.5_2048_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_2048_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_2048_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_2048_0_as-caida20071105centrality.txt
+Completed BrandesSubset0.8_0_as-caida20071105 in time 0.78301066s                                              ] 1%0%
+File created: BrandesSubset0.8_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.8_0_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.8_0_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.8_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.8_0_as-caida20071105_accesses.txt
+File created: BrandesSubset0.8_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.8_0_as-caida20071105centrality.txt
+Time taken to partition: 19.686984398==========================================================================] 100%
+Time taken to construct skeleton: 1.560070018
+Time taken to run brandes on skeleton: 2.79542951
+Time taken to compute other centralities: 626.926713018
+Completed BrandesPP0.8_2_0_as-caida20071105 in time 650.970158699s
+File created: BrandesPP0.8_2_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_2_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_2_0_as-caida20071105with accessses: 7730729291
+File created: BrandesPP0.8_2_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_2_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_2_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_2_0_as-caida20071105centrality.txt
+Time taken to partition: 28.750909379==========================================================================] 100%
+Time taken to construct skeleton: 1.359875601
+Time taken to run brandes on skeleton: 3.713779802
+Time taken to compute other centralities: 103.429167273
+Completed BrandesPP0.8_8_0_as-caida20071105 in time 137.255170074s
+File created: BrandesPP0.8_8_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_8_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_8_0_as-caida20071105with accessses: 11019563892
+File created: BrandesPP0.8_8_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_8_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_8_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_8_0_as-caida20071105centrality.txt
+Time taken to partition: 30.078588261==========================================================================] 100%
+Time taken to construct skeleton: 1.226120397
+Time taken to run brandes on skeleton: 3.961125347
+Time taken to compute other centralities: 43.978498492
+Completed BrandesPP0.8_32_0_as-caida20071105 in time 79.245753141s
+File created: BrandesPP0.8_32_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_32_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_32_0_as-caida20071105with accessses: 11478596902
+File created: BrandesPP0.8_32_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_32_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_32_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_32_0_as-caida20071105centrality.txt
+Time taken to partition: 28.162309319==========================================================================] 100%
+Time taken to construct skeleton: 1.163290412
+Time taken to run brandes on skeleton: 4.183039932
+Time taken to compute other centralities: 31.111899107
+Completed BrandesPP0.8_128_0_as-caida20071105 in time 64.622071079s
+File created: BrandesPP0.8_128_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_128_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_128_0_as-caida20071105with accessses: 10958781958
+File created: BrandesPP0.8_128_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_128_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_128_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_128_0_as-caida20071105centrality.txt
+Time taken to partition: 29.293773736==========================================================================] 100%
+Time taken to construct skeleton: 1.141047413
+Time taken to run brandes on skeleton: 4.213782738
+Time taken to compute other centralities: 35.710716668
+Completed BrandesPP0.8_512_0_as-caida20071105 in time 70.36028961s
+File created: BrandesPP0.8_512_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_512_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_512_0_as-caida20071105with accessses: 11348296041
+File created: BrandesPP0.8_512_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_512_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_512_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_512_0_as-caida20071105centrality.txt
+Time taken to partition: 29.013484208==========================================================================] 100%
+Time taken to construct skeleton: 1.171129304
+Time taken to run brandes on skeleton: 4.173261612
+Time taken to compute other centralities: 33.763541948
+Completed BrandesPP0.8_2048_0_as-caida20071105 in time 68.122386264s
+File created: BrandesPP0.8_2048_0_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_2048_0_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_2048_0_as-caida20071105with accessses: 11090022689
+File created: BrandesPP0.8_2048_0_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_2048_0_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_2048_0_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_2048_0_as-caida20071105centrality.txt
+Completed BrandesSubset0.001_1_as-caida20071105 in time 0.87839431s                                            ] 1%0%
+File created: BrandesSubset0.001_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.001_1_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.001_1_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.001_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.001_1_as-caida20071105_accesses.txt
+File created: BrandesSubset0.001_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.001_1_as-caida20071105centrality.txt
+Time taken to partition: 20.252602642==========================================================================] 100%
+Time taken to construct skeleton: 1.295554927
+Time taken to run brandes on skeleton: 2.598039704
+Time taken to compute other centralities: 719.143777602
+Completed BrandesPP0.001_2_1_as-caida20071105 in time 743.291493405s
+File created: BrandesPP0.001_2_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_2_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_2_1_as-caida20071105with accessses: 7831418176
+File created: BrandesPP0.001_2_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_2_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_2_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_2_1_as-caida20071105centrality.txt
+Time taken to partition: 28.213646612==========================================================================] 100%
+Time taken to construct skeleton: 1.413946544
+Time taken to run brandes on skeleton: 3.693805361
+Time taken to compute other centralities: 144.55840086
+Completed BrandesPP0.001_8_1_as-caida20071105 in time 177.88077084s
+File created: BrandesPP0.001_8_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_8_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_8_1_as-caida20071105with accessses: 10958367356
+File created: BrandesPP0.001_8_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_8_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_8_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_8_1_as-caida20071105centrality.txt
+Time taken to partition: 29.541948092==========================================================================] 100%
+Time taken to construct skeleton: 1.212472226
+Time taken to run brandes on skeleton: 4.088263685
+Time taken to compute other centralities: 36.294082055
+Completed BrandesPP0.001_32_1_as-caida20071105 in time 71.137703336s
+File created: BrandesPP0.001_32_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_32_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_32_1_as-caida20071105with accessses: 11406246735
+File created: BrandesPP0.001_32_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_32_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_32_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_32_1_as-caida20071105centrality.txt
+Time taken to partition: 30.045019643==========================================================================] 100%
+Time taken to construct skeleton: 1.067797669
+Time taken to run brandes on skeleton: 4.156026629
+Time taken to compute other centralities: 29.64287493
+Completed BrandesPP0.001_128_1_as-caida20071105 in time 64.913017784s
+File created: BrandesPP0.001_128_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_128_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_128_1_as-caida20071105with accessses: 11502142103
+File created: BrandesPP0.001_128_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_128_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_128_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_128_1_as-caida20071105centrality.txt
+Time taken to partition: 27.258344378==========================================================================] 100%
+Time taken to construct skeleton: 1.269798047
+Time taken to run brandes on skeleton: 4.146680557
+Time taken to compute other centralities: 24.208228959
+Completed BrandesPP0.001_512_1_as-caida20071105 in time 56.884063867s
+File created: BrandesPP0.001_512_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_512_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_512_1_as-caida20071105with accessses: 10699376405
+File created: BrandesPP0.001_512_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_512_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_512_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_512_1_as-caida20071105centrality.txt
+Time taken to partition: 27.862817586==========================================================================] 100%
+Time taken to construct skeleton: 1.127787234
+Time taken to run brandes on skeleton: 4.181401135
+Time taken to compute other centralities: 23.829466583
+Completed BrandesPP0.001_2048_1_as-caida20071105 in time 57.002418387s
+File created: BrandesPP0.001_2048_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_2048_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_2048_1_as-caida20071105with accessses: 10716853785
+File created: BrandesPP0.001_2048_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_2048_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_2048_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_2048_1_as-caida20071105centrality.txt
+Completed BrandesSubset0.01_1_as-caida20071105 in time 0.802149051s                                            ] 1%0%
+File created: BrandesSubset0.01_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.01_1_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.01_1_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.01_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.01_1_as-caida20071105_accesses.txt
+File created: BrandesSubset0.01_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.01_1_as-caida20071105centrality.txt
+Time taken to partition: 19.910655204==========================================================================] 100%
+Time taken to construct skeleton: 1.43067631
+Time taken to run brandes on skeleton: 2.721541266
+Time taken to compute other centralities: 572.020192843
+Completed BrandesPP0.01_2_1_as-caida20071105 in time 596.084015883s
+File created: BrandesPP0.01_2_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_2_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_2_1_as-caida20071105with accessses: 7736801748
+File created: BrandesPP0.01_2_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_2_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_2_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_2_1_as-caida20071105centrality.txt
+Time taken to partition: 28.402995215==========================================================================] 100%
+Time taken to construct skeleton: 1.450667628
+Time taken to run brandes on skeleton: 3.778806054
+Time taken to compute other centralities: 109.096696169
+Completed BrandesPP0.01_8_1_as-caida20071105 in time 142.730701291s
+File created: BrandesPP0.01_8_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_8_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_8_1_as-caida20071105with accessses: 10937314173
+File created: BrandesPP0.01_8_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_8_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_8_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_8_1_as-caida20071105centrality.txt
+Time taken to partition: 28.877120094==========================================================================] 100%
+Time taken to construct skeleton: 1.251984228
+Time taken to run brandes on skeleton: 3.951648776
+Time taken to compute other centralities: 40.183795739
+Completed BrandesPP0.01_32_1_as-caida20071105 in time 74.265476907s
+File created: BrandesPP0.01_32_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_32_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_32_1_as-caida20071105with accessses: 10991185807
+File created: BrandesPP0.01_32_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_32_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_32_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_32_1_as-caida20071105centrality.txt
+Time taken to partition: 30.03453388===========================================================================] 100%
+Time taken to construct skeleton: 1.290202591
+Time taken to run brandes on skeleton: 4.189936214
+Time taken to compute other centralities: 27.695614805
+Completed BrandesPP0.01_128_1_as-caida20071105 in time 63.211770494s
+File created: BrandesPP0.01_128_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_128_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_128_1_as-caida20071105with accessses: 11808015428
+File created: BrandesPP0.01_128_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_128_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_128_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_128_1_as-caida20071105centrality.txt
+Time taken to partition: 29.264581637==========================================================================] 100%
+Time taken to construct skeleton: 1.059244755
+Time taken to run brandes on skeleton: 4.203740368
+Time taken to compute other centralities: 31.274608434
+Completed BrandesPP0.01_512_1_as-caida20071105 in time 65.803102566s
+File created: BrandesPP0.01_512_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_512_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_512_1_as-caida20071105with accessses: 11430531763
+File created: BrandesPP0.01_512_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_512_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_512_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_512_1_as-caida20071105centrality.txt
+Time taken to partition: 30.147115699==========================================================================] 100%
+Time taken to construct skeleton: 1.128812229
+Time taken to run brandes on skeleton: 4.208677704
+Time taken to compute other centralities: 24.36973
+Completed BrandesPP0.01_2048_1_as-caida20071105 in time 59.855281544s
+File created: BrandesPP0.01_2048_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_2048_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_2048_1_as-caida20071105with accessses: 11507525715
+File created: BrandesPP0.01_2048_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_2048_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_2048_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_2048_1_as-caida20071105centrality.txt
+Completed BrandesSubset0.05_1_as-caida20071105 in time 0.79527618s                                             ] 1%0%
+File created: BrandesSubset0.05_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.05_1_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.05_1_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.05_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.05_1_as-caida20071105_accesses.txt
+File created: BrandesSubset0.05_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.05_1_as-caida20071105centrality.txt
+Time taken to partition: 19.915536009==========================================================================] 100%
+Time taken to construct skeleton: 1.444163511
+Time taken to run brandes on skeleton: 2.781613893
+Time taken to compute other centralities: 666.206526263
+Completed BrandesPP0.05_2_1_as-caida20071105 in time 690.348768869s
+File created: BrandesPP0.05_2_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_2_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_2_1_as-caida20071105with accessses: 7722367344
+File created: BrandesPP0.05_2_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_2_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_2_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_2_1_as-caida20071105centrality.txt
+Time taken to partition: 27.57987659===========================================================================] 100%
+Time taken to construct skeleton: 1.241994549
+Time taken to run brandes on skeleton: 3.798833202
+Time taken to compute other centralities: 111.730196987
+Completed BrandesPP0.05_8_1_as-caida20071105 in time 144.351874071s
+File created: BrandesPP0.05_8_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_8_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_8_1_as-caida20071105with accessses: 10674179947
+File created: BrandesPP0.05_8_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_8_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_8_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_8_1_as-caida20071105centrality.txt
+Time taken to partition: 28.793635339==========================================================================] 100%
+Time taken to construct skeleton: 1.278526948
+Time taken to run brandes on skeleton: 4.016693516
+Time taken to compute other centralities: 43.058031762
+Completed BrandesPP0.05_32_1_as-caida20071105 in time 77.147840214s
+File created: BrandesPP0.05_32_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_32_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_32_1_as-caida20071105with accessses: 11048059465
+File created: BrandesPP0.05_32_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_32_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_32_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_32_1_as-caida20071105centrality.txt
+Time taken to partition: 27.054500779==========================================================================] 100%
+Time taken to construct skeleton: 0.99298139
+Time taken to run brandes on skeleton: 4.146517875
+Time taken to compute other centralities: 24.864743496
+Completed BrandesPP0.05_128_1_as-caida20071105 in time 57.059658067s
+File created: BrandesPP0.05_128_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_128_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_128_1_as-caida20071105with accessses: 10620402303
+File created: BrandesPP0.05_128_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_128_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_128_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_128_1_as-caida20071105centrality.txt
+Time taken to partition: 28.814983247==========================================================================] 100%
+Time taken to construct skeleton: 1.087683638
+Time taken to run brandes on skeleton: 4.228029188
+Time taken to compute other centralities: 31.034672967
+Completed BrandesPP0.05_512_1_as-caida20071105 in time 65.166306987s
+File created: BrandesPP0.05_512_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_512_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_512_1_as-caida20071105with accessses: 11361689770
+File created: BrandesPP0.05_512_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_512_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_512_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_512_1_as-caida20071105centrality.txt
+Time taken to partition: 28.66413503===========================================================================] 100%
+Time taken to construct skeleton: 1.101212576
+Time taken to run brandes on skeleton: 4.13997541
+Time taken to compute other centralities: 24.782147942
+Completed BrandesPP0.05_2048_1_as-caida20071105 in time 58.688915706s
+File created: BrandesPP0.05_2048_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_2048_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_2048_1_as-caida20071105with accessses: 11075254988
+File created: BrandesPP0.05_2048_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_2048_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_2048_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_2048_1_as-caida20071105centrality.txt
+Completed BrandesSubset0.1_1_as-caida20071105 in time 0.780844937s                                             ] 1%0%
+File created: BrandesSubset0.1_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.1_1_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.1_1_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.1_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.1_1_as-caida20071105_accesses.txt
+File created: BrandesSubset0.1_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.1_1_as-caida20071105centrality.txt
+Time taken to partition: 20.041615777==========================================================================] 100%
+Time taken to construct skeleton: 1.46109585
+Time taken to run brandes on skeleton: 2.693980088
+Time taken to compute other centralities: 700.634725083
+Completed BrandesPP0.1_2_1_as-caida20071105 in time 724.832354162s
+File created: BrandesPP0.1_2_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_2_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_2_1_as-caida20071105with accessses: 7798695747
+File created: BrandesPP0.1_2_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_2_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_2_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_2_1_as-caida20071105centrality.txt
+Time taken to partition: 28.075925221==========================================================================] 100%
+Time taken to construct skeleton: 1.356710503
+Time taken to run brandes on skeleton: 3.72398088
+Time taken to compute other centralities: 115.715006694
+Completed BrandesPP0.1_8_1_as-caida20071105 in time 148.878181804s
+File created: BrandesPP0.1_8_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_8_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_8_1_as-caida20071105with accessses: 10892625784
+File created: BrandesPP0.1_8_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_8_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_8_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_8_1_as-caida20071105centrality.txt
+Time taken to partition: 27.644356485==========================================================================] 100%
+Time taken to construct skeleton: 1.275450078
+Time taken to run brandes on skeleton: 4.038268854
+Time taken to compute other centralities: 38.823276443
+Completed BrandesPP0.1_32_1_as-caida20071105 in time 71.782545417s
+File created: BrandesPP0.1_32_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_32_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_32_1_as-caida20071105with accessses: 10836349858
+File created: BrandesPP0.1_32_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_32_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_32_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_32_1_as-caida20071105centrality.txt
+Time taken to partition: 27.284330562==========================================================================] 100%
+Time taken to construct skeleton: 1.261115914
+Time taken to run brandes on skeleton: 4.135002195
+Time taken to compute other centralities: 30.155969805
+Completed BrandesPP0.1_128_1_as-caida20071105 in time 62.837365734s
+File created: BrandesPP0.1_128_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_128_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_128_1_as-caida20071105with accessses: 10507099228
+File created: BrandesPP0.1_128_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_128_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_128_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_128_1_as-caida20071105centrality.txt
+Time taken to partition: 27.971887906==========================================================================] 100%
+Time taken to construct skeleton: 1.224332196
+Time taken to run brandes on skeleton: 4.294931589
+Time taken to compute other centralities: 22.777408299
+Completed BrandesPP0.1_512_1_as-caida20071105 in time 56.269519065s
+File created: BrandesPP0.1_512_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_512_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_512_1_as-caida20071105with accessses: 10952374859
+File created: BrandesPP0.1_512_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_512_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_512_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_512_1_as-caida20071105centrality.txt
+Time taken to partition: 29.681363064==========================================================================] 100%
+Time taken to construct skeleton: 1.186445515
+Time taken to run brandes on skeleton: 4.196739435
+Time taken to compute other centralities: 26.797593362
+Completed BrandesPP0.1_2048_1_as-caida20071105 in time 61.863051058s
+File created: BrandesPP0.1_2048_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_2048_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_2048_1_as-caida20071105with accessses: 11492382020
+File created: BrandesPP0.1_2048_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_2048_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_2048_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_2048_1_as-caida20071105centrality.txt
+Completed BrandesSubset0.5_1_as-caida20071105 in time 0.827435744s                                             ] 1%0%
+File created: BrandesSubset0.5_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.5_1_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.5_1_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.5_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.5_1_as-caida20071105_accesses.txt
+File created: BrandesSubset0.5_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.5_1_as-caida20071105centrality.txt
+Time taken to partition: 20.274685027==========================================================================] 100%
+Time taken to construct skeleton: 1.507433242
+Time taken to run brandes on skeleton: 2.752153957
+Time taken to compute other centralities: 543.342280476
+Completed BrandesPP0.5_2_1_as-caida20071105 in time 567.878045366s
+File created: BrandesPP0.5_2_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_2_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_2_1_as-caida20071105with accessses: 7856842660
+File created: BrandesPP0.5_2_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_2_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_2_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_2_1_as-caida20071105centrality.txt
+Time taken to partition: 27.812093169==========================================================================] 100%
+Time taken to construct skeleton: 1.356331001
+Time taken to run brandes on skeleton: 3.545337171
+Time taken to compute other centralities: 166.860618902
+Completed BrandesPP0.5_8_1_as-caida20071105 in time 199.575342006s
+File created: BrandesPP0.5_8_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_8_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_8_1_as-caida20071105with accessses: 10765081122
+File created: BrandesPP0.5_8_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_8_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_8_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_8_1_as-caida20071105centrality.txt
+Time taken to partition: 27.914833005==========================================================================] 100%
+Time taken to construct skeleton: 1.315530409
+Time taken to run brandes on skeleton: 3.930888256
+Time taken to compute other centralities: 71.679148288
+Completed BrandesPP0.5_32_1_as-caida20071105 in time 104.841324451s
+File created: BrandesPP0.5_32_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_32_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_32_1_as-caida20071105with accessses: 10787463319
+File created: BrandesPP0.5_32_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_32_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_32_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_32_1_as-caida20071105centrality.txt
+Time taken to partition: 29.552689095==========================================================================] 100%
+Time taken to construct skeleton: 1.257021402
+Time taken to run brandes on skeleton: 4.073232901
+Time taken to compute other centralities: 27.248704349
+Completed BrandesPP0.5_128_1_as-caida20071105 in time 62.132576236s
+File created: BrandesPP0.5_128_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_128_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_128_1_as-caida20071105with accessses: 11348756833
+File created: BrandesPP0.5_128_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_128_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_128_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_128_1_as-caida20071105centrality.txt
+Time taken to partition: 27.971926846==========================================================================] 100%
+Time taken to construct skeleton: 1.15132874
+Time taken to run brandes on skeleton: 4.115263244
+Time taken to compute other centralities: 26.967436002
+Completed BrandesPP0.5_512_1_as-caida20071105 in time 60.207474219s
+File created: BrandesPP0.5_512_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_512_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_512_1_as-caida20071105with accessses: 10784443254
+File created: BrandesPP0.5_512_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_512_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_512_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_512_1_as-caida20071105centrality.txt
+Time taken to partition: 28.333052419==========================================================================] 100%
+Time taken to construct skeleton: 1.249251715
+Time taken to run brandes on skeleton: 4.20025028
+Time taken to compute other centralities: 40.93493811
+Completed BrandesPP0.5_2048_1_as-caida20071105 in time 74.718391245s
+File created: BrandesPP0.5_2048_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_2048_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_2048_1_as-caida20071105with accessses: 10817062797
+File created: BrandesPP0.5_2048_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_2048_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_2048_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_2048_1_as-caida20071105centrality.txt
+Completed BrandesSubset0.8_1_as-caida20071105 in time 0.844227993s                                             ] 1%0%
+File created: BrandesSubset0.8_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.8_1_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.8_1_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.8_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.8_1_as-caida20071105_accesses.txt
+File created: BrandesSubset0.8_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.8_1_as-caida20071105centrality.txt
+Time taken to partition: 20.28135781===========================================================================] 100%
+Time taken to construct skeleton: 1.488232771
+Time taken to run brandes on skeleton: 2.721325746
+Time taken to compute other centralities: 695.99432399
+Completed BrandesPP0.8_2_1_as-caida20071105 in time 720.486787687s
+File created: BrandesPP0.8_2_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_2_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_2_1_as-caida20071105with accessses: 7875036901
+File created: BrandesPP0.8_2_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_2_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_2_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_2_1_as-caida20071105centrality.txt
+Time taken to partition: 28.170193901==========================================================================] 100%
+Time taken to construct skeleton: 1.365450905
+Time taken to run brandes on skeleton: 3.780721745
+Time taken to compute other centralities: 99.620788025
+Completed BrandesPP0.8_8_1_as-caida20071105 in time 132.938112365s
+File created: BrandesPP0.8_8_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_8_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_8_1_as-caida20071105with accessses: 10827009114
+File created: BrandesPP0.8_8_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_8_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_8_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_8_1_as-caida20071105centrality.txt
+Time taken to partition: 28.67677855===========================================================================] 100%
+Time taken to construct skeleton: 1.381090664
+Time taken to run brandes on skeleton: 4.024385749
+Time taken to compute other centralities: 40.174476366
+Completed BrandesPP0.8_32_1_as-caida20071105 in time 74.257645651s
+File created: BrandesPP0.8_32_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_32_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_32_1_as-caida20071105with accessses: 11182806217
+File created: BrandesPP0.8_32_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_32_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_32_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_32_1_as-caida20071105centrality.txt
+Time taken to partition: 27.05666883===========================================================================] 100%
+Time taken to construct skeleton: 1.387350935
+Time taken to run brandes on skeleton: 4.137418351
+Time taken to compute other centralities: 32.727486209
+Completed BrandesPP0.8_128_1_as-caida20071105 in time 65.309844513s
+File created: BrandesPP0.8_128_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_128_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_128_1_as-caida20071105with accessses: 10538345733
+File created: BrandesPP0.8_128_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_128_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_128_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_128_1_as-caida20071105centrality.txt
+Time taken to partition: 29.283198338==========================================================================] 100%
+Time taken to construct skeleton: 1.245720507
+Time taken to run brandes on skeleton: 4.201855866
+Time taken to compute other centralities: 22.97601212
+Completed BrandesPP0.8_512_1_as-caida20071105 in time 57.707991153s
+File created: BrandesPP0.8_512_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_512_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_512_1_as-caida20071105with accessses: 11314445861
+File created: BrandesPP0.8_512_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_512_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_512_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_512_1_as-caida20071105centrality.txt
+Time taken to partition: 28.301442269==========================================================================] 100%
+Time taken to construct skeleton: 1.342661826
+Time taken to run brandes on skeleton: 4.246702826
+Time taken to compute other centralities: 28.485062168
+Completed BrandesPP0.8_2048_1_as-caida20071105 in time 62.376793693s
+File created: BrandesPP0.8_2048_1_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_2048_1_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_2048_1_as-caida20071105with accessses: 10913190357
+File created: BrandesPP0.8_2048_1_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_2048_1_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_2048_1_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_2048_1_as-caida20071105centrality.txt
+Completed BrandesSubset0.001_2_as-caida20071105 in time 0.84971353s                                            ] 1%0%
+File created: BrandesSubset0.001_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.001_2_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.001_2_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.001_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.001_2_as-caida20071105_accesses.txt
+File created: BrandesSubset0.001_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.001_2_as-caida20071105centrality.txt
+Time taken to partition: 19.668823614==========================================================================] 100%
+Time taken to construct skeleton: 1.401173491
+Time taken to run brandes on skeleton: 2.680469506
+Time taken to compute other centralities: 622.826997702
+Completed BrandesPP0.001_2_2_as-caida20071105 in time 646.578377161s
+File created: BrandesPP0.001_2_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_2_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_2_2_as-caida20071105with accessses: 7727166554
+File created: BrandesPP0.001_2_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_2_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_2_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_2_2_as-caida20071105centrality.txt
+Time taken to partition: 26.569942117==========================================================================] 100%
+Time taken to construct skeleton: 1.286849349
+Time taken to run brandes on skeleton: 3.428119845
+Time taken to compute other centralities: 132.654894058
+Completed BrandesPP0.001_8_2_as-caida20071105 in time 163.940773627s
+File created: BrandesPP0.001_8_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_8_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_8_2_as-caida20071105with accessses: 10367687777
+File created: BrandesPP0.001_8_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_8_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_8_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_8_2_as-caida20071105centrality.txt
+Time taken to partition: 28.450957706==========================================================================] 100%
+Time taken to construct skeleton: 1.087618955
+Time taken to run brandes on skeleton: 3.850447305
+Time taken to compute other centralities: 43.588522068
+Completed BrandesPP0.001_32_2_as-caida20071105 in time 76.978499079s
+File created: BrandesPP0.001_32_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_32_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_32_2_as-caida20071105with accessses: 11283992908
+File created: BrandesPP0.001_32_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_32_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_32_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_32_2_as-caida20071105centrality.txt
+Time taken to partition: 29.767656284==========================================================================] 100%
+Time taken to construct skeleton: 1.296754716
+Time taken to run brandes on skeleton: 4.122155024
+Time taken to compute other centralities: 31.122217807
+Completed BrandesPP0.001_128_2_as-caida20071105 in time 66.309712175s
+File created: BrandesPP0.001_128_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_128_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_128_2_as-caida20071105with accessses: 11429037148
+File created: BrandesPP0.001_128_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_128_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_128_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_128_2_as-caida20071105centrality.txt
+Time taken to partition: 27.663023358==========================================================================] 100%
+Time taken to construct skeleton: 1.23607505
+Time taken to run brandes on skeleton: 4.165345956
+Time taken to compute other centralities: 25.381891152
+Completed BrandesPP0.001_512_2_as-caida20071105 in time 58.447317409s
+File created: BrandesPP0.001_512_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_512_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_512_2_as-caida20071105with accessses: 10670625958
+File created: BrandesPP0.001_512_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_512_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_512_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_512_2_as-caida20071105centrality.txt
+Time taken to partition: 28.097064939==========================================================================] 100%
+Time taken to construct skeleton: 1.181662078
+Time taken to run brandes on skeleton: 4.193283526
+Time taken to compute other centralities: 25.287711639
+Completed BrandesPP0.001_2048_2_as-caida20071105 in time 58.760640395s
+File created: BrandesPP0.001_2048_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.001_2048_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.001_2048_2_as-caida20071105with accessses: 10815355024
+File created: BrandesPP0.001_2048_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.001_2048_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.001_2048_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.001_2048_2_as-caida20071105centrality.txt
+Completed BrandesSubset0.01_2_as-caida20071105 in time 0.854719976s                                            ] 1%0%
+File created: BrandesSubset0.01_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.01_2_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.01_2_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.01_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.01_2_as-caida20071105_accesses.txt
+File created: BrandesSubset0.01_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.01_2_as-caida20071105centrality.txt
+Time taken to partition: 19.948919169==========================================================================] 100%
+Time taken to construct skeleton: 1.570632511
+Time taken to run brandes on skeleton: 2.769129429
+Time taken to compute other centralities: 636.631859032
+Completed BrandesPP0.01_2_2_as-caida20071105 in time 660.92145807s
+File created: BrandesPP0.01_2_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_2_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_2_2_as-caida20071105with accessses: 7814234955
+File created: BrandesPP0.01_2_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_2_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_2_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_2_2_as-caida20071105centrality.txt
+Time taken to partition: 26.841364342==========================================================================] 100%
+Time taken to construct skeleton: 1.353623462
+Time taken to run brandes on skeleton: 3.856036254
+Time taken to compute other centralities: 108.416829319
+Completed BrandesPP0.01_8_2_as-caida20071105 in time 140.46881369s
+File created: BrandesPP0.01_8_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_8_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_8_2_as-caida20071105with accessses: 10435745073
+File created: BrandesPP0.01_8_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_8_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_8_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_8_2_as-caida20071105centrality.txt
+Time taken to partition: 27.782355091==========================================================================] 100%
+Time taken to construct skeleton: 1.33446777
+Time taken to run brandes on skeleton: 3.980667215
+Time taken to compute other centralities: 57.551077967
+Completed BrandesPP0.01_32_2_as-caida20071105 in time 90.650070579s
+File created: BrandesPP0.01_32_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_32_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_32_2_as-caida20071105with accessses: 10780429323
+File created: BrandesPP0.01_32_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_32_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_32_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_32_2_as-caida20071105centrality.txt
+Time taken to partition: 29.995372996==========================================================================] 100%
+Time taken to construct skeleton: 1.287155627
+Time taken to run brandes on skeleton: 4.224982365
+Time taken to compute other centralities: 29.77049743
+Completed BrandesPP0.01_128_2_as-caida20071105 in time 65.279495449s
+File created: BrandesPP0.01_128_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_128_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_128_2_as-caida20071105with accessses: 11449810380
+File created: BrandesPP0.01_128_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_128_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_128_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_128_2_as-caida20071105centrality.txt
+Time taken to partition: 26.793386671==========================================================================] 100%
+Time taken to construct skeleton: 1.460466365
+Time taken to run brandes on skeleton: 4.175626879
+Time taken to compute other centralities: 42.77532294
+Completed BrandesPP0.01_512_2_as-caida20071105 in time 75.20571805s
+File created: BrandesPP0.01_512_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_512_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_512_2_as-caida20071105with accessses: 10309870281
+File created: BrandesPP0.01_512_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_512_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_512_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_512_2_as-caida20071105centrality.txt
+Time taken to partition: 28.904695672==========================================================================] 100%
+Time taken to construct skeleton: 1.132342522
+Time taken to run brandes on skeleton: 4.212675199
+Time taken to compute other centralities: 27.073813838
+Completed BrandesPP0.01_2048_2_as-caida20071105 in time 61.324460539s
+File created: BrandesPP0.01_2048_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_2048_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.01_2048_2_as-caida20071105with accessses: 11241701237
+File created: BrandesPP0.01_2048_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_2048_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.01_2048_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_2048_2_as-caida20071105centrality.txt
+Completed BrandesSubset0.05_2_as-caida20071105 in time 0.873342745s                                            ] 1%0%
+File created: BrandesSubset0.05_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.05_2_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.05_2_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.05_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.05_2_as-caida20071105_accesses.txt
+File created: BrandesSubset0.05_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.05_2_as-caida20071105centrality.txt
+Time taken to partition: 20.243888859==========================================================================] 100%
+Time taken to construct skeleton: 1.428517941
+Time taken to run brandes on skeleton: 2.829798307
+Time taken to compute other centralities: 650.455902521
+Completed BrandesPP0.05_2_2_as-caida20071105 in time 674.95899416s
+File created: BrandesPP0.05_2_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_2_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_2_2_as-caida20071105with accessses: 7865999874
+File created: BrandesPP0.05_2_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_2_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_2_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_2_2_as-caida20071105centrality.txt
+Time taken to partition: 27.129932537==========================================================================] 100%
+Time taken to construct skeleton: 1.299021995
+Time taken to run brandes on skeleton: 3.738848994
+Time taken to compute other centralities: 115.814048829
+Completed BrandesPP0.05_8_2_as-caida20071105 in time 147.982788418s
+File created: BrandesPP0.05_8_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_8_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_8_2_as-caida20071105with accessses: 10501671137
+File created: BrandesPP0.05_8_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_8_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_8_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_8_2_as-caida20071105centrality.txt
+Time taken to partition: 28.65884612===========================================================================] 100%
+Time taken to construct skeleton: 1.201266032
+Time taken to run brandes on skeleton: 3.993166188
+Time taken to compute other centralities: 49.756118283
+Completed BrandesPP0.05_32_2_as-caida20071105 in time 83.610294901s
+File created: BrandesPP0.05_32_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_32_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_32_2_as-caida20071105with accessses: 11132106725
+File created: BrandesPP0.05_32_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_32_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_32_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_32_2_as-caida20071105centrality.txt
+Time taken to partition: 28.927530505==========================================================================] 100%
+Time taken to construct skeleton: 1.272182074
+Time taken to run brandes on skeleton: 4.154593699
+Time taken to compute other centralities: 29.222119571
+Completed BrandesPP0.05_128_2_as-caida20071105 in time 63.577381826s
+File created: BrandesPP0.05_128_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_128_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_128_2_as-caida20071105with accessses: 11107819782
+File created: BrandesPP0.05_128_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_128_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_128_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_128_2_as-caida20071105centrality.txt
+Time taken to partition: 29.582493384==========================================================================] 100%
+Time taken to construct skeleton: 1.082239432
+Time taken to run brandes on skeleton: 4.159420333
+Time taken to compute other centralities: 29.982221261
+Completed BrandesPP0.05_512_2_as-caida20071105 in time 64.807322933s
+File created: BrandesPP0.05_512_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_512_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_512_2_as-caida20071105with accessses: 11355117298
+File created: BrandesPP0.05_512_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_512_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_512_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_512_2_as-caida20071105centrality.txt
+Time taken to partition: 28.217735309==========================================================================] 100%
+Time taken to construct skeleton: 1.177663806
+Time taken to run brandes on skeleton: 4.165559912
+Time taken to compute other centralities: 26.076811571
+Completed BrandesPP0.05_2048_2_as-caida20071105 in time 59.638683576s
+File created: BrandesPP0.05_2048_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.05_2048_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.05_2048_2_as-caida20071105with accessses: 10805768114
+File created: BrandesPP0.05_2048_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.05_2048_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.05_2048_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.05_2048_2_as-caida20071105centrality.txt
+Completed BrandesSubset0.1_2_as-caida20071105 in time 0.841359777s                                             ] 1%0%
+File created: BrandesSubset0.1_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.1_2_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.1_2_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.1_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.1_2_as-caida20071105_accesses.txt
+File created: BrandesSubset0.1_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.1_2_as-caida20071105centrality.txt
+Time taken to partition: 20.08958005===========================================================================] 100%
+Time taken to construct skeleton: 1.445018968
+Time taken to run brandes on skeleton: 2.815099508
+Time taken to compute other centralities: 637.486577573
+Completed BrandesPP0.1_2_2_as-caida20071105 in time 661.837298009s
+File created: BrandesPP0.1_2_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_2_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_2_2_as-caida20071105with accessses: 7841936908
+File created: BrandesPP0.1_2_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_2_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_2_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_2_2_as-caida20071105centrality.txt
+Time taken to partition: 26.664778434==========================================================================] 100%
+Time taken to construct skeleton: 1.093901913
+Time taken to run brandes on skeleton: 3.737980973
+Time taken to compute other centralities: 110.421697659
+Completed BrandesPP0.1_8_2_as-caida20071105 in time 141.919482004s
+File created: BrandesPP0.1_8_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_8_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_8_2_as-caida20071105with accessses: 10380721228
+File created: BrandesPP0.1_8_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_8_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_8_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_8_2_as-caida20071105centrality.txt
+Time taken to partition: 30.391456765==========================================================================] 100%
+Time taken to construct skeleton: 1.165041898
+Time taken to run brandes on skeleton: 3.867319446
+Time taken to compute other centralities: 42.185650917
+Completed BrandesPP0.1_32_2_as-caida20071105 in time 77.610673365s
+File created: BrandesPP0.1_32_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_32_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_32_2_as-caida20071105with accessses: 11799788105
+File created: BrandesPP0.1_32_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_32_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_32_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_32_2_as-caida20071105centrality.txt
+Time taken to partition: 29.302075384==========================================================================] 100%
+Time taken to construct skeleton: 1.106481186
+Time taken to run brandes on skeleton: 3.908925942
+Time taken to compute other centralities: 34.613761777
+Completed BrandesPP0.1_128_2_as-caida20071105 in time 68.932425963s
+File created: BrandesPP0.1_128_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_128_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_128_2_as-caida20071105with accessses: 11438085723
+File created: BrandesPP0.1_128_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_128_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_128_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_128_2_as-caida20071105centrality.txt
+Time taken to partition: 29.212585708==========================================================================] 100%
+Time taken to construct skeleton: 1.065811684
+Time taken to run brandes on skeleton: 4.8236583
+Time taken to compute other centralities: 24.231833383
+Completed BrandesPP0.1_512_2_as-caida20071105 in time 59.334975082s
+File created: BrandesPP0.1_512_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_512_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_512_2_as-caida20071105with accessses: 11132997923
+File created: BrandesPP0.1_512_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_512_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_512_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_512_2_as-caida20071105centrality.txt
+Time taken to partition: 27.806301504==========================================================================] 100%
+Time taken to construct skeleton: 1.344880479
+Time taken to run brandes on skeleton: 4.262630937
+Time taken to compute other centralities: 23.389919557
+Completed BrandesPP0.1_2048_2_as-caida20071105 in time 56.805193071s
+File created: BrandesPP0.1_2048_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.1_2048_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.1_2048_2_as-caida20071105with accessses: 10633982696
+File created: BrandesPP0.1_2048_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.1_2048_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.1_2048_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.1_2048_2_as-caida20071105centrality.txt
+Completed BrandesSubset0.5_2_as-caida20071105 in time 0.851406367s                                             ] 1%0%
+File created: BrandesSubset0.5_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.5_2_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.5_2_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.5_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.5_2_as-caida20071105_accesses.txt
+File created: BrandesSubset0.5_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.5_2_as-caida20071105centrality.txt
+Time taken to partition: 20.280688248==========================================================================] 100%
+Time taken to construct skeleton: 1.35828817
+Time taken to run brandes on skeleton: 2.682004102
+Time taken to compute other centralities: 647.550342545
+Completed BrandesPP0.5_2_2_as-caida20071105 in time 671.872275397s
+File created: BrandesPP0.5_2_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_2_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_2_2_as-caida20071105with accessses: 7831482331
+File created: BrandesPP0.5_2_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_2_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_2_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_2_2_as-caida20071105centrality.txt
+Time taken to partition: 27.850897119==========================================================================] 100%
+Time taken to construct skeleton: 1.373526854
+Time taken to run brandes on skeleton: 3.667110423
+Time taken to compute other centralities: 154.668390654
+Completed BrandesPP0.5_8_2_as-caida20071105 in time 187.56083862s
+File created: BrandesPP0.5_8_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_8_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_8_2_as-caida20071105with accessses: 10547760247
+File created: BrandesPP0.5_8_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_8_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_8_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_8_2_as-caida20071105centrality.txt
+Time taken to partition: 28.443221276==========================================================================] 100%
+Time taken to construct skeleton: 1.082186409
+Time taken to run brandes on skeleton: 3.997562414
+Time taken to compute other centralities: 43.648687443
+Completed BrandesPP0.5_32_2_as-caida20071105 in time 77.172594359s
+File created: BrandesPP0.5_32_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_32_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_32_2_as-caida20071105with accessses: 11188373458
+File created: BrandesPP0.5_32_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_32_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_32_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_32_2_as-caida20071105centrality.txt
+Time taken to partition: 29.770395356==========================================================================] 100%
+Time taken to construct skeleton: 1.322274269
+Time taken to run brandes on skeleton: 4.155386764
+Time taken to compute other centralities: 35.843175846
+Completed BrandesPP0.5_128_2_as-caida20071105 in time 71.092208474s
+File created: BrandesPP0.5_128_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_128_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_128_2_as-caida20071105with accessses: 11303881178
+File created: BrandesPP0.5_128_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_128_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_128_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_128_2_as-caida20071105centrality.txt
+Time taken to partition: 27.898140889==========================================================================] 100%
+Time taken to construct skeleton: 1.173589622
+Time taken to run brandes on skeleton: 4.08917003
+Time taken to compute other centralities: 24.814869595
+Completed BrandesPP0.5_512_2_as-caida20071105 in time 57.976851748s
+File created: BrandesPP0.5_512_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_512_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_512_2_as-caida20071105with accessses: 11007970705
+File created: BrandesPP0.5_512_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_512_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_512_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_512_2_as-caida20071105centrality.txt
+Time taken to partition: 29.01245885===========================================================================] 100%
+Time taken to construct skeleton: 1.020377884
+Time taken to run brandes on skeleton: 4.1884528
+Time taken to compute other centralities: 25.923790666
+Completed BrandesPP0.5_2048_2_as-caida20071105 in time 60.146021593s
+File created: BrandesPP0.5_2048_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.5_2048_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.5_2048_2_as-caida20071105with accessses: 11004367287
+File created: BrandesPP0.5_2048_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.5_2048_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.5_2048_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.5_2048_2_as-caida20071105centrality.txt
+Completed BrandesSubset0.8_2_as-caida20071105 in time 0.79673383s                                              ] 1%0%
+File created: BrandesSubset0.8_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesSubset0.8_2_as-caida20071105_descriptor.txt
+Completed BrandesSubset0.8_2_as-caida20071105with accessses: 49154429
+File created: BrandesSubset0.8_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesSubset0.8_2_as-caida20071105_accesses.txt
+File created: BrandesSubset0.8_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesSubset0.8_2_as-caida20071105centrality.txt
+Time taken to partition: 19.843802339==========================================================================] 100%
+Time taken to construct skeleton: 1.576591574
+Time taken to run brandes on skeleton: 2.716497283
+Time taken to compute other centralities: 587.167517865
+Completed BrandesPP0.8_2_2_as-caida20071105 in time 611.305914107s
+File created: BrandesPP0.8_2_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_2_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_2_2_as-caida20071105with accessses: 7725881260
+File created: BrandesPP0.8_2_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_2_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_2_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_2_2_as-caida20071105centrality.txt
+Time taken to partition: 27.596420537==========================================================================] 100%
+Time taken to construct skeleton: 1.375025566
+Time taken to run brandes on skeleton: 3.77729472
+Time taken to compute other centralities: 109.294446678
+Completed BrandesPP0.8_8_2_as-caida20071105 in time 142.04414039s
+File created: BrandesPP0.8_8_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_8_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_8_2_as-caida20071105with accessses: 10810866301
+File created: BrandesPP0.8_8_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_8_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_8_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_8_2_as-caida20071105centrality.txt
+Time taken to partition: 28.638763548==========================================================================] 100%
+Time taken to construct skeleton: 1.013021835
+Time taken to run brandes on skeleton: 4.06314664
+Time taken to compute other centralities: 43.127908685
+Completed BrandesPP0.8_32_2_as-caida20071105 in time 76.843738651s
+File created: BrandesPP0.8_32_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_32_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_32_2_as-caida20071105with accessses: 11229799020
+File created: BrandesPP0.8_32_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_32_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_32_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_32_2_as-caida20071105centrality.txt
+Time taken to partition: 28.996723944==========================================================================] 100%
+Time taken to construct skeleton: 1.106824374
+Time taken to run brandes on skeleton: 4.111366754
+Time taken to compute other centralities: 36.610450119
+Completed BrandesPP0.8_128_2_as-caida20071105 in time 70.826263246s
+File created: BrandesPP0.8_128_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_128_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_128_2_as-caida20071105with accessses: 11374947947
+File created: BrandesPP0.8_128_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_128_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_128_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_128_2_as-caida20071105centrality.txt
+Time taken to partition: 29.832021273==========================================================================] 100%
+Time taken to construct skeleton: 1.194403146
+Time taken to run brandes on skeleton: 3.924847775
+Time taken to compute other centralities: 34.130290842
+Completed BrandesPP0.8_512_2_as-caida20071105 in time 69.082504053s
+File created: BrandesPP0.8_512_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_512_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_512_2_as-caida20071105with accessses: 11247058365
+File created: BrandesPP0.8_512_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_512_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_512_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_512_2_as-caida20071105centrality.txt
+Time taken to partition: 28.054322493==========================================================================] 100%
+Time taken to construct skeleton: 1.396173362
+Time taken to run brandes on skeleton: 4.155958104
+Time taken to compute other centralities: 33.923503345
+Completed BrandesPP0.8_2048_2_as-caida20071105 in time 67.531424621s
+File created: BrandesPP0.8_2048_2_as-caida20071105_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.8_2048_2_as-caida20071105_descriptor.txt
+Completed BrandesPP0.8_2048_2_as-caida20071105with accessses: 10761089115
+File created: BrandesPP0.8_2048_2_as-caida20071105_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.8_2048_2_as-caida20071105_accesses.txt
+File created: BrandesPP0.8_2048_2_as-caida20071105centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.8_2048_2_as-caida20071105centrality.txt
+Time taken to partition: 169.539241118=========================================================================] 100%
+Time taken to construct skeleton: 8.225197909
+Time taken to run brandes on skeleton: 56.087104562
+Time taken to compute other centralities: 19853.028354324
+Completed BrandesPP0.01_2_0_slashdot0811 in time 20086.882023833s
+File created: BrandesPP0.01_2_0_slashdot0811_descriptor.txt
+Successfully wrote to the file descriptions/BrandesPP0.01_2_0_slashdot0811_descriptor.txt
+Completed BrandesPP0.01_2_0_slashdot0811with accessses: 89354726381
+File created: BrandesPP0.01_2_0_slashdot0811_accesses.txt
+Successfully wrote to the file accesses/BrandesPP0.01_2_0_slashdot0811_accesses.txt
+File created: BrandesPP0.01_2_0_slashdot0811centrality.txt
+Successfully wrote to the file centralities/BrandesPP0.01_2_0_slashdot0811centrality.txt
+Time taken to partition: 251.629491676=========================================================================] 100%
+Time taken to construct skeleton: 7.075696191
+Time taken to run brandes on skeleton: 59.027660076

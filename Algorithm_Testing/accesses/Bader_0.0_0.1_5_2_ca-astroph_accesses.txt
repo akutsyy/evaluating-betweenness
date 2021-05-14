@@ -1,0 +1,3 @@
+Running Bader with parameters Low=0.0'
+High=0.1 on: datasets/final/ca-astroph_undirected.txt
+Graph accesses: 399386207

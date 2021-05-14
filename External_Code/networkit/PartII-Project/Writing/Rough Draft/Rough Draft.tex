@@ -1,0 +1,1106 @@
+% Template for a Computer Science Tripos Part II project dissertation
+\documentclass[12pt,a4paper,twoside,openright]{report}
+\usepackage[pdfborder={0 0 0}]{hyperref}    % turns references into hyperlinks
+\usepackage[margin=20mm]{geometry}  % adjusts page layout
+\usepackage{graphicx}  % allows inclusion of PDF, PNG and JPG images
+\usepackage{verbatim}
+\usepackage{docmute}   % only needed to allow inclusion of proposal.tex
+\usepackage{enumitem}
+
+\usepackage{changepage} % Adjustwidth in proposal
+\usepackage{tabularx,stackengine,collcell,ltablex} % Better Tables
+\usepackage{color,soul} % For hl
+\usepackage{float} % Tables
+%AMS packages
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+
+\usepackage{mathtools}%Minor mathstuff
+\usepackage{microtype}%Improve typography
+
+\usepackage{hyphenat} % nohypens
+
+%\usepackage[sorting=none]{biblatex}
+%\bibliography{zoteroOut} 
+
+
+
+\raggedbottom                           % try to avoid widows and orphans
+\sloppy
+\clubpenalty1000%
+\widowpenalty1000%
+
+\keepXColumns % Makes ltablex play nice
+
+\renewcommand{\baselinestretch}{1.1}    % adjust line spacing to make
+% more readable
+
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}} % Link emails
+
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}} % C++
+
+\newcommand{\todo}[1]{\hl{TODO: #1}}
+\newcommand{\ttt}[1]{\texttt{#1}}
+\newcommand{\java}[1]{\ttt{#1}}
+\newcommand{\erdos}{Erd\H{o}s }
+
+\newcommand{\specialcell}[2][c]{%
+	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}} % Tables nonsense
+
+
+\newcommand{\bigO}[1]{$\mathcal{O}(#1)$}
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil} % can do \floor*{abc}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\let\endminwd\relax
+\newcolumntype{L}[1]{>{\collectcell\xminwd l{#1}}l<{\endminwd\endcollectcell}}
+\newcolumntype{C}[1]{>{\collectcell\xminwd c{#1}}c<{\endminwd\endcollectcell}}
+\newcolumntype{R}[1]{>{\collectcell\xminwd r{#1}}r<{\endminwd\endcollectcell}}
+
+\begin{document}
+	
+	\bibliographystyle{plain}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Title
+	
+	
+	\pagestyle{empty}
+	
+	\rightline{\LARGE \textbf{Iris Kutsyy}}
+	
+	\vspace*{60mm}
+	\begin{center}
+		\Huge
+		\textbf{Evaluating Betweenness Centrality Algorithms on Real World Datasets} \\[5mm]
+		Computer Science Tripos -- Part II \\[5mm]
+		Trinity College \\[5mm]
+		\today  % today's date
+	\end{center}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Proforma, table of contents and list of figures
+	
+	\pagestyle{plain}
+	
+	\chapter*{Proforma}
+	
+	{\large
+		\begin{tabular}{ll}
+			Name:               & \bf Iris Kutsyy                       \\
+			College:            & \bf Trinity College                     \\
+			Project Title:      & \bf Evaluating Betweenness Centrality Algorithms on Real World Datasets \\
+			Examination:        & \bf Computer Science Tripos -- Part II, July 2021  \\
+			Word Count:         & \bf \hl{TODO}\footnotemark[1]
+			(well less than the 12000 limit)  \\
+			Project Originator: & Iris Kutsyy                    \\
+			Supervisor:         & Dr Timothy Griffin                \\ 
+		\end{tabular}
+	}
+	\footnotetext[1]{This word count was computed
+		by \ttt{detex diss.tex | tr -cd '0-9A-Za-z $\tt\backslash$n' | wc -w}
+	}
+	\stepcounter{footnote}
+	
+	
+	\section*{Original Aims of the Project}
+	
+	\hl{TODO} To write a demonstration dissertation\footnote{A normal footnote without the
+		complication of being in a table.} using \LaTeX\ to save
+	student's time when writing their own dissertations. The dissertation
+	should illustrate how to use the more common \LaTeX\ constructs. It
+	should include pictures and diagrams to show how these can be
+	incorporated into the dissertation.  It should contain the entire
+	\LaTeX\ source of the dissertation and the makefile.  It should
+	explain how to construct an MSDOS disk of the dissertation in
+	Postscript format that can be used by the book shop for printing, and,
+	finally, it should have the prescribed layout and format of a diploma
+	dissertation.
+	
+	
+	\section*{Work Completed}
+	
+	\hl{TODO} All that has been completed appears in this dissertation.
+	
+	\section*{Special Difficulties}
+	
+	\hl{TODO} Learning how to incorporate encapulated postscript into a \LaTeX\
+	document on both Ubuntu Linux and OS X.
+	
+	\newpage
+	\section*{Declaration}
+	
+	I, Iris of Trinity College, being a candidate for Part II of the Computer
+	Science Tripos, hereby declare
+	that this dissertation and the work described in it are my own work,
+	unaided except as may be specified below, and that the dissertation
+	does not contain material that has already been used to any substantial
+	extent for a comparable purpose.
+	
+	\bigskip
+	\leftline{Signed Iris Kutsyy}
+	
+	\medskip
+	\leftline{Date \today}
+	
+	\tableofcontents
+	
+	\listoffigures
+	
+	\newpage
+	\frenchspacing
+	\section*{Acknowledgements}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% now for the chapters
+	
+	\pagestyle{headings}
+	
+	\chapter{Introduction}
+	
+	\section{Motivation}
+	This project aims to evaluate algorithms for analyzing graphs. Graphs (also known as networks) represent entities (nodes) and the connections between them (edges). Their generality lends them to a vast number of applications, and the analysis of large graphs has lead to interesting results in disease modeling, sociology, supply chain management, and biology \cite{disease}\cite{social}\cite{supply}\cite{bio}.
+	
+	One method of analyzing graphs is through the use of graph statistics. In contrast to \textit{metrics}, which are single numbers that describe the entire graph (such as average degree, connectivity, or diameter), \textit{statistics} assign a value to each node. One widely used and important statistic is betweenness centrality, which measures the importance of a node. While there are several other measures of importance, betweenness centrality is by far the most frequently used \cite{geisberger} \hl{TODO: mention applications?}. Further, algorithms for computing betweenness centrality can be trivially extended to compute several other centrality statistics, including closeness centrality and stress centrality \cite{brandes}.
+	
+	The betweenness centrality of a node $v$ is defined as the number of shortest paths from any node to any other node which pass through $v$. Formally, we can write: \begin{equation} \label{eq:1}
+		C(v) := \sum_{s\neq v \neq t \in V} \frac{\sigma(s,t|v)}{\sigma(s,t)}
+	\end{equation}
+	where $\sigma(s,t|v)$ is the number of shortest paths from $s$ to $t$ that pass through $v$, and $\sigma(s,t)$ is the total number of shortest paths from $s$ to $t$.
+	
+	Betweenness centrality was first defined in 1977 by Linton Freeman \cite{freeman}. Na\"{i}ve implementations can compute betweenness centrality for all nodes in $\mathcal{O}(n^3)$ time and $\mathcal{O}(n^2)$ space on a graph of $n$ nodes and $m$ edges by solving the all-pairs shortest paths problem. In 2001, Brandes improved this to $\mathcal{O}(nm)$ time and $\mathcal{O}(n+m)$ space for unweighted graphs, and $\mathcal{O}(nm+n^2\log(n))$ time and $\mathcal{O}(n+m)$ space for weighted graphs \cite{brandes}. No asymptotic improvement has been found since, and $\mathcal{O}(nm)$ time is still too high to compute betweenness centrality for large graphs, which may have millions of nodes and edges.
+	
+	Despite the lack of asymptotic improvements, there have been dozens of proposed algorithms to compute betweenness centrality faster or to use statistical methods to rapidly compute approximations to it. However, papers proposing new algorithms have just compared them to the algorithm by Brandes, and direct comparisons between them have been limited (see \textit{\nameref{sec:related_work}}). In this project, I will examine and evaluate five promising algorithms for computing betweenness centrality, detailed in \textit{\nameref{sec:algorithms}}.
+	
+	\section{Related Work}\label{sec:related_work}
+	
+	Despite the importance of efficient betweenness centrality algorithms, relatively little work has been done to compare the various existing algorithms.
+	
+	Of the examined algorithms, no author evaluates their algorithm in a comparable way. Bader et al. does not compare the performance of their algorithm to any other \cite{bader}. Borassi and Natale \cite{borassi} compare the performance of their algorithm to the \ttt{RK}, \ttt{ABRA-Aut}, and \ttt{ABRA-1.2} algorithms. Geisberger et al. \cite{geisberger} and \erdos et al. \cite{erdos} compare their algorithms with \ttt{Brandes}. Brandes \cite{brandes}, in turn, compares his algorithm to the now-obsolete \ttt{Floyd}-\ttt{Warshall} algorithm.
+	
+	There are two major studies which attempt to compare the performance of multiple betweenness centrality algorithms. Al-Ghamdi et al. \cite{comparebig} create a system for benchmarking betweenness centrality algorithms on a supercomputer. Their paper focuses primarily on the creation of the benchmark system and the process of benchmarking, and the resulting comparison is treated as a corollary. They compare the performance of the algorithms by Bader et al. and Geisberger et al., as well as others algorithms not discussed in this project.
+	
+	The other study, by Matta et al. \cite{comparesmall} compares a smaller number of algorithms by using them to solve two ``real world'' problems -- clustering a graph and iteratively removing the most important nodes. They run the tests on more typical hardware than Al-Ghamdi et al., but the implementations they test have been parallelized to different degrees. Matta et al. thus conclude that the algorithms which have parallelized implementations are the fastest. They evaluated the algorithms by Borassi and Natale, Brandes, and Geisberger et al., among others.
+	\section{Project Aims}
+	
+	In this project, I will create efficient implementations of five algorithms (see \nameref{sec:algorithms}) and a testing harness to evaluate their performance. I will instrument each of these algorithms to compute performance metrics (time per node, total time, memory usage, the number of graph reads). I will run each of these on large graphs using a high performance computing server and determine the accuracy and efficiency trade-offs each algorithm offers.
+	
+		\section{Overview of selected algorithms} 
+	\begin{table}[H]
+		\label{tab:algorithms}
+		\renewcommand\arraystretch{1.5}
+		\centering
+		\caption{Overview of Selected Algorithms} \todo{self calculated in appendix or footnotes}
+		\begin{tabularx}{\textwidth}{|c|X|}
+			\hline
+			\textbf{Algorithm} &
+			\textbf{Brief Overview} \\ 
+			\hline
+			
+			\ttt{Brandes} \cite{brandes} &
+			
+			Published in 2001, this was the first (and only) algorithm that improves upon the \bigO{n^3} \ttt{Floyd-Warshall} algorithm for computing Betweenness Centrality \\ 
+			\hline
+			
+			\ttt{BP2007} \cite{brandes2007} &
+			
+			This was a follow up to Brandes' 2001 paper, and was motivated by the infeasability of running \ttt{Brandes} on very large graphs. It was one of the first approximate algorithms for computing betweenness centrality. \\ 
+			\hline
+			
+			\specialcell[t]{\ttt{Geisberger}\\ \ttt{Linear}\cite{geisberger}} &
+			
+			Geisberger et al. found that the \ttt{BP2007} algorithm over-estimated the betweenness of neighbors to sampled nodes. \ttt{Geisberger Linear} was developed as a relatively straightforward modification to reduce this effect.\\
+			\hline
+			
+			\specialcell[t]{\ttt{Geisberger}\\ \ttt{Bisection}\cite{geisberger}} &
+			
+			This algorithm was originally developed for use on graphs where there are very few shortest paths between any two nodes. Although it has a very high worst case complexity (which occurs when there are many shortest paths, such as in a grid), it was found to perform well on many real world graphs. It more aggressively corrects for the over-estimation issue. \\ 
+			\hline
+			
+			\specialcell[t]{\ttt{Geisberger}\\ \ttt{Bisection}\\ \ttt{Sampling} \cite{geisberger}} &
+			
+			This algorithm addresses the worst-case performance issues with \ttt{Geisberger Bisection} by only considering one (randomly chosen) shortest path between any two nodes. It takes an additional parameter for the number of shortest path samples to take. \\ 
+			\hline
+			
+			Bader et al. \cite{bader} &
+			
+			All approximate algorithms considered so far use a fixed number of samples. Bader et al. created their algorithm to base the number of samples on the desired accuracy (represented by a parameter $\alpha)$. \\ 
+			\hline
+			
+			\ttt{KADABRA}\cite{borassi} &
+			
+			Borassi and Natale developed their adaptive algorithm to give tight accuracy guarantees, and use a different sampling strategy (directly sampling shortest paths) than most other algorithms. They develop a framework for using different statistical guarantees, although I only consider the version that guarantees absolute error of each centrality estimate. \\ 
+			\hline
+			
+			\ttt{Brandes Subset} \cite{erdos} &
+			
+			In some situations, such as \todo{which?}, it is more appropriate to consider only shortest paths between some subset $S\subseteq V$ of nodes. In this situation, \erdos et al. describe a simple modification to the \ttt{Brandes} algorithm. \\ 
+			\hline
+			
+			\ttt{Brandes++} \cite{erdos} &
+			
+			\erdos et al. use a divide-and-conquer paradigm to calculate subset betweenness centrality more efficiently than \ttt{Brandes Subset}.  \\ 
+			\hline
+		\end{tabularx}
+	\end{table}
+	
+	\begin{table}[H]
+		\label{tab:runtimes}
+		\centering
+		\caption{Worst Case Complexities} \todo{self calculated in appendix or footnotes}
+		\begin{tabularx}{\textwidth}{|c|c|X|}
+			\hline
+			\textbf{Algorithm} &
+			\textbf{Type} &
+			\textbf{Worst Case Complexity} \\ 
+			\hline
+			
+			\ttt{Brandes} \cite{brandes} &
+			Exact &
+			\bigO{n(m+n\log(n))} \\ 
+			\hline
+			
+			\ttt{BP2007} \cite{brandes2007} &
+			Approximate &
+			\bigO{s(m+n\log(n))} \\ 
+			\hline
+			
+			\specialcell[t]{\ttt{Geisberger}\\ \ttt{Linear}\cite{geisberger}} &
+			Aproximate &
+			\bigO{s(m+n\log(n))} \\
+			 \hline
+			 
+			\specialcell[t]{\ttt{Geisberger}\\ \ttt{Bisection}\cite{geisberger}} &
+			Approximate &
+			\bigO{2^n} \\ 
+			\hline
+			
+			\specialcell[t]{\ttt{Geisberger}\\ \ttt{Bisection}\\ \ttt{Sampling} \cite{geisberger}} &
+			Approximate &
+			\bigO{s(m+n\log(n)+nh)} \\ 
+			\hline
+			
+			Bader et al. \cite{bader} &
+			\specialcell[t]{Approximate\\ Adaptive} &
+			\bigO{n(m+n\log(n))} \\ 
+			\hline
+			
+			\ttt{KADABRA}\cite{borassi} &
+			\specialcell[t]{Approximate\\ Adaptive} &
+			\bigO{\frac{\log(n)-\log(\delta)}{\lambda^2}(m+n\log(n))} \\ 
+			\hline
+			
+			\ttt{Brandes Subset} \cite{erdos} &
+			\specialcell[t]{Exact\\ Subset} &
+			\bigO{p(m+n\log(n))} \\ 
+			\hline
+			
+			\ttt{Brandes++} \cite{erdos} &
+			\specialcell[t]{Exact\\ Subset} &
+			\bigO{p(m+\sum_{i=1}^{k}(|F_i(|F_i|+|V_i \setminus F_i|))) +\sum_{i=1}^{k}(|F_i||E_i|+|F_i||V_i|\log|V_i|)} \\ 
+			\hline
+		\end{tabularx}
+	\end{table}
+
+	\section{Reasons for selecting algorithms}
+	\begin{table}[H]
+		\label{tab:reasons}
+		
+		\renewcommand\arraystretch{1.5}
+
+		\centering
+		\caption{Reasons for Selecting Each Algorithm}
+		\begin{tabularx}{\textwidth}{|c|X|}
+			\hline
+			\textbf{Algorithm} &
+			\textbf{Reason} \\ 
+			\hline
+			
+			\ttt{Brandes} \cite{brandes} &
+			
+			This is the most commonly used algorithm for computing betweenness centrality\cite{erdos}, and remains the fastest known algorithm for exactly computing it.\\ 
+			\hline
+			
+			\ttt{BP2007} \cite{brandes2007} &
+			
+			This is the simplest algorithm for approximating betweenness centrality and is the base for the work by Geisberger et al. and Bader et al. \\ 
+			\hline
+			
+			\specialcell[t]{Geisberger et al.\cite{geisberger}\\ \ttt{Linear},\\ \ttt{Bisection},\\ \ttt{Bisection Sampling})} &
+			
+			\ttt{Geisberger Linear} was the algorithm selected by Matta et al.\cite{comparesmall} as the best to use if one does not need accuracy guarantees. Tests by Geisberger et al. indicate that their other two algorithms perform even better than \ttt{Geisberger Linear}\\
+			\hline
+			
+			
+			Bader et al. \cite{bader} &
+			
+			AlGhamdi et al. find that Bader is their fastest algorithm they test, and it uses the same ideas as \ttt{BP2007} with modifications to be adaptive. \\ 
+			\hline
+			
+			\ttt{KADABRA}\cite{borassi} &
+			
+			This algorithm hasn't been compared to other algorithms outside of experiments done by its authors, which place it as a substantial improvement to other adaptive algorithms of the same type, including the algorithm by Riondato and Kornaropoulos \cite{riondato}. This algorithm was one of the best that Matta et al. tested, making any faster algorithm one of the fastest known. \\ 
+			\hline
+			
+			\ttt{Brandes Subset} \cite{erdos} &
+			
+			I implement this algorithm primarily to compare to \ttt{Brandes++}.  \\ 
+			\hline
+			
+			\ttt{Brandes++} \cite{erdos} &
+			
+			\erdos et al. claim that this algorithm is up to 100 times faster than \ttt{Brandes Subset}, making it appealing to test. \\ 
+			\hline
+		\end{tabularx}
+		
+	\end{table}
+
+	\chapter{Preparation}
+	
+	\section{Selected Algorithms}\label{sec:algorithms}
+	
+	\subsection{Brandes}
+	
+	When betweenness centrality was first described by Freeman in 1977, there were no known approaches to calculate it other than the na\"ive approach of calculating all shortest paths and doing the summation in equation \ref{eq:1}. By using the \ttt{Floyd}-\ttt{Warshall} algorithm, it is possible to do this in $\mathcal{O}(n^3)$ time and $\mathcal{O}(n^2)$ space for a graph with $n$ nodes. 
+	
+	The first major improvement to this was described by Ulrik Brandes in his 2001 paper ``A Faster Algorithm for Betweenness Centrality'' \cite{brandes}. Brandes introduces \textit{pair-dependency}, representing the proportion of shortest paths between $s$ and $t$ that pass throubh $v$, defined as \begin{equation} \label{eq:pairdelta}
+		\delta(s,t|v) = \frac{\sigma(s,t|v)}{\sigma(s,t)}
+	\end{equation}
+	
+	Further, he defines the \textit{dependency} of $s$ on $v$ as \begin{equation}\label{eq:delta}
+		\delta(s|v) = \sum_{t \in V} \delta(s,t|V)
+	\end{equation}
+	
+	From equation \ref{eq:1}, can see that\begin{equation}\label{eq:deltacentrality}
+		C(v) = \sum_{s\neq v \neq t \in V} \frac{\sigma(s,t|v)}{\sigma(s,t)} =  \sum_{s\neq v \neq t \in V} \delta(s,t|V) = \sum_{s\neq v \in V} \delta(s|v)
+	\end{equation}
+	
+	The crucial observation in Brandes's paper is that $\delta(s|v)$ follows the following recursive relation: \begin{equation}\label{eq:brandesdelta}
+		\delta(s|v) = \sum_{w: v \in pred(w)} \frac{\sigma(s,v)}{\sigma(s,w)} \cdot (1+\delta(s|w))
+	\end{equation} 
+	Where $pred(v)$ is the set of immediate predecessors of $v$ on all shortest paths from s to any node $t$ that pass through $v$.
+	
+	With this, Brandes proved that we can calculate $\delta(s|v)$ in two phases. First, compute the solution to the single-source shortest paths (SSSP) problem for $s$. That is, compute all shortest paths from $s$ to any node $t$, storing $pred(v)$ for all $v \in V$ and a list of nodes in non-ascending order of distance from $s$. This can be done by running a breadth-first search (BFS) (for unweighted graphs) or Djikstra's algorithm (for weighted graphs) starting at $s$. While exploring the graph, add the immediate predecessor of each explored node $v$ to $pred(v)$ and add the node to a stack. This operation takes $\mathcal{O}(n)$ time for unweighted graphs, $\mathcal{O}(m+n\log(v))$ time for weighted graphs, and takes $\mathcal{O}(n+m)$ space.
+	
+	Additionally, augment the SSSP to also calculate $\sigma(s,v)$ by adding $\sigma(s,w)$ to $\sigma(s,v)$ when exploring the edge $(w,v)$.
+	
+	Next, accumulate dependencies by iteratively popping elements $w$ off of the stack and incrementing each $v \in pred(w)$ by $\frac{\sigma(s,v)}{\sigma(s,w)} \cdot (1+\delta(s|w))$. If all $\delta(s|v)$ are initialized to 0, then each $\delta$ will be the value prescribed by equation \ref{eq:brandesdelta} once the stack is empty. This step takes $\mathcal{O}(m)$ time and $\mathcal{O}(n+m)$ space.
+	
+	Finally, increment $C(v)$ by $\delta(s|v)$ for all $v \in V$. By iterating over all $s \in V$, this will compute $C(v)$ for all $v \in V$.
+	
+	Overall, this algorithm takes $\mathcal{O}(nm)$ time for unweighted graphs, $\mathcal{O}(nm+n^2 \log(n))$ time for weighted graphs, and $\mathcal{O}(n+m)$ space in either case.
+	
+	This algorithm, denoted here as \ttt{Brandes}, is the de facto standard algorithm uses to compute betweenness centrality. In fact, it has been proven that the complexity of computing the betweenness centrality of a single vertex is at least $\mathcal{O}(n^2)$ if the Strong Exponential Time Hypothesis holds \cite{brandescomplexity}. Therefore if the graph is sparse (that is, $m \sim n$), then the \ttt{Brandes} algorithm has optimal asymptotic performance, even for computing the centrality of a single node.
+	
+	\subsection{Brandes Subset} \label{sec:brandessubset}
+	In ``A Divide-and-Conquer Algorithm for Betweenness Centrality'' \cite{erdos} \erdos et al. describe a slightly different metric - target set betweenness centrality. It is defined as follows: For a set $S \subseteq V$ such that $2\leq |S| \leq |V|$, the target set betweenness centrality is defined as the betweenness centrality considering only shortest paths between nodes in the target set, so
+	\begin{equation}\label{eq:subsetcentrality}
+	C^S(v) = \sum_{s \neq v \neq t \in S} \frac{\sigma(s,t|v)}{\sigma(s,t)}.
+	\end{equation}
+	
+	Observe that if $S = V$ then $\forall v \in V.$ $C^S(v) = C(v)$. 
+	
+	Target set betweenness centrality can be calculated with simple modifications to the \ttt{Brandes} algorithm: SSSP is only run from each $s \in S$ and equation \ref{eq:brandesdelta} is replaced by 
+	\begin{equation} \label{eq:subsetdelta}
+	\delta(s|v) = \sum_{w: v \in pred(w)} \frac{\sigma(s,v)}{\sigma(s,w)} \cdot (I_{w\in S}+\delta(s|w)),
+	\end{equation}
+	where $I_{w \in S}$ is an indicator that is 1 if $w \in S$ and 0 otherwise.
+	
+	\subsection{Brandes++} \label{sec:brandes++}
+	
+	\subsubsection{Target Set Betweenness Centrality} \label{sec:targetset}
+	
+	
+	\erdos et al. aim to speed up \ttt{Brandes Subset} by using techniques similar to those used in network routing - splitting the graph into clusters, running a computations on each cluster, and aggregating the results.
+	
+	\subsubsection{The Algorithm}
+	
+	\erdos et al. detail a new algorithm for efficiently computing target set betweenness centrality. Their algorithm, which they call \ttt{Brandes++} consists of five main steps: clustering the graph, adjusting the clustering, constructing a `skeleton graph', calculating the betweenness centrality of nodes in the skeleton graph, and finally calculating the betweenness centrality of nodes not in the skeleton graph.
+	
+
+	I will describe each step individually.
+	\begin{enumerate}[label = \textbf{\arabic*.}]
+		\item \textbf{Clustering}
+		
+		First, we split the overall graph $G$ into a set of sub-graphs $\{G_1,G_2 \ldots G_k\}$ in a way that minimizes the number of edges between sub-graphs. \erdos et al. evaluate the performance of several graph partitioning algorithms and find that using the \ttt{METIS} software package results in the best better performance of \ttt{Brandes++}. \erdos et al. encounter the issue that the speed of the highly optimized \ttt{METIS} package can't be compared to their Python implementation of \ttt{Brandes++}. In order to keep the clustering algorithm's performance comparable to the other algorithms, I re-implement the paper that \ttt{METIS} is based off of. ``A fast and high quality multilevel scheme for partitioning irregular graphs''\cite{mlgp} describes the algorithm used by \ttt{METIS}, a multilevel graph partition algorithm we will refer to as \ttt{MLGP}.
+		
+		\hl{MLGP diagram}
+		\ttt{MLGP} recursively splits a graph into two partitions by using a three-step process. The algorithm aims to minimize the edge cut, which is the sum of the weights of edges between nodes in different partitions. 
+		\begin{enumerate}[label = \arabic*.]
+			\item First, the graph is `coarsened' a pre-determined $k$ times by combining nodes. Each node is combined with with the neighbor connected by the heaviest edge. This step reduces the size of the graph to approximately $\frac{|V|}{2^k}$, significantly speeding up the next step. Note that \ttt{MLGP} interprets weights as closeness while \ttt{Brandes++} interprets them as distance, so all weights must be inverted before running \ttt{MLGP}.
+			
+			\item Next, the graph is actually partitioned. Of the various partitioning algorithms tested by Karypis and Kumar, \ttt{GGGP} consistently achieves the best performance and results \cite{mlgp}. 
+			
+			\ttt{GGGP} begins by adding a random vertex to a set $T$. Then for each neighbor, \ttt{GGGP} calculates the change in the edge cut if that node were to be added to $T$. This is called the gain. GGGP then iteratively adds the neighbor with the lowest gain to $T$, and updates the gain of that node's neighbors. This iteration continues until half of the graph has been added. Then, we define the partitions as the two sets $T$ and $V \setminus T$.
+			
+			Since the starting node greatly affects the quality of the partition, \ttt{MLGP} runs \ttt{GGGP} multiple times and selects the partitioning with the lowest edge cut.
+			
+			\item Finally, the graph is uncoarsened and refined. For each of the $k$ times the graph was coarsened we do the following: 
+			\begin{enumerate}
+				\item Create a new graph where nodes that were merged in the $j$\textsuperscript{th} iteration are unmerged
+				
+				
+				\item Refine the graph: \ttt{MLGP} uses a modification of the \nohyphens{Kernighan–Lin} algorithm, where we calculate the gains (as described above) of all nodes with neighbors in the opposite partition. Then, two nodes in different partitions which would reduce the edge cut the most when swapped are swapped. This process is repeated until no progress has been made in a constant number of swaps or if there are no more nodes to be swapped. Then the iteration with the best edge-cut (computed adding the gains of executed swaps) is selected and output as the refined partition.
+				
+				This is made efficient by using a specialized data structure to store the gains and only selecting from all combinations of the best 3 nodes from each partition.
+			\end{enumerate}
+		\end{enumerate}
+		
+		\item \textbf{Adjustment of Partitions}
+		
+		
+		Step 4 requires that each target node $s \in S$ is a frontier node (has a neighbor in another partition). To satisfy this, we iterate over all $s \in S$ and if $s$ is not a frontier node, we remove it from its partition and create a new partition containing only $s$. If $S = V$ then every node will be a frontier node and step 3 will take the same time as \ttt{Brandes}, but if $S$ is small and the clustering is good, not every node will be a frontier node.
+		\item \textbf{Skeleton Graph}
+		
+		Once the graph has been partitioned, we construct a simplified representation of the graph, called \textsc{skeleton}, with the following properties:
+		
+		If $u$ and $v$ are frontier nodes in different partitions and the edge $(u,v) \in G$ with weight $w$, then $(u,v) \in $ \textsc{skeleton} with weight $w$. 
+		
+		If $u$ and $v$ are frontier nodes in the same partition $P$, and there exists a shortest path from $u$ to $v$ of length $l$ only going through non-frontier nodes (to avoid double-counting), then $(u,v) \in$ \textsc{skeleton} with weight $l$. We can calculate this by doing an SSSP from each frontier node $u$, skipping any $v \not \in P$ and not adding the neighbors of any other frontier node $v \in P$.
+		
+		We also associate a value $\theta$ with each edge, defined as the number of shortest paths that the edge represents. If $u$ and $v$ are in different partitions, then $\omega(u,v) = 1$. If $u$ and $v$ are in the same partition, we calculate $\theta$ when we run the SSSP to determine $l$.
+		
+		
+		\item \textbf{BRANDES\_SK}
+		
+		The target-set \ttt{Brandes} (described in \hyperref[sec:targetset]{Target Set Betweenness Centrality}) is run on \textsc{skeleton}, with a few modifications to account for the fact that paths between frontier nodes in the same partition can represent multiple paths (as given by $\theta$). The modifications are as follows.
+		
+		Rather than incrementing $\sigma(s,v)$ by $\sigma(s,w)$ when exploring the edge $(w,v)$, we instead increment it by $\sigma(s,w)\cdot \theta(w,v)$
+		
+		
+		We must also account for the multiple paths when accumulating delta, so use the following instead of equation \ref{eq:brandesdelta}:
+		
+		\begin{equation}\label{brandes_sk}
+			\delta(s|v) = \sum_{w} \sigma(v,w)\frac{\sigma(s,v)}{\sigma(s,w)}\cdot (I_{w\in S}+\delta(s|w))
+		\end{equation}
+		
+		Note that if $|\textsc{skeleton}| = |V|$ then this takes exactly as much time as \ttt{Brandes}, illustrating that we must have a target set $S$ such that $|S| < |V|$ for the algorithm to be effective, and we must have a good clustering that minimizes the number of frontier nodes.
+		
+		\item \textbf{CENTRALITY}
+		
+		Thus far, we have only computed the centrality of nodes in the skeleton graph (the frontier nodes). In order to compute the centralities of the remaining nodes, \erdos et al. describe one final algorithm, which they call the \ttt{centrality} algorithm.
+		
+		This algorithm essentially calculates equation \ref{brandes_sk} for each $s \in S$, $w \in F_i$, and $v \in V_i / F_i$, 
+		
+		\todo{frontier notation}\\
+		We already know $\delta(s,w)$ and $\sigma(s,w)$ for each $w \in F_i$,  and it is trivial to determine the value of $I_{w\in S}$.
+		
+		If the graph is undirected, then $\sigma(v,w) = \sigma(w,v)$. When constructing the skeleton graph, we run a modified version of \ttt{djikstra} from each $w \in F_i$, which can be simply modified to also compute $\sigma(w,v)$. If the graph is directed, then we can run the same modified algorithm to compute $\sigma(v,w)$.
+	
+		Next, we need to compute $\sigma(s,v)$. The paper doesn't actually describe how to compute this, but the code released by the authors \href{https://cs-people.bu.edu/edori/code.html#Betweenness_centrality}{here} implements this by doing the following:
+		
+		\todo{pseudocode}
+		\begin{enumerate}[label=\arabic*.]
+			\item For each $s \in S$:
+			\item For each partition $i$:
+			\item num\_paths = 0, distance=$\infty$
+			\item For each $v \in V_i \ F_i$:
+			\item For each $f \in F_i$:
+			\item If $d(s\rightarrow f \rightarrow v) < $ distance:
+			\item distance = $d(s\rightarrow f \rightarrow v)$, num\_paths = $\sigma(s,f)*\sigma(f,v)$
+			\item Else if $d(s\rightarrow f \rightarrow v) = $ distance:
+			\item num\_paths $+=\sigma(s,f)*\sigma(f,v)$
+		\end{enumerate}
+	
+		Finally, we need to apply equation \ref{brandes_sk} for each $w \in F_i$, $v \in V_i / F_i$ such that $d(s\rightarrow v \rightarrow f) = d (s \rightarrow f)$ (as calculated in \ttt{Brandes\_SK}).
+		
+		The paper by \erdos et al. claims this can be done in time
+		\begin{equation}
+			\mathcal{O}(\sum_{i=1}^k |F_i||V_i \ F_i|)
+		\end{equation}
+		
+		However, this process needs to be iterated over all $s \in S$, so this algorithm has the following running time (as confirmed by the authors after an email exchange).
+		
+		\begin{equation}
+			\mathcal{O}(\sum_{i=1}^k |S||F_i||V_i \ F_i|)
+		\end{equation}
+		
+		
+		
+	\end{enumerate}
+	\subsection*{Brandes and Pich(2007)}
+	While I didn't originally propose to implement the algorithm detailed by Brandes and Pich in 2007 \cite{brandes2007}, the algorithm by Geisberger et al. is a direct extension of it, making this algorithm useful both for comparing to other approximate algorithms and for understanding them.
+	
+	Their algorithm (here called \ttt{BP2007}) is a simple extension of the \ttt{Brandes} algorithm. Rather than iterate over every source $s \in V$, we compute $n \leq |V|$ samples by randomly selecting source nodes and doing the same computation as in \ttt{Brandes}, accumulating the centrality. At the end, we multiply each centrality by $\frac{|V|}{n}$ to extrapolate from these n samples.
+	
+	While Brandes and Pich test several different methods for randomly selecting sources, they find that simply selecting a random source with uniform probability $\frac{1}{|V|}$ results in the highest accuracy estimator.
+	
+	\subsection{Geisberger et al.} \label{sec:geisberger}
+	Geisberger et al. detail three different algorithms that use the same framework. First, they define a \textit{scaling function} $f \colon [0,1] \rightarrow [0,1]$. This scaling function is what varies between their three algorithms.
+	
+	 Similar to \ttt{BP2007}, all of their algorithms do a number of iterations defined by an input parameter. At each iteration, they pick a random node with uniform probability. Then, they select whether to do a forward or backward search with equal probability. Forward searches are done by running \ttt{SSSP} on the graph from the selected node, and backward searches are done by running it on the \textit{transpose} graph. The transpose graph is defined as $G = (V^T,E^T)$ where $V^T \coloneqq V$ and $E^T \coloneqq \{(u,v) \mid (v,u) \in E \}$. That is, all nodes are present and all edges are reversed.
+	
+	Then, for each path $P = \langle \overbrace{s \dots t}^Q \dots t\rangle$ that the \ttt{SSSP} finds, they define a \textit{scaled contribution}
+	\begin{equation}
+	\delta_P(v) \coloneqq \left\{
+	\begin{array}{ll}
+	\frac{f(l(Q)/l(P)}{\sigma(t,s)} & \text{if forward search}\\
+	\frac{1-f(l(Q)/l(P)}{\sigma(s,t)} & \text{if backward search}
+	\end{array}
+	\right.
+	\end{equation}
+	where $l(Q)$ is the total length of the path $Q$ (whether weighted or unweighted).
+	
+	Then \begin{equation}
+	\delta(v) \coloneqq \sum \sum \{\delta_P(v) \colon P \in SP_{st}(v) \},
+	\end{equation}
+		
+	where the outer sum iterates over $t$ for a forward search and over $s$ for a backward search. $2n\delta(v)$ is an unbiased estimator for the betweenness centrality, so can be treated the same way as $\delta(v|s)$ is in \ttt{BP2007}. Each of the three algorithms simply varies the scaling function, and describes how to compute it.
+
+	
+	\subsubsection{Linear Scaling}
+	The first algorithm described by Geisberger et al. uses $f(x) = x$ as the scaling function, which is why it is called the Linear Scaling algorithm.
+	
+	It is a simple modification to \ttt{BP2007}, and we can simply use the following instead of equation \ref{eq:brandesdelta}:
+	\begin{equation} \label{eq:lineardelta}
+		\delta(s|v) = \sum_{w: v \in pred(w)} \frac{\mu(s,v)}{\mu(s,w)} \cdot \frac{\sigma(s,v)}{\sigma(s,w)} \cdot (1+\delta(s|w))
+	\end{equation} \todo{dist or $\mu$} \todo{not right? see implementation section}
+	
+	Where $\mu(s,v)$ is the distance from $s$ to $v$.
+	
+	\subsubsection{Bisection Scaling}
+	The second algorithm uses \begin{equation}
+		f(x) = \begin{cases}
+			0 & \text{for } x \in [0,1/2)\\
+			1 & \text{for } x \in [1/2,1]
+		\end{cases}
+	\end{equation}
+	
+	Implementing this scaling function is somewhat more complicated - each node $t$ only contributes to the $\delta$ of nodes more than halfway on the path from $s$ to $t$. The way Gesiberger et al. address this is by modifying the SSSP algorithm to store successors rather than predecessors. Then, they do a depth-first traversal of this shortest-paths directed acyclic graph (DAG). When a node $v$is visited, we call \ttt{Decrement\_Half} (described below). Then, we continue the depth-first traversal and when all children have been explored, we can do $\delta(s|v) = \delta(s|v) + \frac{\sigma(s,v)}{\sigma(s,w)} \cdot (1+\delta(s|w))$ for all children $w \in succ(v)$.
+	
+	\ttt{Decrement\_Half} decrements the node halfway on the path from $s$ to $v$ by $\frac{1}{\sigma(s,v)}$ Since this is called once for each path going to $v$, this entirely eliminates the contribution of node $v$ on the node halfway from $s$ to $v$. To determine which node to decrement, we maintain a list representing the current path from $s$ to $v$. 
+	
+	If the graph is unweighted and the stack has $k$ elements, we decrement the node in position $i$, where\begin{equation}
+		i = \begin{cases}
+			\max(0,\floor*{(k-2)/2}) & \text{if forward search}\\
+			\floor*{(k-1)/2} & \text{else}
+			
+		\end{cases}
+	\end{equation}
+	
+	If the graph is weighted, we can store the distances calculated when solving the SSSP and do a binary search for the last node with distance less than $d(v)/2$ (if a forward search) or the first node with a distance greater than $d(v)/2$ (if a backward search).
+	
+	This algorithm visits each node $v$ $\sigma(s,v)$ times rather than once as the Linear Scaling algorithm does, but this performs well if most shortest paths are unique (there is only one way shortest way to reach a node), such as in road networks.
+	
+	\subsection{Bisection Sampling}
+	
+	To address the runtime problems of the Bisection Scaling algorithm, Geisberger et al. introduce the Bisection Sampling method. Here, they do the following procedure $k$ times for some constant $k$.
+	\begin{enumerate}
+		\item For each node $v$ in the shortest-paths DAG, randomly pick a parent $w$ with probability $\frac{\sigma(s,w)}{\sigma(s,v)}$.
+		\item For this new tree, run the accumulation step of Bisection Scaling
+		\item For each $v \in V \setminus \{s\}$, increment $C(v)$ by $\delta(s,v)/k$
+	\end{enumerate}
+	
+	This reduces the DAG to a tree, ensuring we visit each node only once. Since this is sensitive to the choice of parents, we run this sampling multiple times and average the results.
+	
+	\subsection{Bader et al.}
+	
+	This algorithm is a very simple modification of the approximate algorithm proposed by Brandes and Pich in 2007. Rather than stopping after a fixed number of iterations, this algorithm stops when the computed betweenness centrality of a chosen node reaches a threshold. The aim of the algorithm is to stop sampling once a particular node has a reasonably good estimate - thus guaranteeing that that node will be accurate.
+	
+	In order to do this, the algorithm takes two parameters, a node $v$ and a value $c$ (Bader et al. use a value of 5 in their experiments). Then \ttt{BP2007} is run until the accummulated centrality for $v$ is greater than $c \cdot |G|$ where $|G|$ is the size of the graph. Bader et al. also use a maximum cutoff (as in \ttt{BP2007}) of $|G|/20$, as described in their ``Methodology'' section.
+	
+	\subsection{KADABRA}
+	
+	\ttt{KADABRA} is a substantially more advanced adaptive algorithm, and uses a different technique to the algorithms seen so far. The core principle is that it repeatedly selects two nodes at random, then uses a balanced bidirectional version of \ttt{BFS} or \ttt{Djiksra's} to find (uniformly at random) one of the shortest paths between them. The centrality of every node on the path (except for the start and end) is then incremented by one, and this process continues until a particular end condition is met.
+	
+	Finally, the centralities are divided by the number of iterations, thus representing the probability of passing through a particular node when taking a shortest path between any two nodes. In order to keep consistent with the other algorithms, we multiply by $(|G|-1)(|G|-2)$ in order to de-normalize the centralities.
+	
+	\subsubsection{Balanced Search} \label{sec:balancedsearch}
+	In order to find a random shortest path between two nodes, \ttt{KADABRA} uses a balanced bidirectional breadth first search (\ttt{BB-BFS}). The paper only considers unweighted graphs, but suggests the algorithm could be adapted to weighted graphs by using \ttt{Djikstra's} instead of \ttt{BFS}.
+	
+	The bidirectional search performs both a \ttt{BFS} from the start node $s$ and a backwards \ttt{BFS} from the end node $t$. In order to do the backwards search (where edges are followed backwards), we can simply do a forward search on the transpose graph (as discussed in \nameref{sec:geisberger}).
+	
+	Once the two searches intersect, finding a midpoint of total distance $n$, the searches are continued until all midpoints of distance $n$ are found. A midpoint is then chosen at random, weighted proportionally to the number of shortest paths that pass through it. Finally, a path is chosen by backtracking to $s$ and $t$, where at each step a predecessor on the path back to $s$ is chosen at random, with the same weighting as the midpoint, and likewise for the path back to $t$. For this purpose, the \ttt{BFS} must track the predecessors of each node, as well as the number of paths that pass through it, just as we did in the \ttt{BFS} component of \ttt{Brandes}.
+	
+	\subsubsection{End Condition}
+	Borassi and Natale spend the majority of their paper determining an end condition which guarantees that all centralities will have a maximum error of $\lambda$, with probability $1-\frac{\delta}{2}$. They also define an end condition for determining the $k$ nodes with highest centralities, but I do not consider that.
+	
+	First, Borassi and Natale define a maximum termination condition \begin{equation}
+		\omega = \frac{c}{\lambda^2}(\floor{\log_2(\text{VD-2})}+1+\log(\frac{2}{\delta}))
+	\end{equation}
+	where $c$ is described in \cite{riondato} and estimated to be 0.5 by L\"offler and Phillips in \cite{loffler}. VD is an upper bound on the vertex diameter, and can be calculated as such: for each strongly connected component, do a search (\ttt{BFS} or \ttt{Djikstra's}) on both the graph and its transpose, adding together the distance of the furthest (distinct) nodes. The maximum value across all strongly connected components is likely to be an upper bound on the vertex diameter.
+	
+	$\omega$ is the first of two stopping conditions, the second requires an array $\delta(v)$ computed by the function \ttt{computeDelta}
+	
+	\todo{formatting}
+	\paragraph{computeDelta}
+	
+	First, perform a number (Borassi and Natale suggest $\frac{\omega}{100})$ of samples to compute preliminary betweennesses $\tilde{\bm{b}}(v)$ (which must then be divided by $\frac{\omega}{100})$).
+	
+	Then, perform a binary search t find C such that \begin{equation}
+		\sum_{v \in V} 2 \cdot \exp(-\frac{C \lambda^2}{2 \tilde{\bm{b}}(v) \omega}) = \frac{\delta}{2} - \epsilon \delta
+	\end{equation}
+	for some small $\epsilon$.
+	
+	This binary search can be performed with a min of $0$ and a max of $\frac{1}{\lambda^2} \log(4 \cdot|G|\cdot(1-\epsilon)/\delta)$
+	
+	Finally, for all $v \in V$ assign $\delta(v) = \exp(-\frac{C \lambda^2}{2 \tilde{\bm{b}}(v) \omega}) + \frac{\epsilon \delta}{2 \cdot |G|}$
+	
+	\paragraph{haveToStop}	
+	
+	On each iteration of the loop, we only continue if \ttt{haveToStop} returns false. \ttt{haveToStop} returns true only when two conditions are met:\todo{space after dots, general neatness}
+	\begin{enumerate} 
+		\item $\exists v \in V. \bm{b}(v) > 0$
+		\item $\forall v \in V. \frac{1}{\tau} \log \frac{1}{\delta}(\frac{1}{3}-\frac{\omega}{\tau}+\sqrt{(\frac{1}{3}-\frac{\omega}{\tau})^2+\frac{2\cdot \bm{b}(v) \omega}{\log \frac{1}{\delta}}})< \lambda$
+	\end{enumerate}
+
+	where $\bm{b}(v)$ is the current estimate of the betweenness centrality of $v$, and $\tau$ is the number of iterations done so far.
+	
+\section{Requirements Analysis} \todo{Future or past tense?}
+	\subsection{Stakeholders}
+	The primary stakeholder of the Part II project is myself - I need the code to meet the goals outlined in my proposal and here, and to deliver results that can be used in my dissertation. Additionally, the assessors are stakeholders as they may want to review the code. \todo{supervisor as stakeholder?} Finally, as my project evaluates research, both the wider research community and developers who may want to implement betweenness centrality algorithms are also stakeholders.
+	\subsection{Core Requirements}
+	My code must meet the following core requirements:
+	\begin{enumerate}
+		\item To be able to run an arbitrary selected algorithm on an arbitrary graph
+		\item To handle both weighted and unweighted graphs
+		\item To parse graphs from common file types (\ttt{.edges}, \ttt{.mtx}, \ttt{.csv}, or \ttt{.txt} containing an adjacency list)
+		\item To output calculated betweenness centralities for each node
+		\item To compute accuracy metrics from the calculated centralities
+		\item To output useful performance statistics \todo{list them here?}
+		\item To optionally accept or generate a subset to use with the \ttt{Brandes Subset} or \ttt{Brandes++} algorithms
+		\item It must be possible to verify to high certainty the correctness of the code. \todo{remove?}
+		\item For the source code to be accessible by assessors, researchers, and the general public. \todo{supervisor?}
+	\end{enumerate}
+	I do \textit{not} consider pseudographs - a graph where a node $u$ can have multiple edges to another node $v$, nor graphs with cycles that have a non-positive cost.
+	\subsection{Distribution}
+	As I originally planned to run my code on a high performance server, the code needs to be portable to various Linux systems, and must be runnable without root access. Additionally, as the implementations may be of interest to the wider community, it should straightforward for someone with technical aptitude to run the code on their own system, potentially after changing the source code.
+	\subsection{Effectiveness Requirements}
+	Since the project evaluates the speed of betweenness centrality algorithms, it is important for each implementation to be nearly as efficient as a known fast implementation. Due to differences between languages, compiler configurations and other factors, we simply define this to be the same order of magnitude.
+	
+	What is more important is that the implementations are comparable to each other - if there is a direct comparison between two algorithms, my algorithms should have similar results. \todo{is this important/useful?}
+	
+	However, as parallel versions of most of the selected algorithms aren't available, and converting algorithms to parallel algorithms is beyond the scope of this dissertation, I will only consider performance when restricted to a single thread.
+	\subsection{Utilization Environments}
+	My project may be run in the following ways
+	\begin{itemize}
+		\item To evaluate the accuracy and performance of a single algorithm
+		\item To evaluate the accuracy and performance of a series of algorithms
+		\item To calculate the betweenness centrality for a particular graph (Which may be weighted or unweighted)
+		\item To use my implementation of an algorithm as part of a larger system
+	\end{itemize}	
+	\subsection{Necessary Components} \todo{Chart?}
+	In order to meet the core requirements and utilization environments, the system should have the following components:
+	\begin{itemize}
+		\item A method for parsing graphs from files
+		\item An internal graph representation
+		\item Efficient implementations of all chosen algorithms
+		\item A handler to feed one or more graphs to one or more algorithms
+		\item A set of tests to validate correctness
+		\item A method for returning calculated centrality and performance metrics
+		\item A method for deriving accuracy statistics from the calculated centrality
+	\end{itemize}
+
+
+\section{Engineering Practices}
+	\subsection{Waterfall}
+	At the time of writing the project proposal, I chose to use the Waterfall model of software development. My project is a large piece of software development with a well defined start and end points, verifiable requirements, and little to no maintenance after delivery. These make it a very good fit for the Waterfall model. Additionally, I can estimate the time required to develop each component (primarily, each algorithm), meaning the timeline I set out in my project proposal was accurate and useful, a key requirement for the waterfall model.
+	
+	I considered using the Agile model since the testing during development is an attractive element, but my project has little scope for changing requirements. Additionally, I am the primary stakeholder, so a distinct feedback cycle is less important. Further, my project is easily broken down into separate components (algorithms) and would be difficult to break into iterative development cycle.
+	
+	However, I did decide to adapt the testing regime from the Agile model and tested each component after implementing it, rather than solely testing at the end \todo{do I?}.
+	
+	\subsection{Verification}
+			For the purposes of this dissertation, I will define \textit{verification} as the use of tests to check that my implementations are correct and efficient. This is distinct from \textit{experiments}, in which I use my implementations to compare the speed and accuracy of different algorithms.
+			
+			I will verify my code as I write it, one algorithm at a time. I will first verify the correctness of my implementations by manually stepping through each algorithm implementation on a small graph. I will also develop a testing package, containing both automated and semi-automated (which output an easy-to-verify description of the state) tests to verify the correctness of my implementations. Further, this testing package will include tests of performance.
+			
+			Since many of the algorithms are approximate, I will verify that their accuracy is similar to that which is described by the authors.
+			
+			I will write tests to verify the following components:
+			\begin{enumerate}
+				\item Graph representations
+				\item Complex data structures (i.e. priority heaps)
+				\item Experimentation harness \todo{keep?}
+				\item Each algorithm
+				\item Experiment data analysis
+			\end{enumerate} 
+		\subsection{Performance}
+			My project concerns determining the relative performance of complex graph algorithms. To ensure that my results are accurate, I need every implementation to be an efficient implementation of the algorithm. Since there are large performance differences between different languages and tools, I will define an ``efficient'' implementation as one that is less than 10x slower than a known efficient implementation.
+			
+			Since this is a relatively loose bound, I will also compare the relative performance of algorithms, where the expected relative performance is known.
+			\subsubsection{Techniques to Ensure Performance}
+				In order to ensure that performance is comparable between algorithms, I will use the following techniques:
+				\begin{itemize}
+					\item I will re-use functions wherever possible, and make minimal modifications where exact re-use isn't possible. (For example, I can re-use my implementation of Djikstra's algorithm many times, though some algorithms may require a slightly modified version).
+					\item I will re-use data structures wherever I have a choice of which to use (i.e. priority heaps).
+					\item I will test multiple data structures where I have a choice and select the one that results in the best overall performance.
+					\item I will use similar constructions between different algorithms - re-using functions where possible and using the same data structures and paradigms across different functions.
+					\item I will use the efficient graph representation for all algorithms
+				\end{itemize}
+
+	\subsubsection{Data Validation}
+	My project has very few requirements for the data I use. It must represent a valid graph with a maximum of one edge between any two nodes, and if it is weighted then all weights must be positive. In order for my code to parse the graph, all nodes must have integers associated with them. Graphs may be disconnected, but connectivity isn't a requirement for any of the chosen algorithms. Further, disconnected graphs appear in real-life scenarios so testing performance on them is useful.
+	
+	In order to ensure these properties, the graph parser detects and warns about graphs with more than one edge between nodes or non-positive weights, I have written a python script to convert any node labels into integer values.
+\section{Tools}
+	\subsection{Languages} \todo{highlight choice}
+	I will highlight potential choices for language below.
+	\begin{table}[H]
+		\label{tab:languages}
+		\centering
+		
+		\caption{Language options}
+		\begin{tabularx}{\linewidth}{|c|X|X|}
+			\hline 
+			\textbf{Language} & \textbf{Pros} & \textbf{Cons} \\ 
+			\hline 
+			C & \begin{itemize}[leftmargin=5mm] \setlength\itemsep{-0.2em}
+				\item Very fast
+				\item Somewhat Portable
+			\end{itemize} &
+			\begin{itemize}[leftmargin=5mm] \setlength\itemsep{-0.2em}
+				\item Difficult to debug
+				\item Not object-oriented
+				\item Comparatively low-level
+			\end{itemize} \\ 
+			\hline 
+			\CC & \begin{itemize}[leftmargin=5mm] \setlength\itemsep{-0.2em}
+				\item Very fast
+				\item Somewhat Portable
+				\item Object-oriented
+				\item Extensive library support
+			\end{itemize} &
+			\begin{itemize}[leftmargin=5mm] \setlength\itemsep{-0.2em}
+				\item Difficult to debug
+			\end{itemize} \\ 
+			\hline 
+			\specialcell[t]{Java\\ \textbf{(chosen)}} & \begin{itemize}[leftmargin=5mm] \setlength\itemsep{-0.2em}
+				\item Fairly fast
+				\item Highly portable (no re-compiling necessary)
+				\item Object-oriented
+				\item High-level libraries
+				\item I have a lot of experience using it
+				\item Easy debugging
+				\item Some library support
+			\end{itemize} &
+			\begin{itemize}[leftmargin=5mm] \setlength\itemsep{-0.2em}
+				\item Slightly slower than C and \CC
+				\item Performance issues with auto-boxing
+			\end{itemize} \\ 
+			\hline 
+			Python & \begin{itemize}[leftmargin=5mm] \setlength\itemsep{-0.2em}
+				\item Object-oriented
+				\item High level
+				\item Flexible
+				\item Fairly portable
+				\item Extensive library support
+			\end{itemize} &
+			\begin{itemize}[leftmargin=5mm] \setlength\itemsep{-0.2em}
+				\item Vast performance disparity between native and library operations (can make ensuring comparability between algorithms difficult)
+				\item Large projects result in many dependencies to install
+				\item Making readable/reusable code requires special effort (typing hints etc.)
+			\end{itemize} \\ 
+			\hline 
+		\end{tabularx}
+	\end{table}
+
+	I chose Java in the end because it is highly portable, (a distribution requirement), it's easy to write readable code in (a core requirement), and it is straightforward to write efficient code in (a core requirement). Additionally, because of my experience using Java, its high level nature, and the ease of debugging, using Java will speed up the development time and allow me to ensure I can finish my project on time, potentially with extensions.
+
+	\subsection{Datasets}
+	I have chosen to use the following graphs for testing algorithms.
+	\begin{table}[H]
+		\label{tab:datasets}
+		
+		
+		\centering
+		\caption{Datasets}
+		\begin{tabularx}{\linewidth}{|c|c|c|X|}
+			\hline 
+			\textbf{Graph} & \textbf{Domain} & \textbf{Properties} & \textbf{Description} \\ 
+			\hline 
+			\ttt{4932.protein.links} \cite{string} & Biology & \specialcell[t]{6,574 Nodes\\1,845,966 Edges\\Undirected\\Weighted} & Protein relations of Saccharomyces Cerevisiae (Brewer's Yeast). Nodes are proteins and edges are association (based on direct and indirect interaction) between nodes. The original dataset uses high scores to represent closely associated proteins, so I have inverted all weights such that short path mean close relations.\\
+
+			\hline 
+			\ttt{wiki-vote} \cite{snap} & Social & \specialcell[t]{7,115 Nodes\\103,689 Edges\\Directed\\Unweighted} & Votes on requests by Wikipedia users to become administrators as of January 3 2008. Users vote on these requests. Nodes are users, and edges are votes.\\
+			\hline 
+			\ttt{as-caida20071105} \cite{repository} & Technology & \specialcell[t]{26,475 Nodes\\106,762 Edges\\Undirected\\Unweighted} & Network of autonomous systems (AS), a component of the internet, collected by the CAIDA project in 2007. Nodes are AS's and edges are communication.\\
+			\hline 
+			\ttt{slashdot0811} \cite{snap} & Social & \specialcell[t]{77,360 Nodes\\905,468 Edges\\Directed\\Unweighted} & Slashdot is a website containing user-submitted news. This is a network of users that have tagged others as friends or foes. Nodes are users and edges are tags (there is no distinction between friend and foe tags) \\
+			\hline 
+			\ttt{com-amazon} \cite{snap} & Business & \specialcell[t]{334,863 Nodes\\ 925,872 Edges\\Undirected\\Unweighted} & This is a network of amazon products. If two products are frequently purchased together, there is an edge between them. Nodes are products and edges are frequent co-purchasing.\\
+			
+			\hline 
+		\end{tabularx}
+	\end{table}
+	\subsection{Version Control}
+\section{Starting Point}
+The literature available for each algorithm is dramatically different, so I will discuss them individually, as well as the starting point for the overall testing framework.
+
+\subsection{Brandes}
+	\ttt{Brandes} is a very common algorithm, and there are dozens of implementations easily available. In fact, I have previously implemented it as part of the first year course `Machine Learning and Real World Data'. That implementation was very slow, taking 43 seconds to run on a graph of 4000 nodes, but I did start with an intuition for how to think about \ttt{Brandes}.
+
+\subsection{Brandes++ and Brandes Subset}
+
+	Dora \erdos has published the implementations of \ttt{Brandes\_Subset} and \ttt{Brandes++} used in \cite{erdos}, which can be found \href{https://cs-people.bu.edu/edori/code.html#Betweenness_centrality}{here}. The implementation is written using native python loops, and while it is an invaluable resource document, would be extremely difficult to transcribe into efficient Java code.
+	
+	The published implementation of \ttt{Brandes++} does \textit{not} include an implementation of the \ttt{METIS} algorithm, as Erdos et al. used a standalone software package. The sourcecode for the standalone \ttt{METIS} package is published \href{https://github.com/KarypisLab/METIS}{here}, and is high-performance parallelized \CC code. 
+
+\subsection{Brandes and Pich 2007}
+
+Implementations of \ttt{BP2007} are widely available, such as the version published by AlGhamdi et al. \cite{comparebig} \href{https://github.com/ecrc/BeBeCA/blob/master/Source_Code/src/_bc.cc}{here} as ``RAND1''. This implementation is written in high-performance \CC code.
+
+\subsection{Geisberger et al.}
+AlGhamdi et al. \cite{comparebig} tested one of the algorithms described by Geisberger et al., referring to it as RAND2. They don't specify which one they use, but their published source code (found \href{https://github.com/ecrc/BeBeCA}{here}), calls \ttt{NetworKit::ApproxBetweenness2} when RAND2 is specified as the algorithm \cite{bebecacode}. NetworKit is open source and can be found \href{https://github.com/networkit/networkit}{here} \todo{netorkit}. 
+
+The paper by AlGhamdi et al. was published June 2017, as was the github repository containing their code. The latest version of NetworKit at the time was version 4.2, published December 13, 2016 \cite{networkit}. This release can be found in commit 8a2d77448e18a29a487eb9a2e642467733635f24. Here, \ttt{networkit/cpp/centrality/ApproxBetweenness2.cpp} runs the Linear Scaling algorithm described by Geisberger et al. It is written in \CC.
+
+I have not been able to find any implementation of the other algorithms described in \cite{geisberger}, but Robert Geisberger's original student thesis (which can be found \href{https://www.yumpu.com/en/document/view/16871703/better-approximation-of-betweenness-centrality-computer-science}{here}) gives detailed information that is sometimes missing in the published paper. For example, where the published paper says to decrement a node, the original thesis specifies to decrement by $\frac{1}{\sigma(w)}$.
+
+\subsection{Bader et al.}
+
+AlGhamdi et al. \cite{comparebig} have published a version of the algorithm by Bader et al. as ``GSIZE'' \href{https://github.com/ecrc/BeBeCA/blob/master/Source_Code/src/_bc.cc}{here}. It is high-performance \CC code.
+
+\subsection{KADABRA}
+
+Borassi and Natale have published an implementation of their \ttt{KADABRA} algorithm \href{https://github.com/natema/kadabra}{here}, which was written in \CC.
+
+\subsection{A Benchmark for Betweenness Centrality Approximation Algorithms on Large Graphs}
+
+AlGhamdi et al. \cite{comparebig} compared the performance of \ttt{Brandes}, \ttt{Geisberger Linear}, \ttt{BP2007}, and \ttt{Bader}. They use the NetworKit version of \ttt{Geisberger Linear}, but their own version of the others. They only measured total runtime and several error statistics, and only did a single run of each algorithm, with a single set of parameters.
+
+Their code, which has been optimized for use on a supercomputer, was published \href{https://github.com/ecrc/BeBeCA/blob/master/Source_Code}{here}.
+
+\subsection{Comparing the speed and accuracy of approaches to betweenness centrality approximation}
+
+Matta et al. compare \ttt{BP2007}, \ttt{Geisberger Linear}, \ttt{Bader}, and \ttt{KADABRA}. In all cases, they use published implementations of these algorithms, and have not published their own code.
+
+\todo{How to discuss best practices?}
+	
+\chapter{Implementation}
+	
+	\section{Completed Code}
+	My implementation consists of 5 main components - a framework that includes graph representations and necessary data structures, implementations of the 7 algorithms, harnesses evaluating the algorithms, tools to extract useful statistics from the evaluation outputs, and a testing suite with unit and integration tests.
+		\subsection{Framework}
+		\subsubsection{Graph Representation}
+		I evaluated four different graph representations and implemented three of them.
+		\begin{itemize}
+			\item \textbf{Adjacency Matrix:} One possibility is to store the graph as an $n$ by $n$ matrix where an entry $x_ij$ is nonzero if there is an edge from $i$ to $j$. This possibility was quickly discarded because graphs are often sparse - \ttt{com-amazon} has just under 1 million edges, but the matrix representation would need to have 100 billion entries.
+			
+			\item \textbf{Edge List:} Another possibility was to store a list of all edges in the graph. However, this leads to extremely poor performance for finding the neighbors of a node and was only implemented as an exercise in thinking about graphs.
+			
+			\item \textbf{Adjacency List:} This option stores a list of nodes, and associates with each node a list of edges from that node. This allows for relatively breadth first search and I actually implemented two different versions of it, one using complex Java objects and another simply using lists of integers.
+			
+			\item \textbf{Array Representation:} The final option is to use the representation described by Zardosht Kasheff in \cite{metisparallel}. This consists of two arrays. The first (edges[]) is a list of the endpoints ($j$ in the edge $i\rightarrow j$) of all edges, arranged in order by the start node of the edge. The second (nodeList[]) is used to index into edges[], such that the edges from node $n$ lie in edges[] between nodeList[$2n$] and nodeList[$2n+1$]. This does require the nodes to be numbered $0,1,2 \dots n$, but this can be achieved simply by re-labeling nodes. 
+			\todo{figure in notes}
+		\end{itemize}
+		I tested the two adjacency list implementations as well as my array representation implementation by running the \ttt{Brandes} algorithm on \ttt{wiki-vote} with each of the three. I found the array representation to offer much higher performance, which is likely due to the simplicity and cache performance of simply iterating over an array. \todo{elaborate?}
+		
+		If a graph is undirected, this is represented simply by having both the edges $i\rightarrow j$ and $j \rightarrow i$ in the graph.
+		
+		\subsubsection{Heaps} \label{sec:heaps}
+		I tested thee different priority queue data structures, the Binary Heap, the Fibonacci Heap, and the Rank Pair Heap \cite{fredman}. I implemented the binary and rank pair heap, and adapted an implementation of the Fibonacci heap by Keith Schwarz \cite{schwarz}. I also tested the Java \ttt{PriorityQueue} and JGraphT \ttt{JRankPairHeap} classes by running \ttt{Brandes} with each. I also created a testing harness (\ttt{HeapTester}) to exercise common operations on these heaps, the results of which are below. I used my binary heap implementation due to it being by far the fastest in both tests. It is important to note that Java's \ttt{PriorityQueue} is only extremely slow at doing decreaseKey() operations.
+		
+		\begin{table}[h]
+			\label{tab:heaps}
+			\centering
+			\caption{Time to Complete Heap Tests for 100,000 elements}
+			\begin{tabular}{|c|c|}
+				\hline 
+				\textbf{Implementation} & \textbf{Time} \\ 
+				\hline 
+				Binary Heap & 0.164s\\
+				\hline
+				Fibonacci Heap & 0.374s\\
+				\hline
+				Rank Pair Heap & 0.341s\\
+				\hline
+				JGraphT \ttt{RankPairingHeap}& 0.224s\\
+				\hline
+				Java \ttt{PriorityQueue} & 9.086s\\
+				\hline 
+			\end{tabular}
+		\end{table}
+		
+		\begin{table}[h]
+			\label{tab:heaps2}
+			\centering
+			\caption{Time to Complete Heap Tests for 10,000,000 elements}
+			\begin{tabular}{|c|c|}
+				\hline 
+				\textbf{Implementation} & \textbf{Time} \\ 
+				\hline 
+				Binary Heap & 25.71s\\
+				\hline
+				Fibonacci Heap & 50.24s\\
+				\hline
+				Rank Pair Heap & 57.44s\\
+				\hline
+				JGraphT \ttt{RankPairingHeap}& 56.91s\\
+				\hline
+				Java \ttt{PriorityQueue} & $>3000$s\\
+				\hline 
+			\end{tabular}
+		\end{table}
+		\subsection{Algorithms}
+			Although each algorithm was implemented following the paper describing them, each required a series of design decisions that I will now discuss. All algorithms use the Array Representation of a graph and return a Statistics object, which contains information about the execution. However, for reasons discussed later, this does not actually contain any information other than the centralities of each node.
+			
+			All of the implemented algorithms work for both directed and undirected graphs, since undirected graphs are represented simply as directed ones with extra nodes. Further, they also work for both weighted and unweighted graphs, choosing at runtime whether to use \ttt{Djikstra's} or \ttt{BFS} to traverse the graph.
+			
+			As per the definition of the Array Representation of the graph, I assume that all nodes in the graph are integers $1\dots(|G|-1)$. As such, I use arrays to represent mapping of nodes to values, such as the \ttt{centralities[]} array, which assigns a centrality to each node.
+			
+			I also make extensive use of the \ttt{Trove} package \todo{cite}, which contains implementations of many standard data structures. I use these because the Java standard libraries operate only on Objects, and wrap primitives inside an object. If objects are frequently being added and removed from these structures (such as a queue for \ttt{BFS} or \ttt{Djikstra}), this creates pressure on the garbage collector, drastically slowing down computations. In contrast, Trove implementations directly use primitives without wrapping them in an Object.
+			
+			\subsubsection{Brandes}
+			
+				The \ttt{Brandes} algorithm is very well defined, leaving few design choices. Following a series of tests (See \nameref{sec:heaps}), I use my implementation of a binary heap as the priority queue used by \ttt{Djikstra's}.
+				
+				The subset version of Brandes as defined in \cite{erdos} takes a set of target nodes as a parameter, and simply implements the two minor changes described in \nameref{sec:brandessubset}. As with all algorithms, it ensures that all nodes have a default centrality of 0, even if they are never visited.
+				
+			\subsubsection{Brandes++}
+			
+				In contrast to \ttt{Brandes}, \ttt{Brandes++} leaves a huge amount up to the designer. At any place where there are multiple options for sub-algorithms, I use the one the authors test to have the consistently best performance, resulting in the series of algorithms described in \nameref{sec:brandes++}.
+				
+				I vary the number of partitions in my tests \todo{write which values?}, but leave the other parameters for \ttt{METIS} unchanged - a coarsening level proportional to $\log(|G|)$ to ensure that the size of the partitioned graph grows logarithmically with the size of $G$. I use 5 iterations of \ttt{GGGP} and a partition stop condition of 100, as recommended by \todo{author} in \todo{cite}. Since \ttt{METIS} interprets large weights as closely related nodes, and \ttt{Djikstra} uses weights as distance, I invert all weights before feeding the graph to \ttt{METIS}.
+				
+				The algorithm presented by \erdos et al. only works for undirected graphs, so for directed graphs I also have to run \ttt{Djikstra} from all non-frontier nodes to all frontiers in each partition.
+				
+				This was by far the most complicated algorithm to implement, requiring over 1,000 lines of code. \todo{use cloc for accuracy}
+				
+				\todo{discuss some of the performance issues here or in experimental results?}
+			
+			\subsubsection{Brandes and Pich 2007}
+				This algorithm is a near-identical copy of \ttt{Brandes} with very minor modifications. While Brandes and Pich test many different sampling strategies, all result in high runtime or error for some subclass of graphs \todo{graphs}. They conclude that uniform random sampling is the most robust sampling strategy, and is nearly the most accurate for all cases they test. My implementation follows this recommendation.
+				
+				In my tests, I test with $25,50,100,200,400,800,1600,$ and $3200$ sampled nodes to determine how accuracy varies with the number of samples
+				
+			\subsubsection{Geisberger et al.}
+			
+				\paragraph{Geisberger Linear}
+					I use the modification discussed in the text of section \textbf{3.2} of \cite{geisberger}, which is to do \begin{equation} \label{eq:geisbergerlineardelta}
+							\delta(s|v) = \sum_{w: v \in pred(w)} \frac{\sigma(s,v)}{\sigma(s,w)} \cdot (\frac{1}{\mu(s,w)}+\delta(s|w)),
+					\end{equation}
+					
+					rather than equation \ref{eq:brandesdelta}, and 
+					
+					\begin{equation}
+					C(v) =  \sum_{s\neq v \in V} \delta(s|v) \cdot \mu(s,v)
+					\end{equation}
+					
+					rather than equation \ref{eq:deltacentrality}. Here, $\mu(s,v)$ is the shortest path distance (as calculated in \ttt{SSSP}) from $s$ to $v$.
+					
+					In order to do backwards searches (as with all Geisberger versions), I construct the transpose graph as detailed in \ref{sec:balancedsearch} and run \ttt{SSSP} on that.
+					
+					\paragraph{Geisberger Bisection}
+					
+					My implementation uses an iterative depth-first traversal of the shortest-path tree. As stated in Geisberger's thesis, when we visit a node $w$ on the way back down the traversal, we set $\delta(s|v) \leftarrow \delta(s|v) - \frac{1}{\sigma(s,w)}$. If the graph is unweighted, $v$ is simply the node halfway through the DFS stack. If the graph is weighted, I perform a binary search to find the node just under halfway from $s$ to $w$.
+					
+					There are minor differences in rounding for iterations of the backwards search.
+					
+					\paragraph{Geisberger Bisection Sampling}
+			
+					This is a straightforward modification of  \ttt{Geisberger Bisection} with no design choice.
+					
+			\subsubsection{Bader et al.}
+				This is another simple modification to \ttt{Brandes}, and in my tests I try different methods of choosing the input node, and different values of $\alpha$. I use the same cutoff of $\frac{|G|}{20}$ that Bader et al. describe in their methodology section, as otherwise there is no guarantee of termination. I note in the Statistics object whether the cutoff was used for the termination condition.
+								
+			
+		\subsection{Verification} \todo{Name consistency of this}
+		I designed my project for evaluation from the beginning - I started by creating the individual components (graphs, heaps, file parsing) required for my implementation. I was able to test all of these individually before beginning to implement any algorithms. Most of these unit tests can be found in the \ttt{testing} package, though some were conducted using the testing harnesses found in \ttt{framework/mains} and have since been overwritten.
+		
+		I tested in three main ways. Where ground truth implementations (such as the Java priority queue or \ttt{Brandes} algorithm) existed, I created tests to run both on the same dataset and verify that the results are identical. Examples can be found in \ttt{framework/mains/Harness.java} and \ttt{testing/HeapTester.java}. In fact, one of the first things I did was create the \ttt{verification} package, which allows me to verify my implementation of \ttt{Brandes} against the \ttt{JGraphT} implementation.
+		
+		I also tested the speed of different implementations to check that I am using the fastest implementation I can. This can also be found in the aformentioned files, and I tested implementations of Brandes with different graph representations in order to determine which is the fastest (see the \ttt{SetGraph} git branch).
+		
+		Where no ground truth implementations exist, I used a small dataset (the \ttt{toy} or \ttt{toy2} graphs) and worked out a solution by hand, then ran my code with debug information printing. I verified my file parsing, \ttt{BrandesSubSet}, and \ttt{METIS} implementations this way, among other components. While some of these debug statements have been removed, many use my \ttt{print\_debug} method and can be activated by running with a high (20+) debug level. \todo{do I mention that I removed some?}
+		
+		Additionally, one of my core requirements was to compare the speed of my graph algorithm implementations against fast published ones, and I have made sure to do so for all algorithms that I could find.
+		
+		Finally, all of my graph algorithms have been developed for testability, with components such as \ttt{Djikstra's} separated out and easily testable independent of any other graph algorithm. All return a \ttt{Statistics} object, which can be augmented to include extra information about the run (such as which end condition \ttt{Bader} terminates with). This is important both for testing, and for actually running my experiments.
+		
+		
+		\todo{``Any design strategies that looked ahead to the testing stage should be described in order to demonstrate a professional approach was taken'' - do I successfully do this?}
+		\subsection{Instrumentation}
+		I instrumented my ArrayGraph representation to record the number of times an edge is followed. I make sure to always traverse edges with the following paradigm:
+		
+		Because of this consistency, it is straightforward to augment \java{start(i)} and \java{end(i)} to track the number of times they've been called. Because some algorithms may use multiple graphs (\ttt{SKELETON} in \ttt{Brandes++} or the transpose graph in \ttt{KADABRA}), all graphs update a single global variable.
+		
+		\todo{Should I have mentioned the metrics in Preparation?}
+		
+		Although I implemented instrumentation to record the time per node for \ttt{Brandes}, I made it an optional feature and didn't implement it for any other algorithm for reasons discussed in \nameref{sec:extensions}.
+		\subsection{Experimentation}
+		
+		I created three harnesses in order to run experiments on my graph algorithms. All three have necessary information about the run (which graphs and parameters to use, and for how many iterations) stored as variables. I chose to do this instead of taking them as parameters so that I wouldn't risk having typos when running the experiments and having different parameters than intended.
+		
+		All three harnesses follow the same basic structure:
+		\todo{pseudocode}
+		
+		Here, \ttt{warmup} just runs the \ttt{Brandes} algorithm on \ttt{wiki-vote} ten times, and serves to raise the CPU temperature to ensure the first few experiments don't have an advantage due to the colder system temperatures.
+		
+		I re-construct the graph on each run in order to guarantee that a bug which alters the graph in one algorithm does not affect any others. Additionally, the \ttt{getGraph} subroutine has a \ttt{System.gc()} and a \ttt{Thread.sleep(2000)} command, which signal the system to run garbage collection and then pause for two seconds to allow the system to settle a little.
+		
+		I save the full list of centralities for later processing, as well as statistics about the execution - total time and number of graph accesses.
+		
+		\subsection{Extensions and Shortcomings}\label{sec:extensions}
+		The following changed from my project proposal to the final implementation
+		\subsubsection{Algorithms}
+		
+		While I had originally only proposed implementing five algorithms, I extended my project to include \ttt{BrandesSubset}, \ttt{BP2007}, and two additional algorithms by Geisberger et al.
+		
+		\ttt{BrandesSubset} was a necessary component for testing the performance and accuracy of \ttt{Brandes++}, so implementing it was mandatory.
+		
+		\ttt{BP2007} is a simple algorithm that Bader et al. and Geisberger et al. base their algorithms off of, so implementing it allowed me to compare those to a `baseline' approximate algorithm.
+		
+		I originally only proposed to implement the algorithm by Geisberger et al. which Matta et al. tested, which was \ttt{Geisberger Linear}. However, after seeing the impressive results Geisberger et al. claim for \ttt{Geisberger Bisection} and \ttt{Geisberger Bisection Sampling}, I decided to implement all three algorithms.
+		
+		\subsection{METIS}
+		
+		While I had originally only proposed to study algorithms for betweenness centrality, I quickly realized that a major shortcoming in the paper by \erdos et al. was that they didn't implement a graph clustering algorithm themselves. Instead, they performed the graph clustering with a high performance package written in \CC, and the rest of their implementations with native Python. This is a major weakness in their claims, since it is impossible to determine whether the speedup is due to the algorithm itself or them using a much faster implementation for part of it.
+		
+		To avoid the same shortcoming, I implemented the paper \ttt{METIS} is based on.
+		
+		\subsection{Metrics}
+		I originally proposed to collect 4 metrics - total time, number of graph reads, time per node, and memory usage.
+		
+		I successfully implemented the first two, but collecting memory usage information was substantially more complicated. Java has a method that returns the current memory usage, but unless I called that near-continuously, I could not find the peak memory usage with it. I could use an external memory usage monitor, but I would need to record and extract the peak memory usage over a specific interval of time for 1000+ intervals. Perhaps more important, memory usage isn't useful for analyzing these algorithms. With the exception of \ttt{Brandes++}, the main place where the algorithms use large volumes of memory is storing the lists of predecessors when doing the \ttt{SSSP} problem. Thus, monitoring peak memory usage would just tell us the maximum size DAG that \ttt{SSSP} computes, added to a significant amount of noise from the Java garbage collector. Since all of the approximate algorithms sample a small subset of nodes, the depth of the largest DAG can vary significantly due to change, adding even more noise to memory usage metrics. Finally, \ttt{SSSP} is a well-studied problem  \todo{find citations} and there are much better ways to profile it.
+		
+		While I had originally proposed to measure the time per node, I quickly realized that it is a poorly defined metric. While \ttt{Brandes} iterates over all nodes and does a computation from each $v$, that computation (the \ttt{SSSP} and accumulation) doesn't actually affect the betweenness of $v$. Additionally, the approximate algorithms sample only a subset of nodes, making time per node only applicable to the nodes that are chosen. One way to define it is average time per node, which is just $time/|G|$.  \todo{For later: do I end up using this in a graph?}
+		
+		\subsection{Parallelizability}
+		Parallelizing the betweenness centrality algorithms was a proposed extension that I did not do. However, I wanted to briefly make some notes about it. Matta et al. find that the best algorithms they test are those with parallel implementations. However, (\todo{from my informal analysis, should I still have this?}) it is actually possible to effectively parallelize all of the algorithms I have discussed.
+		
+		Apart from \ttt{Brandes++}, all algorithms spend the vast majority of their runtime in a loop that is essentially \todo{pseudocode, make sure to specify uniformally at random}
+		
+		For \ttt{Brandes}, \ttt{BP2007}, \ttt{Geisberger Linear}, \ttt{Geisberger Bisection}, and \ttt{Geisberger Bisection Sampling}, the end condition is simply the total number of iterations conducted. This means that there are no dependencies between iterations of the loop, so parallelization is straightforward. After all $k$ threads have completed, betweennesses can be aggregated with $\log_2(k)$ inter-thread messages. \todo{correct? keep?}
+		
+		\ttt{Bader} and \ttt{KADABRA} have the additional complication of having an end condition that depends on the aggregated betweenness. However, if one can efficiently check this end condition, then the vast majority of the work done by the algorithm can be parallelized.
+		
+		\erdos et al. describe how to parallelize \ttt{Brandes++} - much of the work done in building the skeleton graph, and all of the work of the \ttt{Centralities} algorithm depends only on each cluster independent of any other. This means that those components could be parallelized up to the number of clusters. \ttt{Brandes\_SK} can be parallelized in a similar manner to \ttt{Brandes}.
+		
+	\section{Repository Overview} 
+	
+	Will do when all experiments etc. are done
+	
+	
+	\section{Experimental Results}
+	
+	I would like to talk about how to present/discuss my results.
+	
+	\chapter{Evaluation}
+	\todo{What exactly should I discuss here - my main ways to do evaluation are the test scripts,  though those are fairly incomplete, the experiments, and running my code and other people's on the same dataset}
+	
+	\chapter{Conclusion}
+	
+\todo{What should go here?}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% the bibliography
+	%\addcontentsline{toc}{chapter}{Bibliography}
+	%\bibliography{zoteroOut.bib}
+	%\printbibliography
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% the appendices
+	\appendix
+
+	\chapter{Project Proposal}
+	
+
+	
+\end{document}

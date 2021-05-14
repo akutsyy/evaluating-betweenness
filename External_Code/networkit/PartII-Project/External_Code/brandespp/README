@@ -1,0 +1,36 @@
+Author: Dora Erdos
+Copyright (c) 2014 Boston University.
+All rights reserved.
+
+If using any of this code please cite: 
+Dora Erdos, Vatche Ishakian, Azer Bestavros, and Evimaria Terzi "A Divide-and-Conquer Algorithm for Betweenness Centrality" http://arxiv.org/abs/1406.4173, June, 2014
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+Neither the name "Boston University" nor the names of the authors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+------------------------------------------
+
+usage:
+
+Brandes.py: python Brandes.py  graphfile sourcefile outputfile
+BrandesPP_log.py: python BrandesPP_log.py graphfile sourcefile clusterfile clusterdir
+BrandesPP_query.py: python BrandesPP_query.py sourcefile clusterdir numclusters outputfile
+
+explanation:
+graphfile: contains edges of graph. Direction or repetition of edges does not matter. format: nodeid1\tnodeid2\n
+sourcefile: contains tab separated list of sourcenodes. format: sourceid1\tsourceid2\tsourceid3\t...sourceidn
+clusterfile: contains in line i the id of the cluster of node i.  format: clsuterid\n
+clusterdir: name of folder where information on supernodes and skeleton is stored. Folder needs to exist before runing code.
+numclusters: integer, number of clusters in file. Is allowed to be larger than actual number of clusters.
+outputfile: filename, where the centrality of nodes is written
+
+
+----------------------------------------
+
+PriorityDictionary.py  code is wriiten by  David Eppstein, UC Irvine, 8 Mar 2002

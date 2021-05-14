@@ -1,0 +1,4 @@
+Running BrandesAndPich2008 with parameters pivots=200 on: datasets/final/4932.protein.links_undirected_weighted.csv
+Size: 6574 nodes, 1845966 edges
+Time taken: 2.622614282
+ Graph accesses: 373140778

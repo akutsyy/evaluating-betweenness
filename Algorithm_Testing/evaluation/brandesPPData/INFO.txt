@@ -1,0 +1,46 @@
+Brandes Subset/Brandes++:
+
+Testing (From cold start), as-cadia as undirected graph (with a 0 0 edge at the start and no header) - this is as-cadia-zeroed.txt in the algorithm_evaluation folder.
+
+Copied over as-cadia-zeroed into brandespp/test_input, replaced spaces with tabs. This is as-cadia.txt. Also copied over sources.txt, clusterfile.txt for as-caida and 1000 partitions.
+
+Fixed a bug in Brandes.py line 154
+
+Ran  time python2 Brandes.py test_input/as-caida.txt test_input/sources.txt brandesOutput.txt
+
+Note that it is python2
+
+Output:
+
+real	5m9.971s
+user	5m9.004s
+sys	0m0.952s
+
+
+Output is in BrandesErdosOutput.txt
+
+Also fixed same bug on line 181 of BrandesPP_log.py
+
+Had to remove 0 0 from as-caida.txt for BrandesPP, but shouldn't affect results. Also removed first line from clusterfile.txt. If sources had chosen 0, I would have to re-run
+Also changed cluster 0 to cluster 99 with
+sed -i '
+Saving as as-caida-oneindexed.txt in brandespp/test_input
+
+Ran time python2 BrandesPP_log.py test_input/as-caida-oneindexed.txt test_input/sources.txt test_input/clusterfile.txt test_input/clusterdir/
+
+Output:
+
+real	0m3.234s
+user	0m3.134s
+sys	0m0.020s
+
+
+Same bug on line 196 of BrandesPP_query.py
+
+Ran time python2 BrandesPP_query.py test_input/sources.txt test_input/clusterdir 122 brandesPP_output.txt
+
+Output:
+
+real	4m27.360s
+user	4m26.707s
+sys	0m0.628s

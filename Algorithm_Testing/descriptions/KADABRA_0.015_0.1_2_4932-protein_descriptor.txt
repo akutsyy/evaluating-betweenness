@@ -1,0 +1,4 @@
+Running KADABRA with parameters lambda=0.015, delta=0.1terminated from cutoff: true iterations: 5808 on: datasets/final/4932.protein.links_undirected_weighted.csv
+Size: 6574 nodes, 1845966 edges
+Time taken: 26.631347634
+ Graph accesses: 296961898

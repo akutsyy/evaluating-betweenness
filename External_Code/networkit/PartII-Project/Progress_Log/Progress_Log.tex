@@ -1,0 +1,233 @@
+\documentclass[a4paper,12pt,english]{article}
+\usepackage{soul}
+\usepackage{titling}
+\usepackage[vmargin=20mm,hmargin=25mm]{geometry}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage[english]{babel}
+\usepackage{changepage}
+\usepackage{makecell}
+\usepackage{bookmark}
+\usepackage{isodate}
+\usepackage{hyperref}
+\usepackage[level]{datetime}
+
+
+\usepackage{tabularx}
+    \renewcommand\tabularxcolumn[1]{m{#1}}
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+
+% Fixes date in section
+    \newcommand{\printdatetitle}[1]{
+      \texorpdfstring{\printdate{#1}}{#1}
+    }
+
+    \makeatletter
+    \providecommand{\@nil}
+    \makeatother
+    
+    \dateinputformat{tex}
+
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+\begin{document}
+
+\title{Progress Log}
+\author{Iris Kutsyy}
+\date{\protect\today}
+
+\maketitle
+\frenchspacing
+
+\section*{\printdatetitle{2020/10/26}}
+\begin{itemize}
+\item Set up git
+\item Started progress log
+\end{itemize}
+
+
+\section*{\printdatetitle{2020/11/02}}
+\begin{itemize}
+\item Slower progress since the announcement of national lockdown
+\item AlGhamdi et al. and Matta et al. simply measure the total runtime, I will simply measure time per node, total time, memory usage, and number of graph reads. I will use \verb|System.nanoTime|.
+\item For the time being, will represent graphs by an array of nodes and set of edges
+\item Began skeleton of framework
+\item Attempted to get access to high power computing on Windows, failed at CL VPN setup, will try on Linux
+\item Downloaded test datasets
+\end{itemize}
+
+\section*{\printdatetitle{2020/11/03}}
+\begin{itemize}
+\item Worked on setting up access to CL resources
+\end{itemize}
+
+\section*{\printdatetitle{2020/11/04}}
+\begin{itemize}
+\item Successfully got access to the high power computing servers rio, nile, and yellow. \textbf{MILESTONE}
+\end{itemize}
+
+\section*{\printdatetitle{2020/11/05}}
+\begin{itemize}
+\item Got access working on Linux boot as well.
+\item First day of national lockdown.
+\end{itemize}
+
+\section*{\printdatetitle{2020/11/04}}
+\begin{itemize}
+\item Completed framework. \textbf{MILESTONE}
+\end{itemize}
+
+\section*{\printdatetitle{2020/11/14}}
+\begin{itemize}
+\item Completed \texttt{Brandes} for weighted and unweighted graphs. \textbf{MILESTONE}
+\item Tested on unweighted graphs ONLY. (by using known graphs
+\end{itemize}
+
+\section*{\printdatetitle{2020/11/20}}
+\begin{itemize}
+\item Tested \texttt{Brandes} against \texttt{JGraphT}. \textbf{MILESTONE}
+\item Found that I had bugs
+\end{itemize}
+
+\section*{\printdatetitle{2020/11/21}}
+\begin{itemize}
+\item Fixed bugs, tested on a medium (1k nodes) multigraph.
+\item Added multigraph support
+\end{itemize}
+
+\section*{\printdatetitle{2020/11/30}}
+\begin{itemize}
+\item Completed introduction
+\item Attempting to do Fibonacci Heap for Brandes weighted queue, but JGraphT has removed features
+\item Switching back to JGraphT 1.3.0 because it is the last documented version (we love documentation\dots)
+\item Cannot switch to older JGraphT because the way Graphs are imported has changed
+\item Instead using FibHeap from here: 
+
+\url{https://keithschwarz.com/interesting/code/?dir=fibonacci-heap}
+\item Have bugs :(
+\end{itemize}
+
+\section*{\printdatetitle{2020/12/1}}
+\begin{itemize}
+\item Fixed bug! It was a 0-weight cycle in the input
+\item Got introduction approved!
+\item Will do background where I go into depth about previous work and the algorithms
+\item Copying from my own proposal is fine according to Tim
+\item Optimized Brandes, it is now faster than JGraphT
+\end{itemize}
+
+\section*{\printdatetitle{2020/12/4} - \printdatetitle{2020/12/11}}
+\begin{itemize}
+\item Attempted to use a simpler representation of graphs - SetGraph, ran tests to compare to original (running on large graph), couldn't get it faster than {\raise.2ex\hbox{$\scriptstyle\sim$}}10\% slower, even with \texttt{trove} primitive hashmaps.
+\end{itemize}
+
+\section*{\printdatetitle{2020/12/11}}
+\begin{itemize}
+\item Brandes++ implementation can be found at \url{https://cs-people.bu.edu/edori/code.html#Betweenness_centrality}
+\item Holy shit that implementation is god awful wtf it's unreadable, I'm not gonna have trouble showing that my code is as fast as it, I would have trouble being slower than 100x faster
+\item My \texttt{Brandes} implementation runs 55500\% faster\dots
+\end{itemize}
+
+\section*{\printdatetitle{2020/12/14}}
+\begin{itemize}
+\item Using Metis since it's consistently the fastest in Brandes++
+\item Using \url{http://glaros.dtc.umn.edu/gkhome/node/78}
+\item Using HEM since it's consistently the best tested by the above paper, and it is easy to revert to RM
+\item Merging weighted and unweighted graphs since the difference in memory usage is small and not worth the development time (and casting nonsense)
+\end{itemize}
+
+\section*{\printdatetitle{2020/12/15}}
+\begin{itemize}
+\item Using KGGGP since it was found to consistently perform best for partition
+\item \url{https://ieeexplore.ieee.org/document/7445341}
+\item Doing 5-way partition initially
+\item Using Local Greedy Approach since that's what appears to be used by METIS
+\item Using GGGP as described in ``A FAST AND HIGH QUALITY MULTILEVEL SCHEME FORPARTITIONING IRREGULAR GRAPHS'' 1998
+\end{itemize}
+\section*{\printdatetitle{2020/12/16}}
+\begin{itemize}
+\item Trying with ArrayGraph and \url{https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-895-theory-of-parallel-systems-sma-5509-fall-2003/projects/kasheff.pdf
+}
+\end{itemize}
+
+\section*{\printdatetitle{2020/12/19}}
+\begin{itemize}
+\item The burnout got really intense, had to take a day off and it was very helpful and made me more productive today than I have been in a while.
+\item Got coarsening and partitioning done
+\item Using BKL(*,1) for refinement, as it was found to be the best and fastest
+\item Using boundary of 2\% as in the paper.
+\item Need to implement a new data structure for finding neighbors and KL refinement
+\item This is sub-algorithm \#7...
+\end{itemize}
+
+\section*{\printdatetitle{2020/12/22}}
+\begin{itemize}
+\item Finished meletis!
+\item Tested on small graphs
+\item Tested that refinement reduces edge-cut
+\item Tested that for all $P_i$, union $P_i$ is all nodes in G and for any $P_i, P_j$ union is empty
+\item Tested partition sizes are roughly equal (not identical due to coarsening phase)
+\item Manually reviewed again and again that my code matches the specification
+\item URLs used:\\
+\url{http://glaros.dtc.umn.edu/gkhome/metis/metis/publications}\\
+``Multilevelk-way Partitioning Schemefor Irregular Graphs1'' George Karypis and Vipin Kuma\\
+``MULTILEVEL GRAPH PARTITIONING SCHEMES'' George Karypis and Vipin Kumar\\
+\url{https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-895-theory-of-parallel-systems-sma-5509-fall-2003/projects/kasheff.pdf}
+`` FAST AND HIGH QUALITY MULTILEVEL SCHEME FORPARTITIONING IRREGULAR GRAPHS'' GEORGE  KARYPIS†ANDVIPIN  KUMAR 1998\\
+\url{https://dl.acm.org/doi/10.5555/800263.809204}\\
+\url{http://users.ece.northwestern.edu/~haizhou/357/lec2.pdf}\\
+\url{https://github.com/sahibjotsingh/KL-Algorithm}
+\item Replaced old Brandes implementation with a primitive based approach (using ArrayGraph) - testing improvements (previous wiki-vote was 7.2 seconds, now 3.95)
+\end{itemize}
+
+
+\section*{\printdatetitle{2021/01/02}}
+\begin{itemize}
+\item Brandes++ assumes an undirected graph, need to add a djikstra's on each subgraph from each non-frontier to each frontier.
+\item Paper incorrectly says looking for s$\rightarrow$v$\rightarrow$f, code and formula indicate s$\rightarrow$f$\rightarrow$v
+
+\item Problem:
+\begin{itemize}
+\item In the version of the paper published on researchgate on June 2014 here: \url{https://www.researchgate.net/publication/263201045_A_Divide-and-Conquer_Algorithm_for_Betweenness_Centrality} on page 8 under the \texttt{Build\_SK} algorithm description it says ``However, \texttt{Brandes++ }is not equipped to take shortest paths starting from $s$ into consideration if $s\in V_i / F_i$ for some supernode $G_i$'' and describes that they guarantee this is not the case by making $s$ its own cluster.
+
+\item The archivx version submitted 16 June 2014 and last edited 4 June 2015 available here:  \url{https://arxiv.org/abs/1406.4173} says on page 5 under the same section:\\
+
+``Note  that  since we  need  to  know  the  shortest  paths  for  every  target node $s\in S$,  we  treat  the  nodes  in $S$ specially.   More specifically, given the input partition $P$, we remove all targets  from  their  respective  parts  and  add  them  as singletons.  Thus, we use the partition $<$Math$>$.  Assuming that the number of target  nodes  is  relatively  small  compared  to  the  total number of nodes in the network,  this does not have a significant effect on the running time of our algorithm.'' with no particular emphasis, immediately going to discussing how some operations could be parallelized.
+
+\item The proceedings of the 2015 SIAM international conference on data mining says the same \url{https://epubs.siam.org/doi/10.1137/1.9781611974010.49}
+
+\end{itemize}
+\end{itemize}
+
+\section*{\printdatetitle{2021/01/08}}
+\begin{itemize}
+\item So, turns out the paper is for the shortest paths between a subset of nodes, I've been struggling with that for a few days.
+\item Will implement and compare to an approach using a modified Brandes
+\item Their implementation takes $O(\sum{|S||F_i|\sum{|V_i / F_i|}})$ which is slower than the paper describes
+\item Switched from combining ints to longs to just using a map of maps after finding that the latter is faster (intCombiningTest)
+\end{itemize}
+
+
+\section*{\printdatetitle{2021/01/13}}
+\begin{itemize}
+\item Testing on p2p unweighted undirected:\\
+Binary heap: 66.85s
+Fibonacci heap: 65.54s
+\item Nope I'm just stupid, that was with unweighted so didn't use the heaps
+\end{itemize}
+
+\section*{\printdatetitle{2021/01/15}}
+\begin{itemize}
+\item Implemented RankPairingHeap and it works!
+\end{itemize}
+
+\section*{\printdatetitle{2021/01/27}}
+\begin{itemize}
+\item Done with Geisberger!
+\item Also implemented GeisbergerLinear, GeisbergerEnumerative, and Brandes(2008)
+\end{itemize}
+\end{document}

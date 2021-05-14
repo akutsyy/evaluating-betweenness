@@ -1,0 +1,3 @@
+Running GeisbergerBisectionSampled with parameters pivots=1600, samples=8 on: datasets/final/com-amazon_undirected.txt
+Size: 334863 nodes, 1851744 edges
+Time taken: 1201.037164687

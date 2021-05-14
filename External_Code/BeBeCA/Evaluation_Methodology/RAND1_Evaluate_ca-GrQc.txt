@@ -1,0 +1,12 @@
+Start Evaluating :.........
+
+Average Error = 9.65113e-05
+Maximum Error = 0.00233688
+
+Top 1% will compare 41 vertices
+Top Hit (41 v) managed to identify = 95.1219512195122 %
+
+Kindall Distance :=
+0.9825895645
+
+##### Done #####

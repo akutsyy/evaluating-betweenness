@@ -1,0 +1,71 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{soul}
+\usepackage{titling}
+\usepackage[vmargin=20mm,hmargin=25mm]{geometry}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage[english]{babel}
+\usepackage{changepage}
+\usepackage{makecell}
+\usepackage{hyperref}
+
+
+\usepackage{tabularx}
+    \renewcommand\tabularxcolumn[1]{m{#1}}
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+
+\renewcommand{\baselinestretch}{0.99}
+
+\setlength{\droptitle}{-5em}   % This is your set screw
+
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+\begin{document}
+
+\title{{\Large Computer Science Tripos - Part II - Project Progress Report}\vspace{0.5cm}\\
+Evaluating Betweenness Centrality Algorithms for Real World Datasets}
+
+\date{\parbox{\linewidth}{\centering% 
+\vspace{-2cm}     
+Iris Kutsyy \hspace{1cm} ak2149@cam.ac.uk \hspace{1cm} Trinity College \\ \vspace{3mm}  
+      \today\endgraf\vspace{3mm}
+  }}
+
+\maketitle
+\frenchspacing
+
+\noindent
+\textbf{Project Supervisor:} Dr. Timothy Griffin
+
+\noindent
+\textbf{Directors of Studies:} Dr. Sean Holden, Dr. Neel Krishnaswami, Prof. Frank Stajano
+
+\noindent
+\textbf{Project Overseers:} Prof. Marcelo Fiore, Dr. Robert Mullins
+
+\section*{Progress Report}
+
+Despite some unexpected difficulty, my Part II project is exactly on pace. My project requires implementing five algorithms, instrumenting them with a variety of metrics, and evaluating their performance on large graphs.
+
+I quickly researched instrumentation and decided on a set of metrics for evaluating the performance of the algorithms (time spent per node, total time, memory usage, and the number of graph reads). By November 4th I also successfully logged onto the high power computing server I was granted access to, meeting my milestones.
+
+
+By November 20th I created a framework for running and testing the centrality algorithms, and implemented my first algorithm, the \texttt{Brandes} algorithm. I verified its output using \texttt{JGraphT}, a Java graph analysis library.
+
+I then optimized my graph representation and \texttt{Brandes} implementation, and ended up with an implementation that runs about 10 times faster than the \texttt{JGraphT} implementation.
+
+I ran my implementation of \texttt{Brandes} on the high performance server to determine the maximum size of graphs I can use for my experimentation. I realized that my laptop actually has higher single threaded performance than the server, so will use it instead.
+
+Following this, I began implementing the \texttt{Brandes++} algorithm. Difficulty arose because that algorithm requires implementing a specific (and very complicated) graph clustering algorithm to achieve the performance the paper describes. That graph algorithm itself requires implementing three more algorithms and a new data structure. I finished the graph partition algorithm by the 22nd of December, missing my milestone for finishing \texttt{Brandes++}. However, I'd set aside a buffer for unforseen difficulty and finished implementing and testing the \texttt{Brandes++} algorithm by January 12th.
+
+By January 20th I finished the algorithm by Geisberger et al, meeting my milestone.
+
+I additionally implemented multiple heap algorithms (Rank-Pair Heap, Binary Heap, Fibonacci Heap) to determine which allowed the \texttt{Brandes} algorithm to run fastest (It turned out to be the binary heap, which I'd already been using).
+
+I have fully read through the remaining two algorithms and neither have complications like \texttt{Brandes++} does, so I expect to finish my project on time.
+
+\end{document}

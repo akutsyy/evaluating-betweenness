@@ -1,0 +1,7 @@
+Running BrandesPP with parameters Set Percentage=0.001'
+Set Size=6
+NumPartitions=2
+Times=[4.096518186, 0.69027151, 0.102455898, 0.0, 0.069559121] on: datasets/final/4932.protein.links_undirected_weighted.csv
+Size: 6574 nodes, 1845966 edges
+Time taken: 4.959159848
+ Graph accesses: 1791497673

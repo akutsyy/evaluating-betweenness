@@ -1,0 +1,3 @@
+Running GeisbergerBisectionSampled with parameters pivots=800, samples=1 on: datasets/final/wiki-vote_directed.txt
+Size: 7115 nodes, 201524 edges
+Time taken: 2.137442358

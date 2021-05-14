@@ -1,0 +1,4 @@
+Running Brandes with parameters None on: datasets/final/slashdot0811_directed.txt
+Size: 77360 nodes, 905468 edges
+Time taken: 923.714537073
+ Graph accesses: 80026339907

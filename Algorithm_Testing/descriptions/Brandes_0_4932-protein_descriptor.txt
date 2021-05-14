@@ -1,0 +1,4 @@
+Running Brandes with parameters None on: datasets/final/4932.protein.links_undirected_weighted.csv
+Size: 6574 nodes, 1845966 edges
+Time taken: 87.470093043
+ Graph accesses: 12253714077

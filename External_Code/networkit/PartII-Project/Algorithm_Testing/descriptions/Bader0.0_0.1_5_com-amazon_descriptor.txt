@@ -1,0 +1,6 @@
+Running Bader with parameters Low=0.0'
+High=0.1
+Terminated from max iterations cutoff:true on: datasets/final/com-amazon_undirected.txt
+Size: 334863 nodes, 1851744 edges
+Time taken: 1534.704672451
+ Graph accesses: 47824035491

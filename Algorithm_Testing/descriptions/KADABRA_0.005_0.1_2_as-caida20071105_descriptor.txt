@@ -1,0 +1,4 @@
+Running KADABRA with parameters lambda=0.005, delta=0.1terminated from cutoff: true iterations: 132198 on: datasets/final/as-caida20071105_undirected.txt
+Size: 26475 nodes, 106762 edges
+Time taken: 11.638617194
+ Graph accesses: 530848623

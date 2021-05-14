@@ -1,0 +1,4 @@
+Running BrandesPP with parameters Set Percentage=0.1'
+Set Size=1877
+NumPartitions=128 on: datasets/final/ca-astroph_undirected.txt
+Graph accesses: 2878164080

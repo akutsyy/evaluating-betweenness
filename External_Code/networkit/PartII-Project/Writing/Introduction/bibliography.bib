@@ -1,0 +1,280 @@
+@article{mlgp,
+author = {Karypis, George and Kumar, Vipin},
+title = {A Fast and High Quality Multilevel Scheme for Partitioning Irregular Graphs},
+year = {1998},
+issue_date = {Aug. 1998},
+publisher = {Society for Industrial and Applied Mathematics},
+address = {USA},
+volume = {20},
+number = {1},
+issn = {1064-8275},
+abstract = {Recently, a number of researchers have investigated a class of graph partitioning algorithms that reduce the size of the graph by collapsing vertices and edges, partition the smaller graph, and then uncoarsen it to construct a partition for the original graph [Bui and Jones, Proc. of the 6th SIAM Conference on Parallel Processing for Scientific Computing, 1993, 445--452; Hendrickson and Leland,  A Multilevel Algorithm for Partitioning Graphs, Tech. report SAND 93-1301, Sandia National Laboratories, Albuquerque, NM, 1993]. From the early work it was clear that multilevel techniques held great promise; however, it was not known if they can be made to consistently produce high quality partitions for graphs arising in a wide range of application domains. We investigate the effectiveness of many different choices for all three phases: coarsening, partition of the coarsest graph, and refinement. In particular, we present a new coarsening heuristic (called heavy-edge heuristic) for which the size of the partition of the coarse graph is within a small factor of the size of the final partition obtained after multilevel refinement. We also present a much faster variation of the Kernighan--Lin (KL) algorithm for refining during uncoarsening. We test our scheme on a large number of graphs arising in various domains including finite element methods, linear programming, VLSI, and transportation. Our experiments show that our scheme produces partitions that are consistently better than those produced by spectral partitioning schemes in substantially smaller time. Also, when our scheme is used to compute fill-reducing orderings for sparse matrices, it produces orderings that have substantially smaller fill than the widely used multiple minimum degree algorithm.},
+journal = {SIAM J. Sci. Comput.},
+month = dec,
+pages = {359–392},
+numpages = {34},
+keywords = {graph partitioning, finite element computations, fill-reducing orderings, parallel computations}
+}
+
+
+@article{brandescomplexity,
+	title = {Into the {Square} - {On} the {Complexity} of {Quadratic}-{Time} {Solvable} {Problems}},
+	url = {http://arxiv.org/abs/1407.4972},
+	abstract = {This paper will analyze several quadratic-time solvable problems, and will classify them into two classes: problems that are solvable in truly subquadratic time (that is, in time \$O(n{\textasciicircum}\{2-{\textbackslash}epsilon\})\$ for some \${\textbackslash}epsilon{\textgreater}0\$) and problems that are not, unless the well known Strong Exponential Time Hypothesis (SETH) is false. In particular, we will prove that some quadratic-time solvable problems are indeed easier than expected. We will provide an algorithm that computes the transitive closure of a directed graph in time \$O(mn{\textasciicircum}\{{\textbackslash}frac\{{\textbackslash}omega+1\}\{4\}\})\$, where \$m\$ denotes the number of edges in the transitive closure and \${\textbackslash}omega\$ is the exponent for matrix multiplication. As a side effect, we will prove that our algorithm runs in time \$O(n{\textasciicircum}\{{\textbackslash}frac\{5\}\{3\}\})\$ if the transitive closure is sparse. The same time bounds hold if we want to check whether a graph is transitive, by replacing m with the number of edges in the graph itself. As far as we know, this is the fastest algorithm for sparse transitive digraph recognition. Finally, we will apply our algorithm to the comparability graph recognition problem (dating back to 1941), obtaining the first truly subquadratic algorithm. The second part of the paper deals with hardness results. Starting from an artificial quadratic-time solvable variation of the k-SAT problem, we will construct a graph of Karp reductions, proving that a truly subquadratic-time algorithm for any of the problems in the graph falsifies SETH. The analyzed problems are the following: computing the subset graph, finding dominating sets, computing the betweenness centrality of a vertex, computing the minimum closeness centrality, and computing the hyperbolicity of a pair of vertices. We will also be able to include in our framework three proofs already appeared in the literature, concerning the graph diameter computation, local alignment of strings and orthogonality of vectors.},
+	urldate = {2021-02-13},
+	journal = {arXiv:1407.4972 [cs]},
+	author = {Borassi, Michele and Crescenzi, Pierluigi and Habib, Michel},
+	month = jul,
+	year = {2014},
+	note = {arXiv: 1407.4972},
+	keywords = {Computer Science - Computational Complexity},
+}
+
+
+@article{freeman,
+ ISSN = {00380431},
+ URL = {http://www.jstor.org/stable/3033543},
+ abstract = {A Family of new measures of point and graph centrality based on early intuitions of Bavelas (1948) is introduced. These measures define centrality in terms of the degree to which a point falls on the shortest path between others and therefore has a potential for control of communication. They may be used to index centrality in any large or small network of symmetrical relations, whether connected or unconnected.},
+ author = {Linton C. Freeman},
+ journal = {Sociometry},
+ number = {1},
+ pages = {35--41},
+ publisher = {[American Sociological Association, Sage Publications, Inc.]},
+ title = {A Set of Measures of Centrality Based on Betweenness},
+ volume = {40},
+ year = {1977}
+}
+
+
+
+ @misc{string, title={Welcome to STRING}, url={https://string-db.org/}, author={Bork, Peer and Jensen, Lars  Juhl and von Mering, Christian}} 
+
+@article{bio,
+title = "Network Analysis of Protein Structures Identifies Functional Residues",
+journal = "Journal of Molecular Biology",
+volume = "344",
+number = "4",
+pages = "1135 - 1146",
+year = "2004",
+issn = "0022-2836",
+doi = "https://doi.org/10.1016/j.jmb.2004.10.055",
+url = "http://www.sciencedirect.com/science/article/pii/S0022283604013592",
+author = "Gil Amitai and Arye Shemesh and Einat Sitbon and Maxim Shklar and Dvir Netanely and Ilya Venger and Shmuel Pietrokovski",
+keywords = "protein active sites identification, protein structure analysis, network analysis, closeness degree, ORFans",
+abstract = "Identifying active site residues strictly from protein three-dimensional structure is a difficult task, especially for proteins that have few or no homologues. We transformed protein structures into residue interaction graphs (RIGs), where amino acid residues are graph nodes and their interactions with each other are the graph edges. We found that active site, ligand-binding and evolutionary conserved residues, typically have high closeness values. Residues with high closeness values interact directly or by a few intermediates with all other residues of the protein. Combining closeness and surface accessibility identified active site residues in 70% of 178 representative structures. Detailed structural analysis of specific enzymes also located other types of functional residues. These include the substrate binding sites of acetylcholinesterases and subtilisin, and the regions whose structural changes activate MAP kinase and glycogen phosphorylase. Our approach uses single protein structures, and does not rely on sequence conservation, comparison to other similar structures or any prior knowledge. Residue closeness is distinct from various sequence and structure measures and can thus complement them in identifying key protein residues. Closeness integrates the effect of the entire protein on single residues. Such natural structural design may be evolutionary maintained to preserve interaction redundancy and contribute to optimal setting of functional sites."
+}
+
+@article{supply,
+title = "Mapping supply chain risk by network analysis of product platforms",
+journal = "Sustainable Materials and Technologies",
+volume = "10",
+pages = "14 - 22",
+year = "2016",
+issn = "2214-9937",
+doi = "https://doi.org/10.1016/j.susmat.2016.10.002",
+url = "http://www.sciencedirect.com/science/article/pii/S2214993716300318",
+author = "Philip Nuss and T.E. Graedel and Elisa Alonso and Adam Carroll",
+keywords = "Sustainable resource management, Supply chain risk assessment, Social network analysis, Metals criticality, Product platforms",
+abstract = "Modern technology makes use of a variety of materials to allow for its proper functioning. To explore in detail the relationships connecting materials to the products that require them, we map supply chains for five product platforms (a cadmium telluride solar cell, a germanium solar cell, a turbine blade, a lead acid battery, and a hard drive (HD) magnet) using a data ontology that specifies the supply chain actors (nodes) and linkages (e.g., material exchange and contractual relationships) among them. We then propose a set of network indicators (product complexity, producer diversity, supply chain length, and potential bottlenecks) to assess the situation for each platform in the overall supply chain networks. Among the results of interest are the following: (1) the turbine blade displays a high product complexity, defined by the material linkages to the platform; (2) the germanium solar cell is produced by only a few manufacturers globally and requires more physical transformation steps than do the other project platforms; (3) including production quantity and sourcing countries in the assessment shows that a large portion of nodes of the supply chain of the hard-drive magnet are located in potentially unreliable countries. We conclude by discussing how the network analysis of supply chains could be combined with criticality and scenario analyses of abiotic raw materials to comprise a comprehensive picture of product platform risk."
+}
+
+@article{social,
+author = {Evelien Otte and Ronald Rousseau},
+title ={Social network analysis: a powerful strategy, also for the information sciences},
+journal = {Journal of Information Science},
+volume = {28},
+number = {6},
+pages = {441-453},
+year = {2002},
+doi = {10.1177/016555150202800601},
+
+URL = { 
+        https://doi.org/10.1177/016555150202800601
+    
+},
+eprint = { 
+        https://doi.org/10.1177/016555150202800601
+    
+}
+,
+    abstract = { Social network analysis (SNA) is not a formal theory in sociology but rather a strategy for investigating social structures. As it is an idea that can be applied in many fields, we study, in particular, its influence in the information sciences. Information scientists study publication, citation and co-citation networks, collaboration structures and other forms of social interaction networks. Moreover, the Internet represents a social network of an unprecedented scale. In all these studies social network analysis can successfully be applied. SNA is further related to recent theories concerning the free market economy, geography and transport networks. The growth of SNA is documented and a co-author network of SNA is drawn. Centrality measures of the SNA network are calculated. }
+}
+
+@article{disease,
+author = {Pipatsart, Navavat and Modchang, Charin and Triampo, Wannapong and Amornsamankul, Somkid},
+year = {2018},
+month = {10},
+pages = {11.1-11.8},
+title = {Network Based Model of Infectious Disease Transmission in Macroalgae},
+volume = {19},
+journal = {International Journal of Simulation: Systems, Science and Technology},
+doi = {10.5013/IJSSST.a.19.05.11}
+}
+
+@article{brandes,
+author = { Ulrik   Brandes },
+title = {A faster algorithm for betweenness centrality},
+journal = {The Journal of Mathematical Sociology},
+volume = {25},
+number = {2},
+pages = {163-177},
+year  = {2001},
+publisher = {Routledge},
+doi = {10.1080/0022250X.2001.9990249},
+
+URL = { 
+        https://doi.org/10.1080/0022250X.2001.9990249
+    
+},
+eprint = { 
+        https://doi.org/10.1080/0022250X.2001.9990249
+    
+}
+
+}
+
+
+
+
+
+
+
+@article{brandes2008,
+author = {Brandes, Ulrik and Pich, Christian},
+title = {CENTRALITY ESTIMATION IN LARGE NETWORKS},
+journal = {International Journal of Bifurcation and Chaos},
+volume = {17},
+number = {07},
+pages = {2303-2318},
+year = {2007},
+doi = {10.1142/S0218127407018403},
+
+URL = { 
+        https://doi.org/10.1142/S0218127407018403
+    
+},
+eprint = { 
+        https://doi.org/10.1142/S0218127407018403
+    
+}
+,
+    abstract = { Centrality indices are an essential concept in network analysis. For those based on shortest-path distances the computation is at least quadratic in the number of nodes, since it usually involves solving the single-source shortest-paths (SSSP) problem from every node. Therefore, exact computation is infeasible for many large networks of interest today. Centrality scores can be estimated, however, from a limited number of SSSP computations. We present results from an experimental study of the quality of such estimates under various selection strategies for the source vertices. }
+}
+
+
+
+
+@misc{erdos,
+      title={A Divide-and-Conquer Algorithm for Betweenness Centrality}, 
+      author={Dora Erdos and Vatche Ishakian and Azer Bestavros and Evimaria Terzi},
+      year={2015},
+      eprint={1406.4173},
+      archivePrefix={arXiv},
+      primaryClass={cs.DS}
+}
+
+
+@InProceedings{bader,
+author="Bader, David A.
+and Kintali, Shiva
+and Madduri, Kamesh
+and Mihail, Milena",
+editor="Bonato, Anthony
+and Chung, Fan R. K.",
+title="Approximating Betweenness Centrality",
+booktitle="Algorithms and Models for the Web-Graph",
+year="2007",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="124--137",
+abstract="Betweenness is a centrality measure based on shortest paths, widely used in complex network analysis. It is computationally-expensive to exactly determine betweenness; currently the fastest-known algorithm by Brandes requires O(nm) time for unweighted graphs and O(nm{\thinspace}+{\thinspace}n2logn) time for weighted graphs, where n is the number of vertices and m is the number of edges in the network. These are also the worst-case time bounds for computing the betweenness score of a single vertex. In this paper, we present a novel approximation algorithm for computing betweenness centrality of a given vertex, for both weighted and unweighted graphs. Our approximation algorithm is based on an adaptive sampling technique that significantly reduces the number of single-source shortest path computations for vertices with high centrality. We conduct an extensive experimental study on real-world graph instances, and observe that our random sampling algorithm gives very good betweenness approximations for biological networks, road networks and web crawls.",
+isbn="978-3-540-77004-6"
+}
+
+
+@article{borassi,
+  author    = {Michele Borassi and
+               Emanuele Natale},
+  title     = {{KADABRA} is an ADaptive Algorithm for Betweenness via Random Approximation},
+  journal   = {CoRR},
+  volume    = {abs/1604.08553},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1604.08553},
+  archivePrefix = {arXiv},
+  eprint    = {1604.08553},
+  timestamp = {Mon, 13 Aug 2018 16:47:36 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/BorassiN16.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{geisberger,
+	author = {Geisberger, Robert and Sanders, Peter and Schultes, Dominik},
+	title = {Better Approximation of Betweenness Centrality},
+	year = {2008},
+	publisher = {Society for Industrial and Applied Mathematics},
+	address = {USA},
+	abstract = {Estimating the importance or centrality of the nodes in large networks has recently attracted increased interest. Betweenness is one of the most important centrality indices, which basically counts the number of shortest paths going through a node. Betweenness has been used in diverse applications, e.g., social network analysis or route planning. Since exact computation is prohibitive for large networks, approximation algorithms are important. In this paper, we propose a framework for unbiased approximation of betweenness that generalizes a previous approach by Brandes. Our best new schemes yield significantly better approximation than before for many real world inputs. In particular, we also get good approximations for the betweenness of unimportant nodes.},
+	booktitle = {Proceedings of the Meeting on Algorithm Engineering & Expermiments},
+	pages = {90–100},
+	numpages = {11},
+	location = {San Francisco, California}
+}
+
+@misc{snap,
+                    author       = {Jure Leskovec and Andrej Krevl},
+                    title        = {{SNAP Datasets}: {Stanford} Large Network Dataset Collection},
+                    howpublished = {\url{http://snap.stanford.edu/data}},
+                    month        = jun,
+                    year         = 2014
+                  }
+                  
+@Article{comparesmall,
+author={Matta, John
+and Ercal, Gunes
+and Sinha, Koushik},
+title={Comparing the speed and accuracy of approaches to betweenness centrality approximation},
+journal={Computational Social Networks},
+year={2019},
+month={Feb},
+day={09},
+volume={6},
+number={1},
+pages={2},
+abstract={Many algorithms require doing a large number of betweenness centrality calculations quickly, and accommodating this need is an active open research area. There are many different ideas and approaches to speeding up these calculations, and it is difficult to know which approach will work best in practical situations.},
+issn={2197-4314},
+doi={10.1186/s40649-019-0062-5},
+url={https://doi.org/10.1186/s40649-019-0062-5}
+}
+
+@inproceedings{comparebig,
+author = {AlGhamdi, Ziyad and Jamour, Fuad and Skiadopoulos, Spiros and Kalnis, Panos},
+title = {A Benchmark for Betweenness Centrality Approximation Algorithms on Large Graphs},
+year = {2017},
+isbn = {9781450352826},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3085504.3085510},
+doi = {10.1145/3085504.3085510},
+abstract = {Betweenness centrality quantifies the importance of graph nodes in a variety of applications including social, biological and communication networks. Its computation is very costly for large graphs; therefore, many approximate methods have been proposed. Given the lack of a golden standard, the accuracy of most approximate methods is evaluated on tiny graphs and is not guaranteed to be representative of realistic datasets that are orders of magnitude larger. In this paper, we develop BeBeCA, a benchmark for betweenness centrality approximation methods on large graphs. Specifically: (i) We generate a golden standard by deploying a parallel implementation of Brandes algorithm using 96,000 CPU cores on a supercomputer to compute exact betweenness centrality values for several large graphs with up to 126M edges. (ii) We propose an evaluation methodology to assess various aspects of approximation accuracy, such as average error and quality of node ranking. (iii) We survey a large number of existing approximation methods and compare their performance and accuracy using our benchmark. (iv) We publicly share our benchmark, which includes the golden standard exact betweenness centrality values together with the scripts that implement our evaluation methodology; for researchers to compare their own algorithms and practitioners to select the appropriate algorithm for their application and data.},
+booktitle = {Proceedings of the 29th International Conference on Scientific and Statistical Database Management},
+articleno = {6},
+numpages = {12},
+keywords = {Experimental Evaluation, Betweenness Centrality, Social Networks, Approximation Algorithms},
+location = {Chicago, IL, USA},
+series = {SSDBM '17}
+}
+
+@misc{repository, 
+title={Network Data Repository: The First Interactive Network Data Repository}, url={http://networkrepository.com/}, journal={Network Repository}, author={ Rossi, Ryan  A. and Ahmed, Nesreen   K.}, year={2020}} 
+
+
+@article{floyd,
+  author = {FLOYD, R.W.},
+  title = {Algorithm 97--Shortest Path},
+  volume = {5},
+  pages = {345},
+  date = {1962},
+  language = {fr},
+  journal = {Communications of ACM}
+}
+

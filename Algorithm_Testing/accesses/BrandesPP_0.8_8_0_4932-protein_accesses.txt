@@ -1,0 +1,4 @@
+Running BrandesPP with parameters Set Percentage=0.8'
+Set Size=5259
+NumPartitions=8 on: datasets/final/4932.protein.links_undirected_weighted.csv
+Graph accesses: 12286886542

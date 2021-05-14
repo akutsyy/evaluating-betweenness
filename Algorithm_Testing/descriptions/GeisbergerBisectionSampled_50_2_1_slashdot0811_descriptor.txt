@@ -1,0 +1,4 @@
+Running GeisbergerBisectionSampled with parameters pivots=50, samples=2 on: datasets/final/slashdot0811_directed.txt
+Size: 77360 nodes, 905468 edges
+Time taken: 2.332745848
+ Graph accesses: 65522456

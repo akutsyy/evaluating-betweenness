@@ -1,0 +1,7 @@
+Running Bader with parameters Low=0.0'
+High=0.001
+Terminated from max iterations cutoff:false
+After iterations: 303 on: datasets/final/wiki-vote_directed.txt
+Size: 7115 nodes, 103689 edges
+Time taken: 0.123106838
+ Graph accesses: 14056530

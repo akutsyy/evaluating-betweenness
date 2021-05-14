@@ -1,0 +1,29 @@
+University of Cambridge
+Department of Computer Science and Technology
+
+Allocation of Computing Resources
+
+Name:     Iris Kutsyy
+Userid:   ak2149
+UID:      4655
+
+I understand that allocation of computing resources are made and may only be used subject to rules issued from time to time by the University of Cambridge Information Services Committee, and I agree to abide by such rules.  Copies of these rules are available from:
+
+https://www.uis.cam.ac.uk/about-us/governance/information-services-committee/rules-and-guidelines
+
+Signature:
+
+Date:
+
+-----------------------------------------------------
+University of Cambridge
+Department of Computer Science and Technology
+
+Allocation of Computing Resources  Name:     Iris Kutsyy
+
+You have been allocated and account on the Department of Computer Science and Technology systems.  You are reminded that your use of these systems is subject to the rules made by the Information Services Committee, and that you have signed that you will abide by those rules.  Your user identifier and password are as follows:
+
+Userid:      ak2149
+Password:    raven
+
+You must change your password to an unguessable string known only to yourself as soon as possible. Rules for contructing valid password can be found at: https://www.cl.cam.ac.uk/local/sys/ssh/passwords/ 

@@ -1,0 +1,3 @@
+Running GeisbergerBisection with parameters pivots=3200 on: datasets/final/as-caida20071105_undirected.txt
+Size: 26475 nodes, 106762 edges
+Time taken: 15.530946091

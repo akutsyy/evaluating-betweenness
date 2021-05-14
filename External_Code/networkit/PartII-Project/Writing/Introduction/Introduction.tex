@@ -1,0 +1,297 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{soul}
+\usepackage{titling}
+\usepackage[vmargin=20mm,hmargin=25mm]{geometry}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{color}
+\usepackage{enumitem}
+\setlist{  
+  listparindent=\parindent,
+  parsep=0pt,
+}
+\usepackage[english]{babel}
+\usepackage{changepage}
+\usepackage{makecell}
+\usepackage{hyperref}
+\usepackage{hyphenat}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath} % All of math
+\usepackage{mathtools}
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil} % can do \floor*{abc}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage{tabularx}
+    \renewcommand\tabularxcolumn[1]{m{#1}}
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+    
+
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+  
+%\setlength{\parindent}{2em}
+\setlength{\parskip}{1em}
+
+\renewcommand{\baselinestretch}{0.99}
+
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+
+\begin{document}
+
+\frenchspacing
+
+\section{Introduction}
+\subsection{Motivation}
+This project aims to evaluate algorithms for analyzing graphs. Graphs (also known as networks) represent entities (nodes) and the connections between them (edges). Their generality lends them to a vast number of applications, and the analysis of large graphs has lead to interesting results in disease modeling, sociology, supply chain management, and biology \cite{disease}\cite{social}\cite{supply}\cite{bio}.
+
+One method of analyzing graphs is through the use of graph statistics. In contrast to \textit{metrics}, which are single numbers that describe the entire graph (such as average degree, connectivity, or diameter), \textit{statistics} assign a value to each node. One widely used and important statistic is betweenness centrality, which measures the importance of a node. While there are several other measures of importance, betweenness centrality is by far the most frequently used \cite{geisberger} \hl{TODO: mention applications}. Further, algorithms for computing betweenness centrality can be trivially extended to compute several other centrality statistics, including closeness centrality and stress centrality \cite{brandes}.
+
+The betweenness centrality of a node $v$ is defined as the number of shortest paths from any node to any other node which pass through $v$. Formally, we can write: \begin{equation} \label{eq:1}
+C(v) := \sum_{s\neq v \neq t \in V} \frac{\sigma(s,t|v)}{\sigma(s,t)}
+\end{equation}
+where $\sigma(s,t|v)$ is the number of shortest paths from $s$ to $t$ that pass through $v$, and $\sigma(s,t)$ is the total number of shortest paths from $s$ to $t$.
+
+Betweenness centrality was first defined in 1977 by Linton Freeman \cite{freeman}. Na\"{i}ve implementations can compute betweenness centrality for all nodes in $\mathcal{O}(n^3)$ time and $\mathcal{O}(n^2)$ space on a graph of $n$ nodes and $m$ edges by solving the all-pairs shortest paths problem. In 2001, Brandes improved this to $\mathcal{O}(nm)$ time and $\mathcal{O}(n+m)$ space for unweighted graphs, and $\mathcal{O}(nm+n^2\log(n))$ time and $\mathcal{O}(n+m)$ space for weighted graphs \cite{brandes}. No asymptotic improvement has been found since, and $\mathcal{O}(nm)$ time is still too high to compute betweenness centrality for large graphs, which may have millions of nodes and edges.
+
+Despite the lack of asymptotic improvements, there have been dozens of proposed algorithms to compute betweenness centrality faster or to use statistical methods to rapidly compute approximations to it. However, papers proposing new algorithms have just compared them to the algorithm by Brandes, and direct comparisons between them have been limited (see \textit{\nameref{sec:related_work}}). In this project, I will examine and evaluate five promising algorithms for computing betweenness centrality, detailed in \textit{\nameref{sec:algorithms}}.
+
+\subsection{Related Work}\label{sec:related_work}
+
+Despite the importance of efficient betweenness centrality algorithms, relatively little work has been done to compare the various existing algorithms.
+
+Of the examined algorithms, no author evaluates their algorithm in a comparable way. Bader et al. does not compare the performance of their algorithm to any other \cite{bader}. Borassi and Natale \cite{borassi} compare the performance of their algorithm to the \texttt{RK}, \texttt{ABRA-Aut}, and \texttt{ABRA-1.2} algorithms. Geisberger et al. \cite{geisberger} and Erd\H{o}s et al. \cite{erdos} compare their algorithms with \texttt{Brandes}. Brandes \cite{brandes}, in turn, compares his algorithm to the now-obsolete \texttt{Floyd}-\texttt{Warshall} algorithm. \hl{This is copied from my proposal, is that alright?}
+
+There are two major studies which attempt to compare the performance of multiple betweenness centrality algorithms. Al-Ghamdi et al. \cite{comparebig} create a system for benchmarking betweenness centrality algorithms on a supercomputer. Their paper focuses primarily on the creation of the benchmark system and the process of benchmarking, and the resulting comparison is treated as a corollary. They compare the performance of the algorithms by Bader et al. and Geisberger et al., as well as others algorithms not discussed in this project.
+
+The other study, by Matt et al. \cite{comparesmall} compares a smaller number of algorithms by using them to solve two ``real world'' problems -- clustering a graph and iteratively removing the most important nodes. They run the tests on more typical hardware than Al-Ghamdi et al. but concluded that by running their tests on a computer with a more powerful GPU, the relative rankings of the algorithms changes. They evaluated the algorithms by Borassi and Natale, Brandes, and Geisberger et al., among others.
+\subsection{Project Aims}
+
+In this project, I will create efficient implementations of five algorithms (see \nameref{sec:algorithms}) and a testing harness to evaluate their performance. I will instrument each of these algorithms to compute performance metrics (time per node, total time, memory usage, the number of graph reads). I will run each of these on large graphs using a high performance computing server and determine the accuracy and efficiency trade-offs each algorithm offers.
+
+\subsection{Overview of selected algorithms}
+\begin{table}[H]
+\label{tab:algorithms}
+
+\renewcommand\arraystretch{1.5}
+    \centering
+    \caption{Selected Algorithms}
+\begin{tabularx}{\linewidth}{|c|c|X|}
+\hline 
+\textbf{Algorithm} & \textbf{Type} & \textbf{Brief overview} \\ 
+\hline 
+\texttt{Brandes} \cite{brandes} & Exact & The most commonly used betweenness centrality algorithm \cite{erdos}. It is used as a baseline to represent the current state of the world.\\ 
+\hline 
+\texttt{Brandes++} \cite{erdos}& Exact & Uses a divide and conquer approach to run the \texttt{Brandes} algorithm on smaller subgraphs and collate the results. Claims significant speedups to \texttt{Brandes}, but never before tested.\\ 
+\hline  
+\texttt{BP2008} \cite{brandes2008} & Approximate & Randomly selects source nodes to calculate betweenness centrality. It is a simple modification to \texttt{Brandes} and is what Geisberger et al. build off of.\\
+\hline 
+\specialcell{Geisberger et al. \cite{geisberger} \\ (\texttt{Linear}, \texttt{Bisection},\\ \texttt{Bisection Sampling})} & Approximate & Three different algorithms that are extensions of \texttt{BP2008} with a new weighting strategy.
+\texttt{Linear} was the most accurate approximate algorithm tested by Matta et al. \cite{comparesmall}.\\ 
+\hline 
+Bader et al. \cite{bader} & Approximate & This algorithm uses a different sampling strategy. \hl{TODO: what is it?} On a supercomputer, it had significantly better performance than any other algorithm \cite{comparebig}.\\ 
+\hline 
+\texttt{KADABRA} \cite{borassi}& Approximate & Uses advanced statistical methods \hl{TODO: which?} to select random shortest paths to compute betweenness centrality. It has a guaranteed lower bound on accuracy and was the fastest algorithm in tests by Matta et al. \cite{comparesmall}.\\ 
+\hline 
+\end{tabularx}
+\end{table}
+
+\subsection{Descriptions of Selected Algorithms}\label{sec:algorithms}
+
+\subsection{Brandes}
+
+When betweenness centrality was first described by Freeman in 1977, there were no known approaches to calculate it other than the na\"ive approach of calculating all shortest paths and doing the summation in equation \ref{eq:1}. By using the \texttt{Floyd}-\texttt{Warshall} algorithm, it is possible to do this in $\mathcal{O}(n^3)$ time and $\mathcal{O}(n^2)$ space for a graph with $n$ nodes. 
+
+The first major improvement to this was described by Ulrik Brandes in his 2001 paper ``A Faster Algorithm for Betweenness Centrality'' \cite{brandes}. Brandes introduces \textit{pair-dependency}, representing the proportion of shortest paths between $s$ and $t$ that pass throubh $v$, defined as \begin{equation} \label{eq:pairdelta}
+\delta(s,t|v) = \frac{\sigma(s,t|v)}{\sigma(s,t)}
+\end{equation}
+
+Further, he defines the \textit{dependency} of $s$ on $v$ as \begin{equation}\label{eq:delta}
+\delta(s|v) = \sum_{t \in V} \delta(s,t|V)
+\end{equation}
+
+From equation \ref{eq:1}, can see that\begin{equation}\label{eq:deltacentrality}
+C(v) = \sum_{s\neq v \neq t \in V} \frac{\sigma(s,t|v)}{\sigma(s,t)} =  \sum_{s\neq v \neq t \in V} \delta(s,t|V) = \sum_{s\neq v \in V} \delta(s|v)
+\end{equation}
+
+The crucial observation in Brandes's paper is that $\delta(s|v)$ follows the following recursive relation: \begin{equation}\label{eq:brandesdelta}
+\delta(s|v) = \sum_{w: v \in pred(w)} \frac{\sigma(s,v)}{\sigma(s,w)} \cdot (1+\delta(s|w))
+\end{equation} 
+Where $pred(v)$ is the set of immediate predecessors of $v$ on all shortest paths from s to any node $t$ that pass through $v$.
+
+With this, Brandes proved that we can calculate $\delta(s|v)$ in two phases. First, compute the solution to the single-source shortest paths (SSSP) problem for $s$. That is, compute all shortest paths from $s$ to any node $t$, storing $pred(v)$ for all $v \in V$ and a list of nodes in non-ascending order of distance from $s$. This can be done by running a breadth-first search (BFS) (for unweighted graphs) or Djikstra's algorithm (for weighted graphs) starting at $s$. While exploring the graph, add the immediate predecessor of each explored node $v$ to $pred(v)$ and add the node to a stack. This operation takes $\mathcal{O}(n)$ time for unweighted graphs, $\mathcal{O}(m+n\log(v))$ time for weighted graphs, and takes $\mathcal{O}(n+m)$ space.
+
+Additionally, augment the SSSP to also calculate $\sigma(s,v)$ by adding $\sigma(s,w)$ to $\sigma(s,v)$ when exploring the edge $(w,v)$.
+
+Next, accumulate dependencies by iteratively popping elements $w$ off of the stack and incrementing each $v \in pred(w)$ by $\frac{\sigma(s,v)}{\sigma(s,w)} \cdot (1+\delta(s|w))$. If all $\delta(s|v)$ are initialized to 0, then each $\delta$ will be the value prescribed by equation \ref{eq:brandesdelta} once the stack is empty. This step takes $\mathcal{O}(m)$ time and $\mathcal{O}(n+m)$ space.
+
+Finally, increment $C(v)$ by $\delta(s|v)$ for all $v \in V$. By iterating over all $s \in V$, this will compute $C(v)$ for all $v \in V$.
+
+Overall, this algorithm takes $\mathcal{O}(nm)$ time for unweighted graphs, $\mathcal{O}(nm+n^2 \log(n))$ time for weighted graphs, and $\mathcal{O}(n+m)$ space in either case.
+
+This algorithm, denoted here as \texttt{Brandes}, is the de facto standard algorithm uses to compute betweenness centrality. In fact, it has been proven that the complexity of computing the betweenness centrality of a single vertex is at least $\mathcal{O}(n^2)$ if the Strong Exponential Time Hypothesis holds \cite{brandescomplexity}. Therefore if the graph is sparse (that is, $m \sim n$), then the \texttt{Brandes} algorithm has optimal asymptotic performance, even for computing the centrality of a single node.
+
+\subsection{Brandes++}
+
+\subsubsection{Target Set Betweenness Centrality} \label{sec:targetset}
+In ``A Divide-and-Conquer Algorithm for Betweenness Centrality'' \cite{erdos} Erd\H{o}s et al. describe a slightly different metric - target set betweenness centrality. It is defined as follows: For a set $S \subset V$ such that $2\leq |S| \leq |V|$, the target set betweenness centrality is defined as the betweenness centrality considering only shortest paths between nodes in the target set, so
+\begin{equation}\label{eq:subsetcentrality}
+C^S(v) = \sum_{s \neq v \neq t \in S} \frac{\sigma(s,t|v)}{\sigma(s,t)}
+\end{equation}
+
+Observe that if $S = V$ then $\forall v \in V$, $C^S(v) = C(v)$. 
+
+Target set betweenness centrality can be calculated with simple modifications to the \texttt{Brandes} algorithm: SSSP is only run from each $s \in S$ and equation \ref{eq:brandesdelta} becomes 
+\begin{equation} \label{eq:subsetdelta}
+\delta(s|v) = \sum_{w: v \in pred(w)} \frac{\sigma(s,v)}{\sigma(s,w)} \cdot (I_{w\in S}+\delta(s|w))
+\end{equation}
+where $I_{w \in S}$ is an indicator that is 1 if $w \in S$ and 0 otherwise.
+
+Erd\H{o}s et al. aim to speed up this calculation by using techniques similar to those used in network routing - splitting the graph into clusters, running a computations on each cluster, and aggregating the results.
+
+\subsubsection{The Algorithm}
+
+Erd\H{o}s et al. detail a new algorithm for efficiently computing target set betweenness centrality. Their algorithm, which they call \texttt{Brandes++} consists of five main steps: clustering the graph, adjusting the clustering, constructing a `skeleton graph', calculating the betweenness centrality of nodes in the skeleton graph, and finally calculating the betweenness centrality of nodes not in the skeleton graph.
+
+\hl{We or I?}
+I will describe each step individually
+\begin{enumerate}[label = \textbf{\arabic*.}]
+\item \textbf{Clustering}
+
+First, we split the overall graph $G$ into a set of sub-graphs $\{G_1,G_2 \ldots G_k\}$ in a way that minimizes the number of edges between sub-graphs. Erd\H{o}s et al. evaluate the performance of several graph partitioning algorithms and find that using the \texttt{METIS} software package results in the best better performance of \texttt{Brandes++}. Erd\H{o}s et al. encounter the issue that the speed of the highly optimized \texttt{METIS} package can't be compared to their Python implementation of \texttt{Brandes++}. In order to keep the clustering algorithm's performance comparable to the other algorithms, I re-implement the paper that \texttt{METIS} is based off of. ``A fast and high quality multilevel scheme for partitioning irregular graphs''\cite{mlgp} describes the algorithm used by \texttt{METIS}, a multilevel graph partition algorithm we will refer to as \texttt{MLGP}.
+
+\hl{MLGP diagram}
+\texttt{MLGP} recursively splits a graph into two partitions by using a three-step process. The algorithm aims to minimize the edge cut, which is the sum of the weights of edges between nodes in different partitions. 
+\begin{enumerate}[label = \arabic*.]
+\item First, the graph is `coarsened' a pre-determined $k$ times by combining nodes. Each node is combined with with the neighbor connected by the heaviest edge. This step reduces the size of the graph to approximately $\frac{|V|}{2^k}$, significantly speeding up the next step. Note that \texttt{MLGP} interprets weights as closeness while \texttt{Brandes++} interprets them as distance, so all weights must be inverted before running \texttt{MLGP}.
+
+\item Next, the graph is actually partitioned. Of the various partitioning algorithms tested by Karypis and Kumar, \texttt{GGGP} consistently achieves the best performance and results \cite{mlgp}. 
+
+\texttt{GGGP} begins by adding a random vertex to a set $T$. Then for each neighbor, \texttt{GGGP} calculates the change in the edge cut if that node were to be added to $T$. This is called the gain. GGGP then iteratively adds the neighbor with the lowest gain to $T$, and updates the gain of that node's neighbors. This iteration continues until half of the graph has been added. Then, we define the partitions as the two sets $T$ and $V \setminus T$.
+
+Since the starting node greatly affects the quality of the partition, \texttt{MLGP} runs \texttt{GGGP} multiple times and selects the partitioning with the lowest edge cut.
+
+\item Finally, the graph is uncoarsened and refined. For each of the $k$ times the graph was coarsened we do the following: 
+\begin{enumerate}
+\item Create a new graph where nodes that were merged in the $j$\textsuperscript{th} iteration are unmerged
+
+
+\item Refine the graph: \texttt{MLGP} uses a modification of the \nohyphens{Kernighan–Lin} algorithm, where we calculate the gains (as described above) of all nodes with neighbors in the opposite partition. Then, two nodes in different partitions which would reduce the edge cut the most when swapped are swapped. This process is repeated until no progress has been made in a constant number of swaps or if there are no more nodes to be swapped. Then the iteration with the best edge-cut (computed adding the gains of executed swaps) is selected and output as the refined partition.
+
+This is made efficient by using a specialized data structure to store the gains and only selecting from all combinations of the best 3 nodes from each partition.
+\end{enumerate}
+\end{enumerate}
+
+\item \textbf{Adjustment of Partitions}
+
+
+Step 4 requires that each target node $s \in S$ is a frontier node (has a neighbor in another partition). To satisfy this, we iterate over all $s \in S$ and if $s$ is not a frontier node, we remove it from its partition and create a new partition containing only $s$. If $S = V$ then every node will be a frontier node and step 3 will take the same time as \texttt{Brandes}, but if $S$ is small and the clustering is good, not every node will be a frontier node.
+\item \textbf{Skeleton Graph}
+
+Once the graph has been partitioned, we construct a simplified representation of the graph, called \textsc{skeleton}, with the following properties:
+
+If $u$ and $v$ are frontier nodes in different partitions and the edge $(u,v) \in G$ with weight $w$, then $(u,v) \in $ \textsc{skeleton} with weight $w$. 
+
+If $u$ and $v$ are frontier nodes in the same partition $P$, and there exists a shortest path from $u$ to $v$ of length $l$ only going through non-frontier nodes (to avoid double-counting), then $(u,v) \in$ \textsc{skeleton} with weight $l$. We can calculate this by doing an SSSP from each frontier node $u$, skipping any $v \not \in P$ and not adding the neighbors of any other frontier node $v \in P$.
+
+We also associate a value $\theta$ with each edge, defined as the number of shortest paths that the edge represents. If $u$ and $v$ are in different partitions, then $\omega(u,v) = 1$. If $u$ and $v$ are in the same partition, we calculate $\theta$ when we run the SSSP to determine $l$.
+
+
+\item \textbf{BRANDES\_SK}
+
+The target-set \texttt{Brandes} (described in \hyperref[sec:targetset]{Target Set Betweenness Centrality}) is run on \textsc{skeleton}, with a few modifications to account for the fact that paths between frontier nodes in the same partition can represent multiple paths (as given by $\theta$). The modifications are as follows.
+
+Rather than incrementing $\sigma(s,v)$ by $\sigma(s,w)$ when exploring the edge $(w,v)$, we instead increment it by $\sigma(s,w)\cdot \theta(w,v)$
+
+
+We must also account for the multiple paths when accumulating delta, so use the following instead of equation \ref{eq:brandesdelta}:
+
+\begin{equation}
+\delta(s|v) = \sum_{w} \sigma(v,w)\frac{\sigma(s,v)}{\sigma(s,w)}\cdot (I_{w\in S}+\delta(s|w))
+\end{equation}
+
+Note that if $|\textsc{skeleton}| = |V|$ then this takes exactly as much time as \texttt{Brandes}, illustrating that we must have a target set $S$ such that $|S| < |V|$ for the algorithm to be effective, and we must have a good clustering that minimizes the number of frontier nodes.
+
+\item \textbf{CENTRALITY}
+
+Thus far, we have calculated the betweenness centrality of every node on the skeleton graph, which includes every node in the target set $S$. However, we have not yet computed the betweenness centrality of nodes not in the skeleton graph (those which are not frontier nodes).
+
+To do so, Erd\H{o}s et al. describe one final algorithm. 
+
+\hl{I have managed to get into contact with one of the authors of the paper, and will write this section after that discussion}
+\end{enumerate}
+\subsection*{Brandes and Pich(2008)}
+While I didn't originally propose to implement the algorithm detailed by Brandes and Pich in 2008 \cite{brandes2008}, the algorithm by Geisberger et al. is a direct extension of it, making this algorithm useful both for comparing to other approximate algorithms and for understanding them.
+
+Their algorithm (here called \texttt{BP2008}) is a simple extension of the \texttt{Brandes} algorithm. Rather than iterate over every source $s \in V$, we compute $n \leq |V|$ samples by randomly selecting source nodes and doing the same computation as in \texttt{Brandes}, accumulating the centrality. At the end, we multiply each centrality by $\frac{|V|}{n}$ to extrapolate from these n samples.
+
+While Brandes and Pich test several different methods for randomly selecting sources, they find that simply selecting a random source with uniform probability $\frac{1}{|V|}$ results in the highest accuracy estimator.
+ 
+\subsection{Geisberger et al.}
+Geisberger et al. detail three different algorithms that use the same framework. 
+
+\hl{I can't think of a more concise way to describe their framework than theirs, how much duplication is okay (equations etc.)}
+
+\subsubsection{Linear Scaling}
+The first algorithm described by Geisberger et al. uses $f(x) = x$ as the scaling function, which is why it is called the Linear Scaling algorithm.
+
+It is a simple modification to \texttt{BP2008}, we can simply use the following instead of equation \ref{eq:brandesdelta}:
+\begin{equation} \label{eq:lineardelta}
+\delta(s|v) = \sum_{w: v \in pred(w)} \frac{\mu(s,v)}{\mu(s,w)} \cdot \frac{\sigma(s,v)}{\sigma(s,w)} \cdot (1+\delta(s|w))
+\end{equation}
+
+Where $\mu(s,v)$ is the distance from $s$ to $v$.
+
+\subsubsection{Bisection Scaling}
+The second algorithm uses \begin{equation}
+f(x) = \begin{cases}
+0 & \text{for } x \in [0,1/2)\\
+1 & \text{for } x \in [1/2,1]
+\end{cases}
+\end{equation}
+
+Implementing this scaling function is somewhat more complicated - each node $t$ only contributes to the $\delta$ of nodes more than halfway on the path from $s$ to $t$. The way Gesiberger et al. address this is by modifying the SSSP algorithm to store successors rather than predecessors. Then, they do a depth-first traversal of this shortest-paths directed acyclic graph (DAG). When a node $v$is visited, we call \texttt{Decrement\_Half} (described below). Then, we continue the depth-first traversal and when all children have been explored, we can do $\delta(s|v) = \delta(s|v) + \frac{\sigma(s,v)}{\sigma(s,w)} \cdot (1+\delta(s|w))$ for all children $w \in succ(v)$.
+
+\texttt{Decrement\_Half} decrements the node halfway on the path from $s$ to $v$ by $\frac{1}{\sigma(s,v)}$ Since this is called once for each path going to $v$, this entirely eliminates the contribution of node $v$ on the node halfway from $s$ to $v$. To determine which node to decrement, we maintain a list representing the current path from $s$ to $v$. 
+
+If the graph is unweighted and the stack has $k$ elements, we decrement the node in position $i$, where\begin{equation}
+i = \begin{cases}
+\max(0,\floor*{(k-2)/2}) & \text{if forward search}\\
+\floor*{(k-1)/2} & \text{else}
+
+\end{cases}
+\end{equation}
+
+If the graph is weighted, we can store the distances calculated when solving the SSSP and do a binary search for the last node with distance less than $d(v)/2$ (if a forward search) or the first node with a distance greater than $d(v)/2$ (if a backward search).
+
+This algorithm visits each node $v$ $\sigma(s,v)$ times rather than once as the Linear Scaling algorithm does, but this performs well if most shortest paths are unique (there is only one way shortest way to reach a node), such as in road networks.
+
+\subsection{Bisection Sampling}
+
+To address the runtime problems of the Bisection Scaling algorithm, Geisberger et al. introduce the Bisection Sampling method. Here, they do the following procedure $k$ times for some constant $k$.
+\begin{enumerate}
+\item For each node $v$ in the shortest-paths DAG, randomly pick a parent $w$ with probability $\frac{\sigma(s,w)}{\sigma(s,v)}$.
+\item For this new tree, run the accumulation step of Bisection Scaling
+\item For each $v \in V \setminus \{s\}$, increment $C(v)$ by $\delta(s,v)/k$
+\end{enumerate}
+
+This reduces the DAG to a tree, ensuring we visit each node only once. Since this is sensitive to the choice of parents, we run this sampling multiple times and average the results.
+
+\subsection{Bader et al.}
+
+I want to talk to you about this algorithm - all it is is the \texttt{BP2008} algorithm where the end condition is replaced with the condition that the betweenness centrality of a pre-chosen node reaches a certain threshold. One of the reviews of betweenness centrality algorithms finds that it's the fastest, while the other points out that it also had the worst performance in the first algorithm and the faster performance was probably just because it ended early.
+
+Also it's performance is wildly unpredictable because it depends on the choice of node. If a node with low betweenness centrality is chosen, it will run many many iterations, or it may end very quickly if the chosen node has very high betweenness centrality.
+\subsection{KADABRA}
+
+
+\newpage
+\bibliography{bibliography}
+\bibliographystyle{plain}
+
+\end{document}

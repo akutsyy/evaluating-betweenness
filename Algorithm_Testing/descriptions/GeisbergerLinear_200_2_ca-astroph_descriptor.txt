@@ -1,0 +1,4 @@
+Running GeisbergerLinear with parameters pivots=200 on: datasets/final/ca-astroph_undirected.txt
+Size: 18772 nodes, 396160 edges
+Time taken: 0.957494116
+ Graph accesses: 87724915

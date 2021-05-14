@@ -1,0 +1,7 @@
+Running BrandesPP with parameters Set Percentage=0.05'
+Set Size=355
+NumPartitions=512
+Times=[2.159809699, 0.095008008, 0.670172279, 0.007056583, 0.719448706] on: datasets/final/wiki-vote_directed.txt
+Size: 7115 nodes, 103689 edges
+Time taken: 3.651948701
+ Graph accesses: 898926699

@@ -1,0 +1,4 @@
+Running BrandesAndPich2008 with parameters pivots=1600 on: datasets/final/wiki-vote_directed.txt
+Size: 7115 nodes, 103689 edges
+Time taken: 0.654663455
+ Graph accesses: 71822038

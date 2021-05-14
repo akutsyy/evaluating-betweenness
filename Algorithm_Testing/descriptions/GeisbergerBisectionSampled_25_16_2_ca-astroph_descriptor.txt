@@ -1,0 +1,4 @@
+Running GeisbergerBisectionSampled with parameters pivots=25, samples=16 on: datasets/final/ca-astroph_undirected.txt
+Size: 18772 nodes, 396160 edges
+Time taken: 1.104686535
+ Graph accesses: 18675332

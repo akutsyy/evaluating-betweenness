@@ -1,0 +1,4 @@
+Running BrandesAndPich2008 with parameters pivots=25 on: datasets/final/com-amazon_undirected.txt
+Size: 334863 nodes, 1851744 edges
+Time taken: 2.667320098
+ Graph accesses: 71743342

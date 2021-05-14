@@ -1,0 +1,3 @@
+File: evaluation/brandesPPData/as-caida-zeroed.txt
+ Time: 3.741322059
+ Time portions: [31.985395072, 1.148416969, 0.472140002, 0.0, 2.11123922]
